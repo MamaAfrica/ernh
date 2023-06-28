@@ -1,0 +1,95 @@
+.banner{
+    display: flex;
+    justify-content: space-around;
+   
+    background-color: black;
+    color: white;
+    padding-bottom: 80px;
+    padding-top: 10px;
+    
+}
+
+
+.bannerSection{
+    margin-top: 50px;
+    width: 50%;
+ 
+}
+.bannerImage{
+     
+    margin-right: 40px;
+}
+
+.bannerSection>div{
+    margin-top: 30px;
+}
+ 
+
+@media screen and (max-width:768px)  {
+    .banner{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+    .bannerSection{
+        margin-top: 50px;
+        margin: 0 auto;
+        width: 100%;
+        padding:0px 30px 0px 50px
+        
+    }
+    .bannerImage{
+        margin: 0 auto;
+    }
+ }
+ 
+@media screen and (max-width:425px)  {
+    .banner{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+    .bannerSection{
+        margin-top: 50px;
+        margin: 0 auto;
+        width: 100%;
+        padding:0px 30px 0px 50px
+        
+    }
+    .bannerImage{
+        margin-top: 0px ;
+        margin-left: -40px;
+    }
+ }
+@media screen and (max-width:320px)  {
+    .banner{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+    .bannerSection{
+        margin-top: 50px;
+        margin: 0 auto;
+        width: 100%;
+        padding:0px 15px 0px 15px
+        
+    }
+    .bannerImage{
+        margin-top: 0px ;
+        margin-left: -40px;
+         width: 20%;
+    }
+ }
+ 

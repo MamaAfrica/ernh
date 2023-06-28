@@ -1,0 +1,151 @@
+.header{
+    background-color: var(--p-col);
+    position: sticky;
+    top: 0px;
+   
+   
+}
+.nav{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+     
+}
+.alogo{
+    margin-top: 10px;
+}
+.main{
+    
+    margin-top: 40px;
+}
+.main ul li{
+    list-style: none;
+}
+.main ul li{
+    float: left;
+    margin-left: 20px;
+    color: white;
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.main ul li:hover{
+    border-bottom: solid var(--s-col) 2px;
+    transition: 300ms;
+}
+.section .hr{
+    height: 1px;
+    background-color: var(--p-col);
+    width: 90%;
+    margin: 50px auto;
+}
+ 
+ 
+.mobileNav{
+    display: none
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+  }
+  
+  .dropdownMenu li {
+    display: block;
+  }
+  
+  .dropdown:hover .dropdownMenu {
+    display: block;
+  }
+ 
+
+@media screen and (max-width:780px)  {
+   .nav{
+    display: none;
+   } 
+    
+.header{
+   margin-bottom: -50px;
+   margin-top: -60px;
+   padding-bottom: 10px;
+    
+}
+.mobileNav{
+    display: flex;
+    justify-content: space-between; 
+    width: 80%;
+    margin-left: 10%;
+    
+    } 
+     .hr{
+        height: 1px;
+        background-color: var(--p-col);
+        width: 90%;
+        margin: 50px auto;
+    }
+    .mobileLogo{
+        margin-top: 20px;
+    }
+    .mobileCart{
+        margin-top: 20px;
+    }
+    .mobileCart li{
+        list-style-type: none;
+    }
+    .mobileNav .hamburger{
+        margin-top: 35px;
+        border:  solid var(--p-col) 1px;
+       height: 20%;
+       border-radius: 10px;
+    }
+     
+    
+   .mobileNav .menu{
+        display: none;
+        border: solid gray 1px;
+        padding: 20px;
+        border-radius: 5px;
+        position: absolute;
+        background-color: rgb(0, 0, 0);
+        margin-left: -20px;
+        color: var(--s-col);
+        margin-top: 10px;
+    }
+    .mobileNav .menu ul li{
+    list-style: none;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: solid var(--p-col) 1px;
+     
+    }
+    .menu li {
+    text-decoration: none;
+     
+    }
+    
+    .hamburger:hover .menu{
+    display: block;
+    }
+    
+    .sign{
+        background-color: #333;
+        border: solid white 2px;
+    }
+    
+    @media screen and (min-width:600px)  {
+        .mobile-nav{
+         display: none;
+        } 
+        
+     }
+}
+    @media screen and (min-width:320px)  {
+        .mobile-nav{
+         display: none;
+        } 
+        .mobileLogo{
+            width: 10%;
+        }
+        
+     }
