@@ -1,14 +1,29 @@
-import { useRouter } from "next/router";
+ 
 import Link from "next/link";
-import Cart from "./cart";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import Logo from "./logo";
 import Hamburger from "./hamburger";
 import classes from './main-navigation.module.css'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 
 const MainNavigation = () => {
+    const { data: session, status } = useSession()
+    const router = useRouter()
+    async function logOut() {
 
-
+       if(status==="authenticated"){
+       
+       await signOut({
+        redirect:false
+    })
+     
+       router.push('/login')
+      }else{
+        console.log('not true')
+      }
+    }
     return (
         <header className={classes.header}>
             <div className={classes.section}>
@@ -43,12 +58,15 @@ const MainNavigation = () => {
                                 <li><Link href='/contact'>Contact</Link></li>
                                 <li><Link href='/about'>Terms</Link></li>
                                 <ul className={classes.dropdownMenu}>
-                                        <li><Link href='/terms-and-conditions'>Terms and Conditions</Link></li>
+                                        <li><Link href='/tandc'>Terms and Conditions</Link></li>
                                         <li><Link href='/privacy'>Privacy Policy</Link></li>
                                          
-                                    </ul>
+                                </ul>
                                 <li><Link href='/freelancing'>Freelancing</Link></li>
-                                <li className={classes.sign}><Link href='/signIn'>Sign In</Link></li>
+                                <div className={classes.sign}>
+                                {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()}>Login</li>)}
+                                </div>
+                               
 
 
 
@@ -101,4 +119,4 @@ const MainNavigation = () => {
     );
 }
 
-export default MainNavigation;
+export default MainNavigation

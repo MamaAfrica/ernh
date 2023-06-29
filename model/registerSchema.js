@@ -3,7 +3,23 @@ const mongoose = require('mongoose')
 
 const regSchema = new Schema({
     _id: Schema.Types.ObjectId,
-    username:{
+    firstname:{
+        type: String,
+        require: true,
+        minLength:[5,'email characters must be greater five'],
+        toLowerCase:true,
+        trim: true,
+        unique: true
+      },
+      lastname:{
+        type: String,
+        require: true,
+        minLength:[5,'email characters must be greater five'],
+        toLowerCase:true,
+        trim: true,
+        unique: true
+      },
+      username:{
         type: String,
         require: true,
         minLength:[5,'email characters must be greater five'],
@@ -16,36 +32,32 @@ const regSchema = new Schema({
         require: true,
         trim: true
     },
-    use:{
+    phone:{
+        type: Number,
+        require: true,
+        trim: true
+    },
+    country:{
+        type: String,
+        require: true,
+         
+    },
+    coupon:{
         type: String,
         require: true,
         trim: true
     },
-    company:{
+    packagec:{
         type: String,
         require: true,
-        trim: true
-    },
-    company:{
-        type: String,
-        require: true,
-        trim: true
-    },
-    companyName:{
-        type: String,
-        require: true,
-        minLength:[5,'company namecharacters must be greater five'],
+        
         trim: true,
-        toLowerCase:true,
+     
     },
-    message:{
-        type: String,
-        require: true,
-        trim: true
-    },
+     
 
-    recipients: [{ type: Schema.Types.ObjectId, ref: 'Recipients' }],
-    birthdays: [{ type: Schema.Types.ObjectId, ref: 'Birthday' }]
+    // recipients: [{ type: Schema.Types.ObjectId, ref: 'Recipients' }],
+    // birthdays: [{ type: Schema.Types.ObjectId, ref: 'Birthday' }]
 })
 
 

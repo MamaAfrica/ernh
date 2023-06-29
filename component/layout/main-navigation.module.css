@@ -59,7 +59,10 @@
     display: block;
   }
  
-
+.sign{
+    display: inline;
+    cursor: pointer;
+}
 @media screen and (max-width:780px)  {
    .nav{
     display: none;

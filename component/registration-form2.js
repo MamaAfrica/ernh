@@ -4,13 +4,12 @@ import Link from 'next/link';
 import Spinner from "./icons/spinner";
 import classes from './registration-form.module.css'
 import data from '../pages/api/data'
-import axios from 'axios';
 
 
 
 
 const RegisterForm = () => {
-
+    // console.log(data)
     const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
     const [show, setShow] = useState(false)
@@ -20,17 +19,15 @@ const RegisterForm = () => {
     const [password, setPassErr] = useState(' ')
     const [waitMsg, setWaitMsg] = useState(' ')
     const [spinner, setSpinner] = useState(false)
-    const [profilePicture, setProfilePicture] = useState(null);
 
     const firstNameInputRef = useRef()
     const lastnameInputRef = useRef()
-    const usernameInputRef = useRef()
+    const emailInputRef = useRef()
     const passwordInputRef = useRef()
     const phoneInputRef = useRef()
     const countryInputRef = useRef()
     const couponInputRef = useRef()
     const packageInputRef = useRef()
-    const imageInputRef = useRef()
 
 
     const router = useRouter()
@@ -43,60 +40,30 @@ const RegisterForm = () => {
 
     async function submitHandler(event) {
         event.preventDefault()
-
-
-
-
-
-        const username = usernameInputRef.current.value;
-        const password = passwordInputRef.current.value;
-        const firstname = firstNameInputRef.current.value
-        const lastname = lastnameInputRef.current.value
-        const phone = phoneInputRef.current.value
-        const country = countryInputRef.current.value
-        const coupon = couponInputRef.current.value
-        const packagec = packageInputRef.current.value
-        const imageUse = imageInputRef.current.value
-
-        // const data = {
-        //     firstname: enteredFirstName,
-        //     lastname: enteredLastName,
-        //     username: enteredEmail,
-        //     password: enteredPassword,
-        //     phone: enteredPhoneInputRef,
-        //     country: enteredCountryInputRef,
-        //     coupon: enteredCouponInputRef,
-        //     packagec: enteredPackageInputRef,
-        // }
+        const enteredEmail = emailInputRef.current.value;
+        const enteredPassword = passwordInputRef.current.value;
+        const enteredFirstName = firstNameInputRef.current.value
+        const enteredLastName = lastnameInputRef.current.value
+        const enteredPhoneInputRef = phoneInputRef.current.value
+        const enteredCountryInputRef = countryInputRef.current.value
+        const enteredCouponInputRef = couponInputRef.current.value
+        const enteredPackageInputRef = packageInputRef.current.value
         //validation
-        // Create a new FormData object
-        // const formData = new FormData();
-        // formData.append('firstname', firstname);
-        // formData.append('lastname', lastname);
-        // formData.append('password', password);
-        // formData.append('phone', phone);
-        // formData.append('email', username);
-        // formData.append('country', country);
-        // formData.append('coupon', coupon);
-        // formData.append('packagec', packagec);
-        // formData.append('profilePicture', profilePicture);
-        // const formData = new FormData();
-         
-        // formData.append('profilePicture', profilePicture);
 
-        if (username.length < 7) {
+
+        if (enteredEmail.length < 7) {
             setEmailErr('Email Lenght must be greater than 7')
             return;
         }
-        if (firstname.length < 3) {
+        if (enteredFirstName.length < 3) {
             setFisrtNameErr('Email Lenght must be greater than three')
             return;
         }
-        if (lastname.length < 3) {
+        if (enteredLastName.length < 3) {
             setLastNameErr('Email Lenght must be greater than three')
             return;
         }
-        if (!validPassword.test(password)) {
+        if (!validPassword.test(enteredPassword)) {
             setPassErr('Password must contain special character(s), and  uppercase');
             return;
         } else {
@@ -104,26 +71,25 @@ const RegisterForm = () => {
         }
         setWaitMsg('Hold on for few seconds...')
         setSpinner(<Spinner />)
-        console.log({ firstname, lastname, username, password, phone, country, coupon, packagec,profilePicture,imageUse })
-        console.log(formData)
         // collection of data
-        const response = await axios.post('api/register/registerForm', { firstname, lastname, username, password, phone, country, coupon, packagec,profilePicture,imageUse }, {
+         const data = {
+            firstname: enteredFirstName,
+            lastname: enteredLastName,  
+            username: enteredEmail,
+            password: enteredPassword,
+            phone:enteredPhoneInputRef,
+            country:enteredCountryInputRef,
+            coupon:enteredCouponInputRef,
+            packagec:enteredPackageInputRef,
+         }
+        const response = await fetch('api/register/registerForm', {
+            method: 'POST',
+            body: JSON.stringify( data ),
             headers: {
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': 'application/json'
             },
+
         });
-
-
-
-
-        // const response = await fetch('api/register/registerForm', {
-        //     method: 'POST',
-        //     body: JSON.stringify(data),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-
-        // });
         let userData = await response.json()
 
         if (!response.ok) {
@@ -132,10 +98,7 @@ const RegisterForm = () => {
 
         router.push('/admin-login')
     }
-    const handleDrop = (acceptedFiles) => {
-        // Update profile picture state with the selected file
-        setProfilePicture(acceptedFiles[0]);
-    };
+
 
     return (
         <div className={classes.section}>
@@ -178,7 +141,7 @@ const RegisterForm = () => {
                         <input type='email'
                             required id="email"
                             name="username"
-                            ref={usernameInputRef} />
+                            ref={emailInputRef} />
 
                     </div>
                     <div>
@@ -257,26 +220,20 @@ const RegisterForm = () => {
 
 
                     </div>
-                    <div className={classes.control}>
-                        <label>
-                            Profile Picture:
-                            <input type="file" accept="image/*" ref={imageInputRef} />
-                        </label>
-                    </div>
                     <div className={classes.use}>
-                        <p>By Using  Earn Hive Application Service, you agree to be bound by our <span className={classes.tandc}><Link href='/tandc' target='_blank'>Terms and Conditions</Link></span>. Earn Hive Application Service reserves the right to change the terms and conditions at any time without notice, and your continual use of Earn Hive Application Service constitutes your content to such changes </p><br />
+                        <p>By Using  Earn Hive Application Service, you agree to be bound by our <span className={classes.tandc}><Link href='/tandc' target='_blank'>Terms and Conditions</Link></span>. Earn Hive Application Service reserves the right to change the terms and conditions at any time without notice, and your continual use of Earn Hive Application Service constitutes your content to such changes </p><br/>
                         <p>Do you agree  Earn Hive Application Service Privacy Policy?</p>
                         <div className={classes.itandc}>
-                            <label htmlFor="agree">I agree</label>
-                            <input type='checkbox' required id="agree" />
+                        <label htmlFor="agree">I agree</label>
+                        <input type='checkbox' required  id="agree" />
                         </div>
-
+                      
                     </div>
                     <div className={classes.actions}>
                         <button type="submit">Register</button>
                     </div>
                     <div className={classes.acc}>
-                        <p>Already have an Account? <Link href='/admin-login' target='_blank'>Login</Link></p>
+                        <p>Already have an Account? <Link href='/login' target='_blank'>Login</Link></p>
                     </div>
 
                 </form>

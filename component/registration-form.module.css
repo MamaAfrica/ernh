@@ -20,6 +20,8 @@ padding-top: 20px;
   }
 .figure img{
     width: 90%;
+    background-color: #ffffff;
+    margin-top: 50px;
    
 }
 .form {
@@ -38,10 +40,12 @@ padding-top: 20px;
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    color: var(--p-col);
   }
   
   .control input,
-  .control textarea {
+  .control textarea, 
+  .control select {
     display: block;
     font: inherit;
     border-radius: 4px;
@@ -85,3 +89,20 @@ padding-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+.getCode{
+  color: var(--s-col);
+  padding-left: 10px;
+}
+.itandc input{
+ margin-left: 20px;
+ margin-top: 10px;
+ 
+}
+.use{
+  margin-top: 60px;
+}
+.tandc{
+  color: var(--s-col);
+  font-weight: bold;
+}
