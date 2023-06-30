@@ -1,6 +1,6 @@
-
+import DropDown from "../icons/dropdown";
 import Link from "next/link";
-import { useState } from "react";
+ 
 import { useRouter } from "next/router";
 import Logo from "./logo";
 import Hamburger from "./hamburger";
@@ -64,7 +64,8 @@ const MainNavigation = () => {
 
 
 
-
+                    
+                                <li style={{marginTop:"-4px",marginLeft:"5px"}}><DropDown/></li>
                                 <li><Link href='/sponsored-task'>Sponsored Task</Link></li>
                                 <li><Link href='/advert'>Hive Advert</Link></li>
                                 <li><Link href='/contact'>Contact</Link></li>
@@ -81,6 +82,7 @@ const MainNavigation = () => {
 
                                     </ul>
                                 </li>
+                                <li style={{marginTop:"-4px",marginLeft:"5px"}}><DropDown/></li>
                                 <li><Link href='/freelancing'>Freelancing</Link></li>
                                 <div className={classes.sign}>
                                     {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}

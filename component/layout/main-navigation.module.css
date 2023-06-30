@@ -49,24 +49,27 @@
     display: none;
     position: absolute;
     top: 70px;
-    padding: 10px;
-    background-color: white;
+    padding: 10px 20px 10px 20px;
+    background-color:var(--p-col);
+    
   }
   .dropdownMenu div  li{
     font-family: 'Times New Roman', Times, serif;
     color: black;
-    padding-top: 5px;
+    padding-top: 8px;
+    color: aliceblue;
   }
 .dropdownM {
     display: none;
     position: absolute;
     top: 70px;
     padding: 10px 10px 30px 10px;
-    background-color: white;
+    padding: 10px 20px 10px 20px;
+    background-color:var(--p-col);
   }
   .dropdownM div  li{
     font-family: 'Times New Roman', Times, serif;
-    color: black;
+    color: rgb(249, 249, 249);
     padding-top: 5px;
   }
   
@@ -86,11 +89,19 @@
   }
   .termsMenu:hover .dropdownM {
     display: block;
+    
   }
  
 .sign{
     display: inline;
     cursor: pointer;
+   
+}
+.sign li{
+    border: solid 1px var(--s-col);
+    padding: 10px 20px 10px 20px;
+    margin-top: -10px;
+    border-radius: 5px;
 }
 @media screen and (max-width:780px)  {
    .nav{
@@ -164,7 +175,9 @@
         background-color: #333;
         border: solid white 2px;
     }
-    
+    .drop{
+        display: inline;
+    }
     @media screen and (min-width:600px)  {
         .mobile-nav{
          display: none;

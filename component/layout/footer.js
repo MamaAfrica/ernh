@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
         </div>
         <p className={classes.copy}>Copyright@EarnHive </p>
-        <p className={classes.design}>Designed and Developed by E. Joseph for EarnHive</p>
+      
         </div>
      );
 }

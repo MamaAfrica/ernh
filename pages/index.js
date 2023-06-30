@@ -1,12 +1,13 @@
 import {Fragment} from 'react'
 import Head from 'next/head'
+import BannerL from '@/component/banner/bannerL';
  
  
  
 
 const HomePage = () => {
   return ( 
-    <>
+  
     <Fragment>
       <Head>
         <title>EarnHive | Beyound Wealth Creation</title>
@@ -17,12 +18,12 @@ const HomePage = () => {
         as the word “HIVE” means, a place where people are actively busy'
         />
       </Head>
-      <h1>Home page</h1>
+     <BannerL/>
       
    
     </Fragment>
     
-    </>
+    
    
    );
 }

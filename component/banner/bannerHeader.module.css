@@ -1,5 +1,9 @@
 .bannerHeader{
-    color: rgb(255, 255, 255);
+    color: var(--s-col);
+    margin-left: 140px;
+    font-size: 3em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 
     
 }
