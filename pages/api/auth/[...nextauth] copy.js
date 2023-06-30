@@ -20,7 +20,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { username, password } = credentials
-        const response = await fetch('http://localhost:3000/api/admin/admin-login', {
+        const response = await fetch('http://localhost:3000/api/login/login-form', {
           method: 'POST',
           body: JSON.stringify({ username, password }),
           headers: {
@@ -55,7 +55,7 @@ export const authOptions = {
     encryption: true,
   },
   pages:{
-      signIn: "'../../ernhv-admin-login'"
+      signIn: "../../login"
     }
 };
 

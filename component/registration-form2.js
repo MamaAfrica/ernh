@@ -96,7 +96,7 @@ const RegisterForm = () => {
             throw new Error(userData.message || 'something went wrong')
         }
 
-        router.push('/admin-login')
+        router.push('/login')
     }
 
 

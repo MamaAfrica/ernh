@@ -1,4 +1,4 @@
- 
+
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -11,18 +11,21 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 const MainNavigation = () => {
     const { data: session, status } = useSession()
     const router = useRouter()
+    function signIn() {
+        router.push('/login')
+    }
     async function logOut() {
 
-       if(status==="authenticated"){
-       
-       await signOut({
-        redirect:false
-    })
-     
-       router.push('/login')
-      }else{
-        console.log('not true')
-      }
+        if (status === "authenticated") {
+
+            await signOut({
+                redirect: false
+            })
+
+            router.push('/login')
+        } else {
+            console.log('not true')
+        }
     }
     return (
         <header className={classes.header}>
@@ -41,12 +44,21 @@ const MainNavigation = () => {
 
 
                                 <li className={classes.menu}>
-                                    <Link href='/about'>Pages</Link>
+                                     Pages 
                                     <ul className={classes.dropdownMenu}>
-                                        <li><Link href='/activation-code'>Get Coupon Code</Link></li>
-                                        <li><Link href='/coupon-checker'>Check Code</Link></li>
-                                        <li><Link href='/how-it-works'>How it works</Link></li>
-                                        <li><Link href='/top-earners'>Top Earners</Link></li>
+                                        <div>
+                                            <li><Link href='/activation-code'>Get Coupon Code</Link></li>
+                                        </div>
+                                        <div>
+                                            <li><Link href='/coupon-checker'>Check Code</Link></li>
+                                        </div>
+                                        <div>
+                                            <li><Link href='/how-it-works'>How it works</Link></li>
+                                        </div>
+                                        <div>
+                                            <li><Link href='/top-earners'>Top Earners</Link></li>
+                                        </div>
+
                                     </ul>
                                 </li>
 
@@ -56,17 +68,24 @@ const MainNavigation = () => {
                                 <li><Link href='/sponsored-task'>Sponsored Task</Link></li>
                                 <li><Link href='/advert'>Hive Advert</Link></li>
                                 <li><Link href='/contact'>Contact</Link></li>
-                                <li><Link href='/about'>Terms</Link></li>
-                                <ul className={classes.dropdownMenu}>
-                                        <li><Link href='/tandc'>Terms and Conditions</Link></li>
-                                        <li><Link href='/privacy'>Privacy Policy</Link></li>
-                                         
-                                </ul>
+                                <li className={classes.termsMenu}>
+                                   Terms 
+                                    <ul className={classes.dropdownM}>
+                                        <div>
+                                            <li><Link href='/tandc'>Terms and Conditions</Link></li>
+                                        </div>
+                                        <div>
+                                            <li><Link href='/privacy'>Privacy Policy</Link></li>
+                                        </div>
+
+
+                                    </ul>
+                                </li>
                                 <li><Link href='/freelancing'>Freelancing</Link></li>
                                 <div className={classes.sign}>
-                                {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()}>Login</li>)}
+                                    {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}
                                 </div>
-                               
+
 
 
 

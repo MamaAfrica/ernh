@@ -2,10 +2,11 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
- import Spinner from "./icons/spinner";
-import classes from './login-form.module.css'
+import Spinner from "@/component/icons/spinner";
  
-import { signIn } from "next-auth/react";
+import classes from './earnhv.module.css'
+ 
+ 
  
 
 
@@ -36,8 +37,7 @@ const AdminRegistration = () => {
         const enteredPassword = passwordInputRef.current.value;
 
         //validation
-        setSpinner(<Spinner/>)
-        setWaitMsg('Hold on for few seconds...')
+        
         if (enteredEmail.length < 15) {
             setEmailErr('Email Lenght must be greater than Fifteen')
             return;
@@ -48,24 +48,42 @@ const AdminRegistration = () => {
         } else {
             setPassErr('Good Password');
         }
-        const result  = await signIn("credentials",{
+        setWaitMsg('Hold on for few seconds...')
+        setSpinner(<Spinner />)
+        // collection of data
+         const data = {
+              
             username: enteredEmail,
             password: enteredPassword,
-            redirect: true,
-            callbackUrl:"/dashboard"
-        })
-        // console.log(result)
+             
+         }
+        const response = await fetch('api/admin/admin-register', {
+            method: 'POST',
+            body: JSON.stringify( data ),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+        });
+        let userData = await response.json()
+
+        if (!response.ok) {
+            throw new Error(userData.message || 'something went wrong')
+        }
+
+        router.push('/ernhv/ernhv-admin-login')
+    }
        
          
-    }
+    
         
     return ( 
         
         <div className={classes.section}>
-            <h2>Admin Login</h2>
+            <h2>Admin Registration</h2>
         <div className={classes.card}>
         <div className={classes.figure}>
-        <img src="https://media.istockphoto.com/id/1257998329/vector/young-afro-american-man-sitting-on-the-chair-at-home-interior-and-working-with-laptop-vector.jpg?s=612x612&w=0&k=20&c=HHHYOCX39w0GCoyqRTfOorDBkLxPT2DhLzN8_B1bAv4=" alt="cartoon on laptop"/>
+        <img src="https://static.vecteezy.com/system/resources/previews/004/379/378/non_2x/technical-support-operator-flat-illustration-company-employee-technician-isolated-cartoon-character-on-white-background-call-center-it-department-worker-with-headset-computer-maintenance-vector.jpg" alt="cartoon on laptop"/>
           </div>
              <form onSubmit={submitHandler}className={classes.form}>
                 <div className={classes.control}>
@@ -101,11 +119,11 @@ const AdminRegistration = () => {
                  
                
                 <div className={classes.actions}>
-                 <button type="submit">Login</button>
+                 <button type="submit">Register</button>
                  </div>
 
                 <p>Forgot Password?</p><br/><br/>
-                <p>You do not have an Account? <Link href='/signUp' target='_blank'>Register</Link></p>
+                <p>You do not have an Account? <Link href='/ernhv-admin-login' target='_blank'>Login</Link></p>
                 
             </form>
             

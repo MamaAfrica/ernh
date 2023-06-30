@@ -2,14 +2,15 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
- import Spinner from "./icons/spinner";
-import classes from './login-form.module.css'
- 
+import Spinner from "@/component/icons/spinner";
 import { signIn } from "next-auth/react";
+import classes from './earnhv.module.css'
+ 
+ 
  
 
 
-const LoginForm = () => {
+const AdminLogin = () => {
   
     const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
@@ -36,7 +37,7 @@ const LoginForm = () => {
         const enteredPassword = passwordInputRef.current.value;
 
         //validation
-        setWaitMsg('Hold on for few seconds...')
+        
         if (enteredEmail.length < 15) {
             setEmailErr('Email Lenght must be greater than Fifteen')
             return;
@@ -47,24 +48,26 @@ const LoginForm = () => {
         } else {
             setPassErr('Good Password');
         }
+        setWaitMsg('Hold on for few seconds...')
+        setSpinner(<Spinner />)
         const result  = await signIn("credentials",{
             username: enteredEmail,
             password: enteredPassword,
             redirect: true,
-            callbackUrl:"/dashboard"
+            callbackUrl:"/ernhv/ernhv-admin-dashboard"
         })
-        // console.log(result)
+    }
        
          
-    }
+    
         
     return ( 
         
         <div className={classes.section}>
-            <h2>Login</h2>
+            <h2>Admin Login</h2>
         <div className={classes.card}>
         <div className={classes.figure}>
-        <img src="https://media.istockphoto.com/id/1257998329/vector/young-afro-american-man-sitting-on-the-chair-at-home-interior-and-working-with-laptop-vector.jpg?s=612x612&w=0&k=20&c=HHHYOCX39w0GCoyqRTfOorDBkLxPT2DhLzN8_B1bAv4=" alt="cartoon on laptop"/>
+        <img src="https://static.vecteezy.com/system/resources/previews/004/379/378/non_2x/technical-support-operator-flat-illustration-company-employee-technician-isolated-cartoon-character-on-white-background-call-center-it-department-worker-with-headset-computer-maintenance-vector.jpg" alt="cartoon on laptop"/>
           </div>
              <form onSubmit={submitHandler}className={classes.form}>
                 <div className={classes.control}>
@@ -104,7 +107,7 @@ const LoginForm = () => {
                  </div>
 
                 <p>Forgot Password?</p><br/><br/>
-                <p>You do not have an Account? <Link href='/signUp' target='_blank'>Register</Link></p>
+                <p>You do not have an Account? <Link href='/ernhv-admin' target='_blank'>Register</Link></p>
                 
             </form>
             
@@ -114,4 +117,4 @@ const LoginForm = () => {
      );
 }
  
-export default LoginForm;
+export default AdminLogin;

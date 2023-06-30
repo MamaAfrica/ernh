@@ -16,7 +16,7 @@
     margin-top: 10px;
 }
 .main{
-    
+    cursor: pointer;
     margin-top: 40px;
 }
 .main ul li{
@@ -31,7 +31,7 @@
 }
 .main ul li:hover{
     border-bottom: solid var(--s-col) 2px;
-    transition: 300ms;
+    transition: 100ms;
 }
 .section .hr{
     height: 1px;
@@ -48,14 +48,43 @@
 .dropdownMenu {
     display: none;
     position: absolute;
-    background-color: #333;
+    top: 70px;
+    padding: 10px;
+    background-color: white;
+  }
+  .dropdownMenu div  li{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    padding-top: 5px;
+  }
+.dropdownM {
+    display: none;
+    position: absolute;
+    top: 70px;
+    padding: 10px 10px 30px 10px;
+    background-color: white;
+  }
+  .dropdownM div  li{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    padding-top: 5px;
   }
   
   .dropdownMenu li {
     display: block;
   }
-  
-  .dropdown:hover .dropdownMenu {
+  .menu{
+    
+    padding-bottom: 30px;
+  }
+  .menu:hover .dropdownMenu {
+    display: block;
+  }
+  .termsMenu{
+    cursor: pointer;
+    padding-bottom: 30px;
+  }
+  .termsMenu:hover .dropdownM {
     display: block;
   }
  
