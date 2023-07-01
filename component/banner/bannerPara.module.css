@@ -13,12 +13,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1em;
     border: solid 1px #754298;
-    background-color: rgba(240, 248, 255, 0);
+    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
     border-radius: 5px;
     color: white;
     cursor: pointer;
 }
 .btn button:hover{
-    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
-    color:var(--p-col);
+  
+    background: rgba(240, 248, 255, 0);
+    color:var(--s-col);
 }

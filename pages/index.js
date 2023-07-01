@@ -2,6 +2,10 @@ import {Fragment} from 'react'
 import Head from 'next/head'
 import BannerL from '@/component/banner/bannerL';
  
+import SectionTwo from '@/component/sections/sectionTwo';
+import SectionOne from '@/component/sections/sectionOne';
+import SectionThree from '@/component/sections/sectionThree';
+ 
  
  
 
@@ -19,8 +23,10 @@ const HomePage = () => {
         />
       </Head>
      <BannerL/>
-      
    
+      <SectionTwo/>
+      <SectionOne/>
+      <SectionThree/>
     </Fragment>
     
     
