@@ -1,0 +1,17 @@
+.bg{
+    background-image: url('../../public/bg.png');
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 200px;
+
+}
+.cover{
+    height: 400px;
+    width: 60%;
+    margin-left: 10%;
+    background-color: white;
+}

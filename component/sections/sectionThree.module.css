@@ -22,7 +22,7 @@ color: var(--s-col);
 .sectionTwo{
     display: flex;
     width: 80%;
-  
+    border-radius: 5px;
     background-color: #EFE7CF;
     margin-left: -10px;
 }
@@ -46,7 +46,7 @@ color: var(--s-col);
  .aside{
     width: 30%; 
      margin-left: 10px;
-  
+  border-radius: 5px;
    
     
     height: 40%;
@@ -69,6 +69,7 @@ color: var(--s-col);
  .aside .figure img{
     width: 100%;
  }
+  
  .aside ul{
     background-color: #EFE7CF;
     padding-left: 20px;
@@ -84,12 +85,15 @@ color: var(--s-col);
   
     width: 50%;
     height: 100%;
+ 
    
  
 }
 .sectionTwo .figure img{
     width: 100%;
     height: 100%;
+    border-start-start-radius: 5px;
+    border-bottom-left-radius: 5px;
 
 }
 .btn button{

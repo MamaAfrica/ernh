@@ -5,6 +5,9 @@ import BannerL from '@/component/banner/bannerL';
 import SectionTwo from '@/component/sections/sectionTwo';
 import SectionOne from '@/component/sections/sectionOne';
 import SectionThree from '@/component/sections/sectionThree';
+import SectionFour from '@/component/sections/sectionFour';
+import SectionFive from '@/component/sections/sectionFive';
+import SectionSix from '@/component/sections/sectionSix';
  
  
  
@@ -27,6 +30,9 @@ const HomePage = () => {
       <SectionTwo/>
       <SectionOne/>
       <SectionThree/>
+      <SectionFour/>
+      <SectionFive/>
+      <SectionSix/>
     </Fragment>
     
     
