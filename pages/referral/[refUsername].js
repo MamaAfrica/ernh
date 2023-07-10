@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Spinner from "./icons/spinner";
-import classes from './registration-form.module.css'
-import data from '../pages/api/data'
+import Spinner from "@/component/icons/spinner";
+import classes from '../registration-form.module.css'
+import data from '../api/data'
 
 
 
 
-const RegisterForm = () => {
+const Referral = () => {
     // console.log(data)
     const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
@@ -37,6 +37,7 @@ const RegisterForm = () => {
     function setFnc() {
         setShow(!show)
     }
+    const { refUsername } = router.query
 
     async function submitHandler(event) {
         event.preventDefault()
@@ -71,6 +72,7 @@ const RegisterForm = () => {
         }
         setWaitMsg('Hold on for few seconds...')
         setSpinner(<Spinner />)
+      
         // collection of data
          const data = {
             firstname: enteredFirstName,
@@ -90,7 +92,7 @@ const RegisterForm = () => {
             hivepostTwo:0,
             dailyLogin:0,
             hiveGame:0,
-            referral:'Admin'
+            referral:refUsername
          }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',
@@ -109,11 +111,13 @@ const RegisterForm = () => {
 
         router.push('/login')
     }
+    
+  
 
 
     return (
         <div className={classes.section}>
-            <h2>Joining Under Admin</h2>
+            <h2>Joining Under {refUsername}</h2>
 
             <div className={classes.card}>
                 <div className={classes.figure}>
@@ -255,4 +259,4 @@ const RegisterForm = () => {
     );
 }
 
-export default RegisterForm;
+export default Referral;

@@ -88,6 +88,9 @@ const regSchema = new Schema({
     hiveGame:{
       type:Number
     },
+    referral:{
+      type:String
+    }
     
      
 
