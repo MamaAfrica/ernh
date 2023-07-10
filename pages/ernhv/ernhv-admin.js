@@ -21,6 +21,8 @@ const AdminRegistration = () => {
     const [waitMsg, setWaitMsg] = useState(' ')
     const [spinner, setSpinner] = useState(false)
 
+    const firstNameInputRef = useRef()
+    const lastNameInputRef = useRef()
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
     const router = useRouter()
@@ -33,6 +35,8 @@ const AdminRegistration = () => {
 
     async function submitHandler(event) {
         event.preventDefault()
+        const  enteredFirstname= firstNameInputRef.current.value;
+        const enteredLastName = lastNameInputRef.current.value
         const enteredEmail = emailInputRef.current.value;
         const enteredPassword = passwordInputRef.current.value;
 
@@ -52,12 +56,15 @@ const AdminRegistration = () => {
         setSpinner(<Spinner />)
         // collection of data
          const data = {
-              
+            firstname: enteredFirstname,
+            lastname: enteredLastName,  
             username: enteredEmail,
             password: enteredPassword,
+            role: 'Admin'
              
          }
-        const response = await fetch('api/admin/admin-register', {
+         console.log(data)
+        const response = await fetch('http://localhost:3000/api/admin/admin-register', {
             method: 'POST',
             body: JSON.stringify( data ),
             headers: {
@@ -89,10 +96,30 @@ const AdminRegistration = () => {
                 <div className={classes.control}>
                 {spinner}
                     <h3>{waitMsg}</h3>
-                   <label htmlFor="Username">Username</label>
+                   <label htmlFor="firstname">Firstname</label>
                    <input type='text' 
-                   required id="Username" 
-                   name = "Username"
+                   required id="firstname" 
+                   name = "firstname"
+                   placeholder= "John"
+                   ref={firstNameInputRef}/>
+                  
+                </div>
+                <div className={classes.control}>
+                
+                   <label htmlFor="Lastname">Lastname</label>
+                   <input type='text' 
+                   required id="lastname" 
+                   name = "lastname"
+                   placeholder= "Doe"
+                   ref={lastNameInputRef}/>
+                  
+                </div>
+                <div className={classes.control}>
+              
+                   <label htmlFor="username">Username</label>
+                   <input type='text' 
+                   required id="username" 
+                   name = "username"
                    placeholder= "jsmith@gmail.com"
                    ref={emailInputRef}/>
                   
@@ -102,11 +129,11 @@ const AdminRegistration = () => {
                 </div>
 
                 <div className={classes.control}>
-                   <label htmlFor="Password">Password</label>
+                   <label htmlFor="password">Password</label>
                    
                    <input type={show?"text":"password"}
                     required id="password"
-                    name="Password" 
+                    name="password" 
                     ref={passwordInputRef}/>
 
                     <div className={classes.span}>
@@ -123,7 +150,7 @@ const AdminRegistration = () => {
                  </div>
 
                 <p>Forgot Password?</p><br/><br/>
-                <p>You do not have an Account? <Link href='/ernhv-admin-login' target='_blank'>Login</Link></p>
+                <p>You do not have an Account? <Link href='/ernhv/ernhv-admin-login' target='_blank'>Login</Link></p>
                 
             </form>
             

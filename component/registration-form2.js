@@ -81,6 +81,15 @@ const RegisterForm = () => {
             country:enteredCountryInputRef,
             coupon:enteredCouponInputRef,
             packagec:enteredPackageInputRef,
+            role:'User',
+            welcomeBonus:2000,
+            referalBonus:0,
+            indirectReferalBonus: 0,
+            secondIndirectRBonus:0,
+            hivepostOne:0,
+            hivepostTwo:0,
+            dailyLogin:0,
+            hiveGame:0,
          }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',
@@ -90,6 +99,7 @@ const RegisterForm = () => {
             },
 
         });
+        console.log(data)
         let userData = await response.json()
 
         if (!response.ok) {

@@ -48,7 +48,7 @@
 }
 
 .aside .figureContent {
-    background-color: #000000;
+    background-color: var(--p-col);
     padding-left: 20px;
     padding-bottom: 30px;
     padding-right: 20px;

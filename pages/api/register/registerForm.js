@@ -13,7 +13,11 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
              
-            const {firstname,lastname, username, password, phone, country, coupon, packagec } = req.body
+            const {firstname,lastname, username, password, phone, country, coupon, packagec,role,welcomeBonus,referalBonus,indirectReferalBonus,secondIndirectRBonus,hivepostOne,hivepostTwo,dailyLogin ,hiveGame} = req.body
+
+            //creating a username with email
+            const refUsername = username.slice(0,username.indexOf('@'))
+            const refLink = `localhost:3000/referral/${refUsername}`
             console.log('Connecting to Mongo')
             await connectDB()
             console.log('Connected to Mongo')
@@ -25,10 +29,24 @@ async function handler(req, res) {
                 lastname:lastname,
                 username: username,
                 password: hashedPassword,
+                refUsername:refUsername,
+                refLink:refLink,
                 phone: phone,
                 country: country,
                 coupon: coupon,
-                packagec: packagec
+                packagec: packagec,
+                role:role,
+                welcomeBonus:welcomeBonus,
+                referalBonus:referalBonus,
+                indirectReferalBonus:indirectReferalBonus,
+                secondIndirectRBonus:secondIndirectRBonus,
+                hivepostOne:hivepostOne,
+                hivepostTwo:hivepostTwo,
+                dailyLogin:dailyLogin,
+                hiveGame:hiveGame
+
+
+
             })
             await doc.save()
             console.log(doc)

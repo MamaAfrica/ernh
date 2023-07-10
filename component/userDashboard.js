@@ -1,6 +1,8 @@
+import DashboardBanner from "./users/dashboardBanner"
+
 function UserDashboard(){
     return(
-        <div>Dashboard</div>
+        <DashboardBanner/>
     )
 }
 

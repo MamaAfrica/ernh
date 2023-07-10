@@ -50,6 +50,7 @@ const LoginForm = () => {
         const result  = await signIn("credentials",{
             username: enteredEmail,
             password: enteredPassword,
+            role: 'User',
             redirect: true,
             callbackUrl:"/dashboard"
         })

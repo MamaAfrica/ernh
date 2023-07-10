@@ -18,7 +18,11 @@
 .main{
     cursor: pointer;
     margin-top: 40px;
+  
+    margin-left: 40px;
+    width: 70%;
 }
+ 
 .main ul li{
     list-style: none;
 }
@@ -102,6 +106,22 @@
     padding: 10px 20px 10px 20px;
     margin-top: -10px;
     border-radius: 5px;
+}
+.userinit{
+    display: inline;
+    cursor: pointer;
+    
+   
+}
+.userInit li{
+    border: solid 1px var(--s-col);
+    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+    padding: 10px 10px 10px 10px;
+    margin-top: -10px;
+    border-radius: 50%;
+}
+.userInit li:hover{
+    background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;
 }
 @media screen and (max-width:780px)  {
    .nav{

@@ -2,6 +2,22 @@ import { Schema, model, models } from 'mongoose'
 const mongoose = require('mongoose')
 
 const adminSchema = new Schema({
+  firstname: {
+    type: String,
+    require: true,
+    minLength: [1, 'Firstname characters must be greater five'],
+    toLowerCase: true,
+    trim: true,
+  
+  },
+  lastname: {
+    type: String,
+    require: true,
+    minLength: [1, 'Lastname characters must be greater five'],
+    toLowerCase: true,
+    trim: true,
+  
+  },
   
   username: {
     type: String,
@@ -15,6 +31,9 @@ const adminSchema = new Schema({
     type: String,
     require: true,
     trim: true
+},
+role:{
+  type:String
 }
    
 })

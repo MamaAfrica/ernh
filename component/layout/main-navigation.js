@@ -1,6 +1,6 @@
 import DropDown from "../icons/dropdown";
 import Link from "next/link";
- 
+
 import { useRouter } from "next/router";
 import Logo from "./logo";
 import Hamburger from "./hamburger";
@@ -14,6 +14,10 @@ const MainNavigation = () => {
     function signIn() {
         router.push('/login')
     }
+
+
+
+
     async function logOut() {
 
         if (status === "authenticated") {
@@ -26,6 +30,9 @@ const MainNavigation = () => {
         } else {
             console.log('not true')
         }
+    }
+    function handleDashboard() {
+        router.push("/dashboard")
     }
     return (
         <header className={classes.header}>
@@ -44,7 +51,7 @@ const MainNavigation = () => {
 
 
                                 <li className={classes.menu}>
-                                     Pages 
+                                    Pages
                                     <ul className={classes.dropdownMenu}>
                                         <div>
                                             <li><Link href='/activation-code'>Get Coupon Code</Link></li>
@@ -64,13 +71,13 @@ const MainNavigation = () => {
 
 
 
-                    
-                                <li style={{marginTop:"-4px",marginLeft:"5px"}}><DropDown/></li>
+
+                                <li style={{ marginTop: "-4px", marginLeft: "5px" }}><DropDown /></li>
                                 <li><Link href='/sponsored-task'>Sponsored Task</Link></li>
                                 <li><Link href='/advert'>Hive Advert</Link></li>
                                 <li><Link href='/contact'>Contact</Link></li>
                                 <li className={classes.termsMenu}>
-                                   Terms 
+                                    Terms
                                     <ul className={classes.dropdownM}>
                                         <div>
                                             <li><Link href='/tandc'>Terms and Conditions</Link></li>
@@ -82,10 +89,16 @@ const MainNavigation = () => {
 
                                     </ul>
                                 </li>
-                                <li style={{marginTop:"-4px",marginLeft:"5px"}}><DropDown/></li>
+                                <li style={{ marginTop: "-4px", marginLeft: "5px" }}><DropDown /></li>
                                 <li><Link href='/freelancing'>Freelancing</Link></li>
                                 <div className={classes.sign}>
                                     {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}
+                                </div>
+                                <div className={classes.userInit}>
+                                    {session?.user ? (<li onClick={handleDashboard}>
+                                        {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}
+
+                                    </li>) : " "}
                                 </div>
 
 

@@ -32,6 +32,12 @@ const regSchema = new Schema({
         require: true,
         trim: true
     },
+    refUsername:{
+      type:String,
+    },
+    refLink:{
+      type:String,
+    },
     phone:{
         type: Number,
         require: true,
@@ -54,6 +60,35 @@ const regSchema = new Schema({
         trim: true,
      
     },
+    role:{
+      type:String
+    },
+    welcomeBonus:{
+      type:Number
+    },
+    referalBonus:{
+      type:Number
+    },
+    indirectReferalBonus:{
+      type:Number
+    },
+    secondIndirectRBonus:{
+      type:Number
+    },
+    hivepostOne:{
+      type:Number
+    },
+    hivepostTwo:{
+      type:Number
+    },
+    
+    dailyLogin:{
+      type:Number
+    },
+    hiveGame:{
+      type:Number
+    },
+    
      
 
     // recipients: [{ type: Schema.Types.ObjectId, ref: 'Recipients' }],

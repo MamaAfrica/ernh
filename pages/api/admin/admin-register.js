@@ -13,7 +13,7 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
              
-            const { username, password } = req.body
+            const {firstname,lastname, username, password,role } = req.body
             console.log('Connecting to Mongo')
             await connectDB()
             console.log('Connected to Mongo')
@@ -21,8 +21,11 @@ async function handler(req, res) {
             const hashedPassword = await bcrypt.hash(password, 10)
             const doc = new Admin({
                 _id: new mongoose.Types.ObjectId(),
+                firstname: firstname,
+                lastname: lastname,
                 username: username,
                 password: hashedPassword,
+                role:role
                  
             })
             await doc.save()

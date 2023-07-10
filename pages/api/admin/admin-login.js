@@ -14,6 +14,7 @@ const bcrypt = require('bcrypt')
         console.log({username, password})
 
         const user = await Admin.findOne({username}) 
+        console.log('i am an ADMIN')
          console.log(user)
          const validUser = await bcrypt.compare(password, user.password)
          console.log(validUser)

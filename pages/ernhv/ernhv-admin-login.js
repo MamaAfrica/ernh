@@ -53,6 +53,7 @@ const AdminLogin = () => {
         const result  = await signIn("credentials",{
             username: enteredEmail,
             password: enteredPassword,
+            role: 'Admin',
             redirect: true,
             callbackUrl:"/ernhv/ernhv-admin-dashboard"
         })
@@ -107,7 +108,7 @@ const AdminLogin = () => {
                  </div>
 
                 <p>Forgot Password?</p><br/><br/>
-                <p>You do not have an Account? <Link href='/ernhv-admin' target='_blank'>Register</Link></p>
+                <p>You do not have an Account? <Link href='/ernhv/ernhv-admin' target='_blank'>Register</Link></p>
                 
             </form>
             
