@@ -5,7 +5,7 @@ import Spinner from "./icons/spinner";
 import classes from './registration-form.module.css'
 import data from '../pages/api/data'
 
-
+ 
 
 
 const RegisterForm = () => {

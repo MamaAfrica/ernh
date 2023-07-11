@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Spinner from "@/component/icons/spinner";
-import classes from '../registration-form.module.css'
+ import classes from '@/component/login-form.module.css'
 import data from '../api/data'
 
 
@@ -94,7 +94,7 @@ const Referral = () => {
             hiveGame:0,
             referral:refUsername
          }
-        const response = await fetch('api/register/registerForm', {
+        const response = await fetch('http://localhost:3000/api/register/registerForm', {
             method: 'POST',
             body: JSON.stringify( data ),
             headers: {

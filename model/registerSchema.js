@@ -6,23 +6,23 @@ const regSchema = new Schema({
     firstname:{
         type: String,
         require: true,
-        minLength:[5,'email characters must be greater five'],
+        minLength:[2,'firstname characters must be greater five'],
         toLowerCase:true,
         trim: true,
-        unique: true
+      
       },
       lastname:{
         type: String,
         require: true,
-        minLength:[5,'email characters must be greater five'],
+        minLength:[2,'lastname characters must be greater five'],
         toLowerCase:true,
         trim: true,
-        unique: true
+     
       },
       username:{
         type: String,
         require: true,
-        minLength:[5,'email characters must be greater five'],
+        minLength:[2,'username characters must be greater five'],
         toLowerCase:true,
         trim: true,
         unique: true
@@ -90,7 +90,9 @@ const regSchema = new Schema({
     },
     referral:{
       type:String
-    }
+    },
+    // referredUsers:[{type:String}]
+    referredUsers:[{type:Schema.Types.ObjectId, ref:'Users'}]
     
      
 

@@ -1,8 +1,12 @@
 import DashboardBanner from "./users/dashboardBanner"
+import DashboardMain from "./users/dashboardMain"
 
-function UserDashboard(){
-    return(
-        <DashboardBanner/>
+function UserDashboard() {
+    return (
+        <div>
+            <DashboardBanner />
+            <DashboardMain />
+        </div>
     )
 }
 
