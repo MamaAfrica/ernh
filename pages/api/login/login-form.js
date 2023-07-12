@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt')
     if(req.method === 'POST'){
         try {
         await connectDB()
-        const{username, password,role} = req.body
+        const{username, password,role,newLogin} = req.body
         if(role==='User'){
             console.log({username, password})
             const user = await Users.findOne({username})
@@ -22,6 +22,15 @@ const bcrypt = require('bcrypt')
                res.status(403).json({message:'not a user'})
              return
             }
+           if(newLogin-user.loginDate>=100000){
+         let dl =   user.dailyLogin + 300
+         await Users.findOneAndUpdate({ username: username }, {
+            $set: {
+                dailyLogin: dl
+            }
+        })
+
+           }
             res.status(200).json(user);
         } else if(role==='Admin'){
             console.log({username, password})

@@ -53,6 +53,7 @@ export const authOptions = {
   jwt: {
     secret: 'SECRET_HERE',
     encryption: true,
+    maxAge: 2 * 60 * 60, // 1 days
   },
   pages:{
       signIn: "'../../ernhv-admin-login'"

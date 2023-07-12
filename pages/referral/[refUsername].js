@@ -72,6 +72,19 @@ const Referral = () => {
         }
         setWaitMsg('Hold on for few seconds...')
         setSpinner(<Spinner />)
+        //picking the date of registration
+        // Date object
+        const date = new Date();
+
+        let currentDay = String(date.getDate()).padStart(2, '0');
+
+        let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
+
+        let currentYear = date.getFullYear();
+
+        // we will display the date as DD-MM-YYYY 
+
+        let currentDate = `${currentDay}${currentMonth}${currentYear}`;
       
         // collection of data
          const data = {
@@ -90,9 +103,12 @@ const Referral = () => {
             secondIndirectRBonus:0,
             hivepostOne:0,
             hivepostTwo:0,
-            dailyLogin:0,
+            dailyLogin:300,
             hiveGame:0,
-            referral:refUsername
+            referral:refUsername,
+            totalWithdrawal: 0,
+            registeredDate:Number(currentDate),
+            loginDate:Number(currentDate),
          }
         const response = await fetch('http://localhost:3000/api/register/registerForm', {
             method: 'POST',

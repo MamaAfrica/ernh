@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
- import Spinner from "./icons/spinner";
+import Spinner from "./icons/spinner";
 import classes from './login-form.module.css'
  
 import { signIn } from "next-auth/react";
@@ -47,10 +47,24 @@ const LoginForm = () => {
         } else {
             setPassErr('Good Password');
         }
+          //picking the date of registration
+        // Date object
+        const date = new Date();
+
+        let currentDay = String(date.getDate()).padStart(2, '0');
+
+        let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
+
+        let currentYear = date.getFullYear();
+
+        // we will display the date as DD-MM-YYYY 
+
+        let currentDate = `${currentDay}${currentMonth}${currentYear}`;
         const result  = await signIn("credentials",{
             username: enteredEmail,
             password: enteredPassword,
             role: 'User',
+            newLogin: currentDate,
             redirect: true,
             callbackUrl:"/dashboard"
         })

@@ -5,7 +5,7 @@ import Spinner from "./icons/spinner";
 import classes from './registration-form.module.css'
 import data from '../pages/api/data'
 
- 
+
 
 
 const RegisterForm = () => {
@@ -71,31 +71,49 @@ const RegisterForm = () => {
         }
         setWaitMsg('Hold on for few seconds...')
         setSpinner(<Spinner />)
+        //picking the date of registration
+        // Date object
+        const date = new Date();
+
+        let currentDay = String(date.getDate()).padStart(2, '0');
+
+        let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
+
+        let currentYear = date.getFullYear();
+
+        // we will display the date as DD-MM-YYYY 
+
+        let currentDate = `${currentDay}${currentMonth}${currentYear}`;
+
+
+
         // collection of data
-         const data = {
+        const data = {
             firstname: enteredFirstName,
-            lastname: enteredLastName,  
+            lastname: enteredLastName,
             username: enteredEmail,
             password: enteredPassword,
-            phone:enteredPhoneInputRef,
-            country:enteredCountryInputRef,
-            coupon:enteredCouponInputRef,
-            packagec:enteredPackageInputRef,
-            role:'User',
-            welcomeBonus:2000,
-            referalBonus:0,
+            phone: enteredPhoneInputRef,
+            country: enteredCountryInputRef,
+            coupon: enteredCouponInputRef,
+            packagec: enteredPackageInputRef,
+            role: 'User',
+            welcomeBonus: 2000,
+            referalBonus: 0,
             indirectReferalBonus: 0,
-            secondIndirectRBonus:0,
-            hivepostOne:0,
-            hivepostTwo:0,
-            dailyLogin:0,
-            hiveGame:0,
-            totalWithdrawal:0,
-            referral:'Admin'
-         }
+            secondIndirectRBonus: 0,
+            hivepostOne: 0,
+            hivepostTwo: 0,
+            dailyLogin: 300,
+            hiveGame: 0,
+            totalWithdrawal: 0,
+            registeredDate:Number(currentDate),
+            loginDate:Number(currentDate),
+            referral: 'Admin'
+        }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',
-            body: JSON.stringify( data ),
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -233,13 +251,13 @@ const RegisterForm = () => {
 
                     </div>
                     <div className={classes.use}>
-                        <p>By Using  Earn Hive Application Service, you agree to be bound by our <span className={classes.tandc}><Link href='/tandc' target='_blank'>Terms and Conditions</Link></span>. Earn Hive Application Service reserves the right to change the terms and conditions at any time without notice, and your continual use of Earn Hive Application Service constitutes your content to such changes </p><br/>
+                        <p>By Using  Earn Hive Application Service, you agree to be bound by our <span className={classes.tandc}><Link href='/tandc' target='_blank'>Terms and Conditions</Link></span>. Earn Hive Application Service reserves the right to change the terms and conditions at any time without notice, and your continual use of Earn Hive Application Service constitutes your content to such changes </p><br />
                         <p>Do you agree  Earn Hive Application Service Privacy Policy?</p>
                         <div className={classes.itandc}>
-                        <label htmlFor="agree">I agree</label>
-                        <input type='checkbox' required  id="agree" />
+                            <label htmlFor="agree">I agree</label>
+                            <input type='checkbox' required id="agree" />
                         </div>
-                      
+
                     </div>
                     <div className={classes.actions}>
                         <button type="submit">Register</button>

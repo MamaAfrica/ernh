@@ -91,6 +91,12 @@ const regSchema = new Schema({
     totalWithdrawal:{
       type:Number
     },
+    registeredDate:{
+      type:Number
+    },
+    loginDate:{
+      type:Number
+    },
     
     referral:{
       type:String

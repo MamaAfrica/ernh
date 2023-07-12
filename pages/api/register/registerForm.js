@@ -13,7 +13,7 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
 
-            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral,totalWithdrawal } = req.body
+            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal, registeredDate,loginDate } = req.body
 
             //creating a username with email
             const refUsername = username.slice(0, username.indexOf('@'))
@@ -60,7 +60,12 @@ async function handler(req, res) {
                 dailyLogin: dailyLogin,
                 hiveGame: hiveGame,
                 referral: referral,
-                totalWithdrawal:totalWithdrawal,
+                totalWithdrawal: totalWithdrawal,
+                registeredDate: registeredDate,
+                loginDate:loginDate
+
+
+
 
 
 
