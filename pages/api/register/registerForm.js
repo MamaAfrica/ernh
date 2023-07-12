@@ -13,7 +13,7 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
 
-            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral } = req.body
+            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral,totalWithdrawal } = req.body
 
             //creating a username with email
             const refUsername = username.slice(0, username.indexOf('@'))
@@ -59,7 +59,8 @@ async function handler(req, res) {
                 hivepostTwo: hivepostTwo,
                 dailyLogin: dailyLogin,
                 hiveGame: hiveGame,
-                referral: referral
+                referral: referral,
+                totalWithdrawal:totalWithdrawal,
 
 
 
@@ -82,7 +83,7 @@ async function handler(req, res) {
                 if (ror !== "Admin") {
                     let foundror = await Users.findOne({ refUsername: ror })
 
-                    let irb = foundror.indirectReferalBonus + 250
+                    let irb = foundror.indirectReferalBonus + 300
                     let sib = foundror.secondIndirectRBonus + 100
                     await Users.findOneAndUpdate({ refUsername: ror }, {
                         $set: {

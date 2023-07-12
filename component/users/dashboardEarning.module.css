@@ -1,0 +1,61 @@
+.section{
+    width: 91%;
+    margin-left: 5%;
+    margin-top: 30px;
+    
+}
+.earningOne{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.earningTwo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.earningOne div{
+    background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: gray 1px 1px 3px;
+
+}
+.earningOne div p{
+    margin-top: 5px;
+    font-weight: 900;
+    padding-left: 10px;
+}
+.earningTwo div{
+    background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: gray 1px 1px 3px;
+}
+.earningTwo div p{
+    margin-top: 5px;
+    font-weight: 900;
+    padding-left: 10px;
+}
+.sectionTwo div{
+    background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    border-radius: 10px;
+    box-shadow: gray 1px 1px 3px;
+}
+.sectionTwo div p{
+    margin-top: 5px;
+    font-weight: 900;
+    padding-left: 10px;
+}

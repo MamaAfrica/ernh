@@ -88,6 +88,10 @@ const regSchema = new Schema({
     hiveGame:{
       type:Number
     },
+    totalWithdrawal:{
+      type:Number
+    },
+    
     referral:{
       type:String
     },

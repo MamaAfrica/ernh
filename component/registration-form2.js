@@ -90,6 +90,7 @@ const RegisterForm = () => {
             hivepostTwo:0,
             dailyLogin:0,
             hiveGame:0,
+            totalWithdrawal:0,
             referral:'Admin'
          }
         const response = await fetch('api/register/registerForm', {

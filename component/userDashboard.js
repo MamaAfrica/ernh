@@ -1,4 +1,5 @@
 import DashboardBanner from "./users/dashboardBanner"
+import DashboardEarnings from "./users/dashboardEarnings"
 import DashboardMain from "./users/dashboardMain"
 
 function UserDashboard() {
@@ -6,6 +7,7 @@ function UserDashboard() {
         <div>
             <DashboardBanner />
             <DashboardMain />
+            <DashboardEarnings/>
         </div>
     )
 }
