@@ -7,6 +7,19 @@ import classes from './dashboardBanner.module.css'
 function DashboardBanner(props) {
     const { data: session, status } = useSession()
     const router = useRouter()
+    let profile
+    function showProfile() {
+        if (session.user.passport !== "none") {
+            profile = <div className={classes.proImg}>
+                <li onClick={handleDashboard}> <img src={session.user.passport} /></li>
+            </div>
+        } else  {
+            profile = <div className={classes.userInit}>
+                <li onClick={handleDashboard}> {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}</li>
+            </div>
+        }  
+    }
+    showProfile()
 
     function handleDashboard() {
 
@@ -35,11 +48,8 @@ function DashboardBanner(props) {
                 </div>
             </div>
             <div className={classes.profile}>
-                <div className={classes.userInit}>
-                    {session?.user ? (<li onClick={handleDashboard}>
-                        {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}
-
-                    </li>) : " "}
+                <div>
+                    {profile}
                 </div>
                 <div className={classes.welcomeUser}>
                     <div className={classes.welcome}>

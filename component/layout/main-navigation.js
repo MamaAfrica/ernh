@@ -6,15 +6,37 @@ import Logo from "./logo";
 import Hamburger from "./hamburger";
 import classes from './main-navigation.module.css'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useState } from "react";
 
 
 const MainNavigation = () => {
     const { data: session, status } = useSession()
+    // const[profile, setProfile] = useState(" ")
     const router = useRouter()
+    let profile
+    function showProfile() {
+        if (session.user.passport !== "none") {
+            profile = <div className={classes.proImg}>
+                <li onClick={handleDashboard}> <img src={session.user.passport} /></li>
+            </div>
+        } else if (session.user) {
+            profile = <div className={classes.userInit}>
+                <li onClick={handleDashboard}> {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}</li>
+            </div>
+        } else {
+            profile = " "
+        }
+    }
+    if (status === "authenticated") {
+
+        showProfile()
+    } else {
+        console.log('not true')
+    }
+
     function signIn() {
         router.push('/login')
     }
-
 
 
 
@@ -94,12 +116,16 @@ const MainNavigation = () => {
                                 <div className={classes.sign}>
                                     {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}
                                 </div>
-                                <div className={classes.userInit}>
+                                <div >
+                                    {profile}
+
+                                </div>
+                                {/* <div className={classes.userInit}>
                                     {session?.user ? (<li onClick={handleDashboard}>
                                         {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}
 
                                     </li>) : " "}
-                                </div>
+                                </div> */}
 
 
 

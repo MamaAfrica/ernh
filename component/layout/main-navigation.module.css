@@ -12,6 +12,7 @@
     justify-content: space-evenly;
      
 }
+
 .alogo{
     margin-top: 10px;
 }
@@ -116,12 +117,22 @@
 .userInit li{
     border: solid 1px var(--s-col);
     background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
-    padding: 10px 10px 10px 10px;
+    padding: 13px 8px 13px 8px;
     margin-top: -10px;
     border-radius: 50%;
 }
 .userInit li:hover{
     background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;
+}
+.proImg li{
+    width: 60px;
+     padding: 13px 8px 13px 8px;
+    margin-top: -25px;
+    border-radius: 50%;
+}
+.proImg img{
+    width: 100%;
+    border-radius: 50%;
 }
 @media screen and (max-width:780px)  {
    .nav{

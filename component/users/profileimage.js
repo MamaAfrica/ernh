@@ -10,6 +10,7 @@ import classes from './profileimage.module.css'
 
 const ProfileImage = () => {
     const router = useRouter()
+    const[errMsg,setErrMsg] = useState("")
     const { data: session, status } = useSession()
     const imageInputRef = useRef()
 
@@ -17,6 +18,12 @@ const ProfileImage = () => {
         event.preventDefault()
         const enteredImage = imageInputRef.current.value;
         const refUsername =  session.user.refUsername
+        if(enteredImage.length>6 && enteredImage.includes('http')){
+            setErrMsg("Please hold on...")
+        }else{
+            setErrMsg("Please provide a valid http link")
+            return;
+        }
         // const data = { 
         //     passport:enteredImage,
         //     refUsername: session.user.refUsername
@@ -57,7 +64,7 @@ const ProfileImage = () => {
 
                 <form onSubmit={submitHandler} className={classes.form}>
                     <div className={classes.control}>
-                       
+                    {errMsg}
                         
                         <label htmlFor="passport">Profile Image Url</label>
                         <input type='text'
