@@ -10,8 +10,8 @@ function UserDashboard() {
             <div>
                 <DashboardSide />
             </div>
-            <div>
-                <DashboardBanner />
+            <div className={classes.sectionOne}>
+                <DashboardBanner placed ="Dashboard" />
                 <DashboardMain />
                 <DashboardEarnings />
             </div>

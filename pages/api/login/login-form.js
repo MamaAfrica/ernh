@@ -22,7 +22,7 @@ const bcrypt = require('bcrypt')
                res.status(403).json({message:'not a user'})
              return
             }
-           if(newLogin-user.loginDate>=100000){
+           if(newLogin-user.loginDate>=1000000){
          let dl =   user.dailyLogin + 300
          await Users.findOneAndUpdate({ username: username }, {
             $set: {

@@ -6,6 +6,7 @@ import WithdrawIcon from "../icons/withdrawIcon";
 import EarningIcon from "../icons/earning";
 import ProfileIcon from "../icons/profile";
 import BankIcon from "../icons/bank";
+import Link from "next/link";
 function DashboardMain() {
     const [isCopied, setIsCopied] = useState(false);
     const { data: session, status } = useSession()
@@ -53,28 +54,28 @@ function DashboardMain() {
                 <div className={classes.icons}>
                     <div className={classes.icon}>
                         <button>
-                            <WithdrawIcon />
+                        <Link href='/withdrawal'>  <WithdrawIcon /></Link>  
 
                         </button>
                         <h4>Withdrawal</h4>
                     </div>
                     <div className={classes.icon}>
                         <button>
-                            <BankIcon />
+                          <Link href='/bank'><BankIcon /></Link>  
 
                         </button>
                         <h4>Bank</h4>
                     </div>
                     <div className={classes.icon}>
                         <button>
-                            <ProfileIcon />
+                          <Link href="/profile"> <ProfileIcon /></Link> 
 
                         </button>
                         <h4>Profile</h4>
                     </div>
                     <div className={classes.icon}>
                         <button>
-                            <EarningIcon />
+                          <Link href='/earning'> <EarningIcon /></Link> 
 
                         </button>
                         <h4>Earning</h4>

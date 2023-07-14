@@ -85,7 +85,7 @@ const LoginForm = () => {
                 <div className={classes.control}>
                 {spinner}
                     <h3>{waitMsg}</h3>
-                   <label htmlFor="Username">Username</label>
+                   <label htmlFor="Username">Email</label>
                    <input type='text' 
                    required id="Username" 
                    name = "Username"

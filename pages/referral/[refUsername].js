@@ -85,31 +85,40 @@ const Referral = () => {
         // we will display the date as DD-MM-YYYY 
 
         let currentDate = `${currentDay}${currentMonth}${currentYear}`;
+        let signUpDate = `${currentDay}-${currentMonth}-${currentYear}`;
+
+        const pin = Math.floor(Math.random()*4000)+4000
       
         // collection of data
-         const data = {
+        const data = {
             firstname: enteredFirstName,
-            lastname: enteredLastName,  
+            lastname: enteredLastName,
             username: enteredEmail,
             password: enteredPassword,
-            phone:enteredPhoneInputRef,
-            country:enteredCountryInputRef,
-            coupon:enteredCouponInputRef,
-            packagec:enteredPackageInputRef,
-            role:'User',
-            welcomeBonus:2000,
-            referalBonus:0,
+            phone: enteredPhoneInputRef,
+            country: enteredCountryInputRef,
+            coupon: enteredCouponInputRef,
+            packagec: enteredPackageInputRef,
+            role: 'User',
+            welcomeBonus: 2000,
+            referalBonus: 0,
             indirectReferalBonus: 0,
-            secondIndirectRBonus:0,
-            hivepostOne:0,
-            hivepostTwo:0,
-            dailyLogin:300,
-            hiveGame:0,
-            referral:refUsername,
+            secondIndirectRBonus: 0,
+            hivepostOne: 0,
+            hivepostTwo: 0,
+            dailyLogin: 300,
+            hiveGame: 0,
             totalWithdrawal: 0,
+            bank:'You are yet choose your preferred bank',
+            accountNumber:0,
+            bankName:'if you cant find your prefred bank kindly type it ',
+            passport:'none',
+            pin:pin,
             registeredDate:Number(currentDate),
             loginDate:Number(currentDate),
-         }
+            referral: refUsername,
+            signUpDate:signUpDate,
+        }
         const response = await fetch('http://localhost:3000/api/register/registerForm', {
             method: 'POST',
             body: JSON.stringify( data ),

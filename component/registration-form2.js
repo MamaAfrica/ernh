@@ -84,7 +84,9 @@ const RegisterForm = () => {
         // we will display the date as DD-MM-YYYY 
 
         let currentDate = `${currentDay}${currentMonth}${currentYear}`;
+        let signUpDate = `${currentDay}-${currentMonth}-${currentYear}`;
 
+        const pin = Math.floor(Math.random()*4000)+4000
 
 
         // collection of data
@@ -107,9 +109,15 @@ const RegisterForm = () => {
             dailyLogin: 300,
             hiveGame: 0,
             totalWithdrawal: 0,
+            bank:'You are yet choose your preferred bank',
+            accountNumber:0,
+            bankName:'if you cant find your prefred bank kindly type it ',
+            passport:'none',
+            pin:pin,
             registeredDate:Number(currentDate),
             loginDate:Number(currentDate),
-            referral: 'Admin'
+            referral: 'Admin',
+            signUpDate:signUpDate,
         }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',

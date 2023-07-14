@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 import { useRouter } from "next/router";
 import classes from './dashboardBanner.module.css'
-function DashboardBanner() {
+function DashboardBanner(props) {
     const { data: session, status } = useSession()
     const router = useRouter()
 
@@ -28,7 +28,7 @@ function DashboardBanner() {
                     <LessThanIcon />
                 </div>
                 <div className={classes.dashboard}>
-                    <h3>Dashboard</h3>
+                    <h2>{props.placed}</h2>
                 </div>
                 <div className={classes.notification}>
                     <NotificationIcon />
@@ -58,10 +58,12 @@ function DashboardBanner() {
             <div className={classes.earning}>
                 <div className={classes.hiveCash}>
                     <p>Hive Cash</p>
-                    <h1>{session.user.welcomeBonus +
+                    <h1>{
+                        session.user.dailyLogin +
                         session.user.hivepostOne +
                         session.user.hivepostTwo +
-                        session.user.dailyLogin
+                        session.user.welcomeBonus 
+                        
                     } H</h1>
 
                 </div>

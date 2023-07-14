@@ -1,0 +1,85 @@
+import { useRef } from "react";
+import { useState } from "react";
+import { useRouter } from 'next/router';
+import { signIn, signOut, useSession } from 'next-auth/react'
+import classes from './profileimage.module.css'
+
+
+
+
+
+const ProfileImage = () => {
+    const router = useRouter()
+    const { data: session, status } = useSession()
+    const imageInputRef = useRef()
+
+    async function submitHandler(event) {
+        event.preventDefault()
+        const enteredImage = imageInputRef.current.value;
+        const refUsername =  session.user.refUsername
+        // const data = { 
+        //     passport:enteredImage,
+        //     refUsername: session.user.refUsername
+
+        // }
+           
+        // console.log(data)
+         
+        const response = await fetch('http://localhost:3000/api/userImage/image-form', {
+            method: 'POST', 
+            body: JSON.stringify({ enteredImage,refUsername  }),
+            headers: {
+              'Content-type': 'application/json'
+            },
+  
+          });
+          let user = await response.json()
+  
+          if (!response.ok) {
+            throw new Error(user.message || 'something went wrong')
+        }
+
+        router.reload()
+
+
+
+
+
+
+
+    }
+
+    return (
+
+        <div className={classes.section}>
+         
+            <div className={classes.card}>
+
+                <form onSubmit={submitHandler} className={classes.form}>
+                    <div className={classes.control}>
+                       
+                        
+                        <label htmlFor="passport">Profile Image Url</label>
+                        <input type='text'
+                            required id="passport"
+                            name="passport"
+                            placeholder="https://....."
+                            ref={imageInputRef} />
+
+                    </div>
+
+
+                    <div className={classes.actions}>
+                        <button type="submit">Submit</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    );
+}
+
+export default ProfileImage;

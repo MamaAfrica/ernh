@@ -13,7 +13,7 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
 
-            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal, registeredDate,loginDate } = req.body
+            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal, registeredDate, loginDate, bank, accountNumber, bankName, passport, pin, signUpDate } = req.body
 
             //creating a username with email
             const refUsername = username.slice(0, username.indexOf('@'))
@@ -29,11 +29,25 @@ async function handler(req, res) {
             //creating downline
             if (referral !== "Admin") {
                 console.log(referral)
-                const referreduser = await Users.findOne({ refUsername: referral })
+                const user = await Users.findOne({refUsername:referral})
+                const userID = user._id
+                const referreduser = Users.findByIdAndUpdate(
+                     userID,
+                    { "$push": { "referredUsers": refUsername } },
 
+                    { "new": true, "upsert": true },
+                   
+
+                ).then( function (err, managerparent) {
+                    if (err) throw err;
+                    console.log(managerparent);
+                })
                 console.log(referreduser)
-                console.log(referreduser.referredUsers)
-                await referreduser.populate('referredUsers')
+
+
+                // console.log(referreduser)
+                // console.log(referreduser.referredUsers)
+                // await referreduser.populate('referredUsers')
                 //  referreduser.referredUsers.push(refUsername)
                 //  console.log(referreduser.referredUsers)
             }
@@ -62,10 +76,13 @@ async function handler(req, res) {
                 referral: referral,
                 totalWithdrawal: totalWithdrawal,
                 registeredDate: registeredDate,
-                loginDate:loginDate
-
-
-
+                loginDate: loginDate,
+                bank: bank,
+                accountNumber: accountNumber,
+                bankName: bankName,
+                passport: passport,
+                pin: pin,
+                signUpDate: signUpDate,
 
 
 
@@ -74,7 +91,7 @@ async function handler(req, res) {
 
             //creating referal Bonus
             if (referral !== "Admin") {
-                // console.log(referral)
+                console.log('creating referral bonus')
                 const referreduser = await Users.findOne({ refUsername: referral })
                 let userReferalBonus = referreduser.referalBonus + 3500
                 await Users.findOneAndUpdate({ refUsername: referral }, { $set: { referalBonus: userReferalBonus } })

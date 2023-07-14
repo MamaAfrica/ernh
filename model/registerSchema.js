@@ -101,8 +101,32 @@ const regSchema = new Schema({
     referral:{
       type:String
     },
+    bank:{
+      type:String
+    },
+    accountNumber:{
+      type:Number
+    },
+    bankName:{
+      type:String
+    },
+    passport:{
+      type:String
+    },
+    
+    pin:{
+      type:Number
+    },
+    signUpDate:{
+      type:String
+    },
+
+    
     // referredUsers:[{type:String}]
-    referredUsers:[{type:Schema.Types.ObjectId, ref:'Users'}]
+    referredUsers:{
+      type:Array,
+      default:''
+    }
     
      
 
