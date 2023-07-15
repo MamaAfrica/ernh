@@ -30,7 +30,7 @@ function DashboardSide() {
             </div>
 
             <div>
-                <BankTwo/>
+              <Link href="/bank"> <BankTwo/></Link> 
             </div>
             <div>
                 <ShareIcon />

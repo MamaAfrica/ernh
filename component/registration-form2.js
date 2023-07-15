@@ -51,8 +51,8 @@ const RegisterForm = () => {
         //validation
 
 
-        if (enteredEmail.length < 7) {
-            setEmailErr('Email Lenght must be greater than 7')
+        if (enteredEmail.length < 10) {
+            setEmailErr('Email Lenght must be greater than ten')
             return;
         }
         if (enteredFirstName.length < 3) {

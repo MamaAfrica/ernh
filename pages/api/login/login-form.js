@@ -3,9 +3,6 @@ import connectDB from "../../../utils/connectmongo"
  const Admin = require('../../../model/adminSchema')
 const bcrypt = require('bcrypt')
  
- 
-  
-     
     
  async function handler(req,res){
     if(req.method === 'POST'){

@@ -22,7 +22,7 @@ const regSchema = new Schema({
       username:{
         type: String,
         require: true,
-        minLength:[2,'username characters must be greater five'],
+        minLength:[10,'username characters must be greater 10'],
         toLowerCase:true,
         trim: true,
         unique: true

@@ -110,7 +110,7 @@ box-shadow: var gray 1px 1px 1px;
   
 }
 .country>div img{
-    width: 90%;
+    width: 100%;
     height: 10%;
     border-radius: 10px;
 }
@@ -138,4 +138,14 @@ box-shadow: var gray 1px 1px 1px;
     width: 30%;
     margin-bottom: 50px;
     
+}
+.withdrawal{
+    margin-top:50px;
+}
+.withdrawal h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
 }

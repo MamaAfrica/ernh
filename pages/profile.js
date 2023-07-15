@@ -6,6 +6,7 @@ import LocationIcon from "@/component/icons/location";
 import ProfileImage from "@/component/users/profileimage";
 import PhoneIcon from "@/component/icons/phone";
 import ChangePassword from "@/component/users/changePassword";
+import Getpin from "@/component/users/getPin";
 function Profile() {
     const { data: session, status } = useSession()
     if (status === "loading") {
@@ -62,8 +63,15 @@ function Profile() {
                     </div>
                     <div className={classes.security}>
                         <h1>Security Settings</h1>
+                         
                         <ChangePassword/>
 
+                    </div>
+
+                    <div className={classes.withdrawal}>
+                        <h1>Withdrawal </h1>
+
+                        <Getpin/>
                     </div>
 
 
