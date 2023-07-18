@@ -1,0 +1,59 @@
+.section{
+    display: flex;
+}
+.payment h1{
+  
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+    margin-bottom: 50px;
+}
+.payment{
+    margin-top: -200px;
+    width: 80%;
+    margin-left: 13%;
+    display: flex;
+}
+.card{
+    background-image: url("../public/card.png");
+    background-repeat: no-repeat;
+    width: 40%;
+    background-size: contain;
+    height: 250px;
+    border: solid rgb(255, 255, 255) 2px;
+}
+.cardDetails{
+    margin-top: 125px;
+    margin-left: 20px;
+    width: 60%;
+    
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.logo{
+    width: 30%;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+.logo img{
+    width: 100%;
+    border-radius: 50%;
+
+}
+.further{
+    border: solid green 1px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 39%;
+    margin-top: 10px;
+}
+.further h4{
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--p-col);
+    font-size: 1em;
+}

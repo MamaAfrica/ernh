@@ -3,7 +3,7 @@
 }
 
 .sectionOne {
-    margin-top: -60px;
+    margin-top: -180px;
     width: 80%;
     margin-left: 13%;
 }
@@ -31,6 +31,9 @@
     width: 100%;
     border-radius: 10px;
 }
+.form>h3{
+    color: var(--s-col);
+}
 
 .control {
     margin-bottom: 0.5rem;
@@ -52,7 +55,12 @@
     width: 100%;
     margin-bottom: 20px;
 }
-
+.control h3{
+    color: red;
+}
+.control h2{
+    color: rgb(5, 151, 22);
+}
 
 .actions button {
     font: inherit;

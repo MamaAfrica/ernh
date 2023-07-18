@@ -14,26 +14,26 @@ function DashboardSide() {
     return (
         <div className={classes.section}>
             <div>
-              <Link href="/dashboard"><DashboardIcon /></Link>  
+             <button> <Link href="/dashboard"><DashboardIcon /></Link>  </button>
             </div>
             <div>
-               <Link href="/profile"><ProfileTwoIcon /></Link> 
+             <button><Link href="/profile"><ProfileTwoIcon /></Link> </button>  
             </div>
             <div>
-                <DownlineIcon />
+             <button><Link href='/downline'><DownlineIcon /></Link></button>   
             </div>
             <div>
-                <DollarIcon />
+               <button> <Link href='/withdrawal'><DollarIcon /></Link></button> 
             </div>
             <div>
-                <EarningTwoIcon />
+              <button><Link href='/earning'><EarningTwoIcon /></Link></button>  
             </div>
 
             <div>
-              <Link href="/bank"> <BankTwo/></Link> 
+             <button><Link href="/bank"> <BankTwo/></Link> </button> 
             </div>
             <div>
-                <ShareIcon />
+              <button><Link href='/share'><ShareIcon /></Link></button>  
             </div>
 
 

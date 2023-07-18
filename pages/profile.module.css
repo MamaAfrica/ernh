@@ -3,8 +3,8 @@
 }
 .sectionDetails{
     margin-top: 150px;
-    width: 93%;
-    margin-left: 3.5%;
+    width: 90%;
+    margin-left: 2%;
 }
 .date{
     text-align: center;
@@ -69,12 +69,13 @@
 }
 .numReferred>.btn button{
  border-radius: 50%;
- border: solid var(--p-col) 1px;
+ border: solid var(--s-col) 1px;
  background-color: #00000000;
 padding: 30px;
 font-size: 2em;
 font-weight: bold;
 box-shadow: var gray 1px 1px 1px;
+color: var(--s-col);
 }
 .referral{
     background: linear-gradient(to right,rgba(5, 5, 118, 0.486),#000000, #000000);
@@ -90,7 +91,7 @@ box-shadow: var gray 1px 1px 1px;
 }
 .sectionFour{
     margin-top: 20px;
-    background-color: #7ca2a3;
+    background-color:var(--p-col);
     border-radius: 10px;
     display: flex;
 }
@@ -100,7 +101,9 @@ box-shadow: var gray 1px 1px 1px;
 }
 .numReferred{
     padding: 50px;
+    color: var(--s-col);
 }
+
 .country{
     padding: 50px;
 }
