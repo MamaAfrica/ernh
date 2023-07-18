@@ -11,7 +11,9 @@ import { useState } from "react";
 
 const MainNavigation = () => {
     const { data: session, status } = useSession()
-    // const[profile, setProfile] = useState(" ")
+
+    
+    
     const router = useRouter()
     let profile
     function showProfile() {

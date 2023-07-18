@@ -16,10 +16,25 @@
     margin-bottom: 50px;
     
 }
-.earning div p{
+.downline div p{
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: solid var(--s-col) 1px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
+}
+.noDownline{
+    background: var(--p-col);
+    padding: 20px;
+    border-radius: 20px;
+}
+.noDownline p{
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.noDownline span{
+    color:  var(--s-col);
+    font-size: 1.5;
+    font-weight: bolf;
 }

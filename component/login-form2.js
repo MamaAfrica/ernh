@@ -64,7 +64,7 @@ const LoginForm = () => {
             username: enteredEmail,
             password: enteredPassword,
             role: 'User',
-            newLogin: currentDate,
+            newLogin: Number(currentDate),
             redirect: true,
             callbackUrl:"/dashboard"
         })

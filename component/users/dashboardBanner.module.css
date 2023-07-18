@@ -35,10 +35,13 @@
 .userInit li{
     border: solid 1px var(--s-col);
     background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
-    padding: 13px 8px 13px 8px;
-    margin-top: -10px;
+    padding: 43px 38px 43px 38px;
+    margin-top: -30px;
     border-radius: 50%;
     list-style-type: none;
+    color: black;
+    font-size: 1.8em;
+    font-weight: 900;
 }
 .userInit li:hover{
     background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;

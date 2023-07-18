@@ -105,7 +105,7 @@ const regSchema = new Schema({
       type:String
     },
     accountNumber:{
-      type:Number
+      type:String
     },
     bankName:{
       type:String
@@ -118,6 +118,24 @@ const regSchema = new Schema({
       type:Number
     },
     signUpDate:{
+      type:String
+    },
+    welcomeEarning:{
+      type:String
+    },
+    referralEarning:{
+      type:String
+    },
+    iReferralEarning:{
+      type:String
+    },
+    sIReferralEarning:{
+      type:String
+    },
+    hivePostEarning:{
+      type:String
+    },
+    dLoginEarning:{
       type:String
     },
 

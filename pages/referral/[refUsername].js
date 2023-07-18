@@ -111,7 +111,7 @@ const Referral = () => {
             totalWithdrawal: 0,
             bank:'You are yet choose your preferred bank',
             accountNumber:0,
-            bankName:'if you cant find your prefred bank kindly type it ',
+            bankName:'You are yet to do your bank setup',
             passport:'none',
             pin:pin,
             registeredDate:Number(currentDate),

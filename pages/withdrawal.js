@@ -3,6 +3,7 @@ import classes from "./withdrawal.module.css"
 import DashboardSide from "@/component/users/dashboardSideBar";
 import DashboardBanner from "@/component/users/dashboardBanner";
 import { useSession } from "next-auth/react";
+import WithdrawalForm from "@/component/users/withdrawalForm";
 
 function Withdrawal() {
     const { data: session, status } = useSession()
@@ -19,37 +20,57 @@ function Withdrawal() {
                     <DashboardSide />
                 </div>
                 <div className={classes.sectionTwo}>
-                    <DashboardBanner placed="Withdrawal" />
+                    <DashboardBanner placed="Withdrawal Funds" />
 
                 </div>
             </div>
-            <div className={classes.payment}>
+            <div className={classes.sectionPay}>
                 <h1>Payment</h1>
-                <div className={classes.sectionOne}>
-                    <div className={classes.card}>
-                        <div className={classes.logo}>
-                            <img src="../logo.png" alt="logo"/>
+
+                <div className={classes.payment}>
+
+                    <div className={classes.sectionOne}>
+                        <div className={classes.card}>
+                            <div className={classes.logo}>
+                                <img src="../logo.png" alt="logo" />
                             </div>
-                        <div className={classes.cardDetails}>
-                            <h4>{session.user.bankName}</h4>
-                             
+                            <div className={classes.cardDetails}>
+                                <h4>{session.user.bankName}</h4>
+
+                            </div>
+
                         </div>
+                        <div className={classes.further}>
+                            <h4>{session.user.bank}</h4>
+                            <h4>{session.user.accountNumber}</h4>
+                        </div>
+                        <div className={classes.paymentForm}>
 
+                        </div>
                     </div>
-                    <div className={classes.further}>
-                    <h4>{session.user.bank}</h4>
-                    <h4>{session.user.accountNumber}</h4>
-                    </div>
-                    <div className={classes.paymentForm}>
+                    <div className={classes.cashOut}>
+                        <WithdrawalForm />
+                        <div className={classes.further}>
+                           <h4> <span>AvailBal:</span> N {session.user.referalBonus +
+                                session.user.indirectReferalBonus +
+                                session.user.secondIndirectRBonus
 
+                            }</h4>
+                            <h4><span>AvailPoints:</span>{
+                                session.user.dailyLogin +
+                                session.user.hivepostOne +
+                                session.user.hivepostTwo +
+                                session.user.welcomeBonus
+
+                            } H</h4>
+                        </div>
                     </div>
+
                 </div>
-                <div className={classes.cashOut}>
-                        <Withdrawal/>
+                <div className={classes.history}>
+                    <h1>Cashout History</h1>
                 </div>
-
             </div>
-
         </div>
     )
 }

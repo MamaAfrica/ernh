@@ -123,7 +123,7 @@ function Bank() {
 
 
                             <label htmlFor="accountNumber">Account Number</label>
-                            <input type='Number'
+                            <input type='text'
                                 required id="accountNumber"
                                 name="accountNumber"
 

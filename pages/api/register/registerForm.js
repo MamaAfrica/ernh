@@ -3,7 +3,18 @@ import Users from "../../../model/registerSchema"
 
 import mongoose from "mongoose"
 const bcrypt = require('bcrypt')
+//creating the date of referral
+const date = new Date();
 
+let currentDay = String(date.getDate()).padStart(2, '0');
+
+let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
+
+let currentYear = date.getFullYear();
+
+// we will display the date as DD-MM-YYYY 
+
+let currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
 
 
 
@@ -29,16 +40,16 @@ async function handler(req, res) {
             //creating downline
             if (referral !== "Admin") {
                 console.log(referral)
-                const user = await Users.findOne({refUsername:referral})
+                const user = await Users.findOne({ refUsername: referral })
                 const userID = user._id
                 const referreduser = Users.findByIdAndUpdate(
-                     userID,
+                    userID,
                     { "$push": { "referredUsers": refUsername } },
 
                     { "new": true, "upsert": true },
-                   
 
-                ).then( function (err, managerparent) {
+
+                ).then(function (err, managerparent) {
                     if (err) throw err;
                     console.log(managerparent);
                 })
@@ -83,7 +94,11 @@ async function handler(req, res) {
                 passport: passport,
                 pin: pin,
                 signUpDate: signUpDate,
-
+                welcomeEarning: `Welcome Bonus: ${welcomeBonus}H || Date: ${currentDate}`,
+                referralEarning: " ",
+                iReferralEarning:" ",
+                dLoginEarning:" ",
+                hivePostEarning:" ",
 
 
             })
@@ -92,9 +107,14 @@ async function handler(req, res) {
             //creating referal Bonus
             if (referral !== "Admin") {
                 console.log('creating referral bonus')
+
                 const referreduser = await Users.findOne({ refUsername: referral })
                 let userReferalBonus = referreduser.referalBonus + 3500
                 await Users.findOneAndUpdate({ refUsername: referral }, { $set: { referalBonus: userReferalBonus } })
+
+                //creating referral update report
+                const refReport = `Referral Bonus: N3,500 || Referred User: ${refUsername} || Date: ${currentDate}`
+                await Users.findOneAndUpdate({ refUsername: referral }, { $set: { referralEarning: refReport } })
             }
             //creating indirect referral bonus
 
@@ -104,6 +124,14 @@ async function handler(req, res) {
                 let ror = referreduser.referral
                 if (ror !== "Admin") {
                     let foundror = await Users.findOne({ refUsername: ror })
+
+                    //creating in diirect referral update report
+                    const iRefReport = `Indirect Referral Bonus: 300H || Referred User: ${referral} || Date: ${currentDate}`
+                    await Users.findOneAndUpdate({ refUsername: ror }, { $set: { iReferralEarning: iRefReport } })
+
+                     //creating second in diirect referral update report
+                     const sIRefReport = ` Second Indirect Referral Bonus: 100H || Referred User: ${refUsername} || Date: ${currentDate}`
+                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { iReferralEarning: sIRefReport } })
 
                     let irb = foundror.indirectReferalBonus + 300
                     let sib = foundror.secondIndirectRBonus + 100

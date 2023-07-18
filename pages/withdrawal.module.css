@@ -1,7 +1,12 @@
 .section{
     display: flex;
 }
-.payment h1{
+.sectionPay{
+    margin-top: -200px;
+    width: 80%;
+    margin-left: 13%;
+}
+.sectionPay h1{
   
     font-family: 'Times New Roman', Times, serif;
     padding-bottom: 20px;
@@ -11,18 +16,18 @@
     margin-bottom: 50px;
 }
 .payment{
-    margin-top: -200px;
-    width: 80%;
-    margin-left: 13%;
+
     display: flex;
+    justify-content: space-between;
 }
 .card{
     background-image: url("../public/card.png");
     background-repeat: no-repeat;
-    width: 40%;
+    width: 80%;
     background-size: contain;
     height: 250px;
     border: solid rgb(255, 255, 255) 2px;
+   
 }
 .cardDetails{
     margin-top: 125px;
@@ -31,7 +36,7 @@
     
     padding: 10px;
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: 'Times New Roman', Times, serif;
 }
 .logo{
@@ -56,4 +61,20 @@
     font-family: 'Times New Roman', Times, serif;
     color: var(--p-col);
     font-size: 1em;
+}
+.further span{
+    color: var(--s-col);
+}
+.cashOut{
+    
+    width: 60%;
+}
+.history h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
