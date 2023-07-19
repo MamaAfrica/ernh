@@ -11,7 +11,8 @@ return(
             title={post.title}
             image={post.image}
             category= {post.category}
-
+            hivepost = {post.hivepost}
+            userlink = {post.userlink}
             description={post.description}
             
             />

@@ -7,7 +7,7 @@ async function handler(req, res) {
    if (req.method === 'POST') {
        try {
             
-           const {title,image, category, description } = req.body
+           const {title,image,hivepost, category, userlink,description } = req.body
            console.log('Connecting to Mongo')
            await connectDB()
            console.log('Connected to Mongo')
@@ -19,6 +19,8 @@ async function handler(req, res) {
             image: image,
             category: category,
             description: description,
+            hivepost:hivepost.toLowerCase(),
+            userlink:userlink
             
                 
            })

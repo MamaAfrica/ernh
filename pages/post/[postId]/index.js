@@ -4,11 +4,15 @@ import { Fragment } from "react"
 import Head from "next/head"
 import connectDB from "@/utils/connectmongo";
 import Post from '../../../model/postSchema'
+ 
 
  
 import classes from './index.module.css'
 
 function PostDetails(props) {
+ 
+  
+   
     return (
         <Fragment>
             <Head>
@@ -21,7 +25,8 @@ function PostDetails(props) {
                 image={props.postData.image}
                 category = {props.postData.category}
                 description={props.postData.description}
-
+                 hivepost = {props.postData.hivepost}
+                 userlink = {props.postData.userlink}
                 id={props.postData.id}
             />
             <h1 className={classes.otherProd}>Post You May be Instrested in</h1>
@@ -47,6 +52,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+   
     const postId = context.params.postId
     await connectDB()
     const selectedPost = await Post.findOne({
@@ -63,7 +69,8 @@ export async function getStaticProps(context) {
                 title: selectedPost.title,
                category: selectedPost.category,
                 image: selectedPost.image,
-            
+                hivepost: selectedPost.hivepost,
+                userlink: selectedPost.userlink,
                 description: selectedPost.description,
                  
             },
@@ -71,7 +78,8 @@ export async function getStaticProps(context) {
                 title: post.title,
                 category: post.category,
                 image: post.image,
-             
+                hivepost: post.hivepost,
+                userlink: post.userlink,
                 description: post.description,
               
                 id: post._id.toString(),

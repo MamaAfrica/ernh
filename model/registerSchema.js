@@ -138,6 +138,12 @@ const regSchema = new Schema({
     dLoginEarning:{
       type:String
     },
+    hivePostOneDate:{
+      type:Number
+    },
+    hivePostTwoDate:{
+      type:Number
+    },
 
     
     // referredUsers:[{type:String}]

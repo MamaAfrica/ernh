@@ -42,7 +42,7 @@ async function handler(req, res) {
                     }
                 })
 
-                if (Number(newLogin) - Number(user.loginDate) !== 0) {
+                if ((Number(newLogin) - Number(user.loginDate) !== 0) ) {
 
                     //creating login update report
                     const loginReport = `Daily Login Bonus: 300H || Date: ${currentDate}`

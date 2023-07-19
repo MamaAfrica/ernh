@@ -36,6 +36,9 @@ function Earning(){
                         <p>{session.user.iReferralEarning}</p>
                     </div>
                     <div>
+                        <p>{session.user.sIReferralEarning}</p>
+                    </div>
+                    <div>
                         <p>{session.user.hivePostEarning}</p>
                     </div>
                     <div>

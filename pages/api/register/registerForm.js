@@ -97,8 +97,11 @@ async function handler(req, res) {
                 welcomeEarning: `Welcome Bonus: ${welcomeBonus}H || Date: ${currentDate}`,
                 referralEarning: " ",
                 iReferralEarning:" ",
-                dLoginEarning:" ",
+                sIReferralEarning:" ",
+                dLoginEarning: `Daily Login Bonus: 300H || Date: ${currentDate}`,
                 hivePostEarning:" ",
+                hivePostOneDate:0,
+                hivePostTwoDate:0,
 
 
             })
@@ -126,12 +129,12 @@ async function handler(req, res) {
                     let foundror = await Users.findOne({ refUsername: ror })
 
                     //creating in diirect referral update report
-                    const iRefReport = `Indirect Referral Bonus: 300H || Referred User: ${referral} || Date: ${currentDate}`
+                    const iRefReport = `Indirect Referral Bonus: N300 || Referred User: ${referral} || Date: ${currentDate}`
                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { iReferralEarning: iRefReport } })
 
                      //creating second in diirect referral update report
-                     const sIRefReport = ` Second Indirect Referral Bonus: 100H || Referred User: ${refUsername} || Date: ${currentDate}`
-                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { iReferralEarning: sIRefReport } })
+                     const sIRefReport = ` Second Indirect Referral Bonus: N100 || Referred User: ${refUsername} || Date: ${currentDate}`
+                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { sIReferralEarning: sIRefReport } })
 
                     let irb = foundror.indirectReferalBonus + 300
                     let sib = foundror.secondIndirectRBonus + 100

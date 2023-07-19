@@ -24,6 +24,18 @@ const postSchema = new Schema({
     trim: true,
      
   },
+  hivepost: {
+    type: String,
+    require: true,
+    
+    trim: true,
+     
+  },
+  userlink: {
+    type: String,
+    trim: true,
+     
+  },
   description:{
     type: String,
     require: true,

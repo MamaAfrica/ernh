@@ -1,6 +1,6 @@
 .postDetail{
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
     margin-top: 50px;
 }
 .postDetail h1{
@@ -31,4 +31,18 @@
     line-height: 30px;
     font-size: 1.2em;
     margin-top: 20px;
+    padding-bottom: 20px;
+}
+.article h3{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 30px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.share{
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+.share span{
+    cursor: pointer;
 }
