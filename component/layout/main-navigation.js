@@ -97,7 +97,7 @@ const MainNavigation = () => {
 
 
                                 <li style={{ marginTop: "-4px", marginLeft: "5px" }}><DropDown /></li>
-                                <li><Link href='/sponsored-task'>Sponsored Task</Link></li>
+                                 
                                 <li><Link href='/advert'>Hive Advert</Link></li>
                                 <li><Link href='/contact'>Contact</Link></li>
                                 <li className={classes.termsMenu}>
@@ -118,7 +118,7 @@ const MainNavigation = () => {
                                 <div className={classes.sign}>
                                     {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}
                                 </div>
-                                <div >
+                                <div className={classes.profile}>
                                     {profile}
 
                                 </div>

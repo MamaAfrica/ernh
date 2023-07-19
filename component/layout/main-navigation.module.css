@@ -3,6 +3,7 @@
     position: sticky;
     top: 0px;
    
+    padding-left: 120px;
    
 }
 .nav{
@@ -10,18 +11,21 @@
     width: 100%;
     margin: 0 auto;
     justify-content: space-evenly;
+    
      
 }
 
 .alogo{
     margin-top: 10px;
 }
+
 .main{
     cursor: pointer;
     margin-top: 40px;
   
-    margin-left: 40px;
-    width: 70%;
+    margin-left: 150px;
+    width: 100%;
+  
 }
  
 .main ul li{
@@ -100,6 +104,10 @@
 .sign{
     display: inline;
     cursor: pointer;
+    
+}
+.profile{
+    margin-left: 200px;
    
 }
 .sign li{

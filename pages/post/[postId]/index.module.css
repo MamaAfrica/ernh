@@ -1,0 +1,10 @@
+.otherProd{
+    margin-left: 5%;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 40%;
+    margin-bottom: 20px;  
+}

@@ -33,7 +33,7 @@ function DashboardSide() {
              <button><Link href="/bank"> <BankTwo/></Link> </button> 
             </div>
             <div>
-              <button><Link href='/share'><ShareIcon /></Link></button>  
+              <button><Link href='/advert'><ShareIcon /></Link></button>  
             </div>
 
 

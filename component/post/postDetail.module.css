@@ -1,0 +1,34 @@
+.postDetail{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 50px;
+}
+.postDetail h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+    margin-bottom: 20px;  
+}
+.section img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.article h6{
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--s-col);
+    font-size: 1em;
+}
+.article h5{
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.article p{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 30px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
