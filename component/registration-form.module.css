@@ -16,6 +16,8 @@ padding-top: 20px;
     justify-content:space-around;
     background-color: #ffffff;
     margin-bottom: -90px;
+    width: 80%;
+    margin-left: 10%;
 
   }
 .figure img{
@@ -25,11 +27,11 @@ padding-top: 20px;
    
 }
 .form {
-    padding: 50px 20px 30px 20px;
-    box-shadow: 2px 2px 3px gainsboro;
-    border: solid rgb(123, 121, 121) 1px;
-    width: 45%;
-    border-radius: 10px;
+  padding: 20px 20px 10px 20px;
+  box-shadow: 2px 2px 3px gainsboro;
+  border: solid rgb(123, 121, 121) 1px;
+  width: 60%;
+  border-radius: 10px;
   }
   
   .control {
