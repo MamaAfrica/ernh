@@ -1,0 +1,11 @@
+.span{
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+.close{
+    display: none;
+}
+.open{
+    display: block;
+}

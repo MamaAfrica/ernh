@@ -1,6 +1,8 @@
 import connectDB from "../../../utils/connectmongo"
 const Users = require('../../../model/registerSchema')
 const Admin = require('../../../model/adminSchema')
+const Vendor = require('../../../model/vendorSchema')
+
 const bcrypt = require('bcrypt')
 
 //creating the date of referral
@@ -42,7 +44,7 @@ async function handler(req, res) {
                     }
                 })
 
-                if ((Number(newLogin) - Number(user.loginDate) !== 0) ) {
+                if ((Number(newLogin) - Number(user.loginDate) !== 0)) {
 
                     //creating login update report
                     const loginReport = `Daily Login Bonus: 300H || Date: ${currentDate}`
@@ -68,6 +70,25 @@ async function handler(req, res) {
                     res.status(403).json({ message: 'not an Admin' })
                     return
                 }
+                res.status(200).json(user);
+            } else if (role === 'Vendor') {
+                console.log({ username, password })
+                console.log('Vendor')
+                const user = await Vendor.findOne({ username: username })
+                console.log(user)
+                const validUser = await bcrypt.compare(password, user.password)
+                console.log(validUser)
+                if (!validUser) {
+                    res.status(403).json({ message: 'not an Vendor' })
+                    return
+                }
+
+                await Vendor.findOneAndUpdate({ username: username }, {
+                    $set: {
+
+                        lastLoginDate: newLogin
+                    }
+                })
                 res.status(200).json(user);
             }
 

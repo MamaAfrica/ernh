@@ -49,8 +49,15 @@ const MainNavigation = () => {
             await signOut({
                 redirect: false
             })
+            if(session.user.role==='vendor'){
+                router.push('/ernhv/ernhvLogin')
+            }else if(session.user.role==='User'){
+                router.push('/login')
+            }else if(session.user.role==='Admin'){
+                router.push('/ernhv/ernhv-admin-login')
+            }
 
-            router.push('/login')
+           
         } else {
             console.log('not true')
         }
