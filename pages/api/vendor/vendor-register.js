@@ -24,7 +24,7 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
              
-            const {firstname,lastname,prefferedUsername, username,phone, password,role } = req.body
+            const {firstname,lastname,prefferedUsername, username,phone, password,passport,link,bank,role } = req.body
             console.log('Connecting to Mongo')
             await connectDB()
             console.log('Connected to Mongo')
@@ -38,6 +38,9 @@ async function handler(req, res) {
                 prefferedUsername:prefferedUsername,
                 password: hashedPassword,
                 phone:phone,
+                passport:passport,
+                bank:bank,
+                link:link,
                 role:role,
                 approved: false,
                 couponsNumber:0,

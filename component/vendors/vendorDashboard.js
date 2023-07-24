@@ -19,8 +19,9 @@ function VendorDashboard() {
         SetsetForm(classes.open)
     }
 
-    async function submitHandler() {
-        const enteredcnInputRef = cnInputRef.current.vaue
+    async function submitHandler(e) {
+        e.preventDefault()
+        const enteredcnInputRef = cnInputRef.current.value
 
 
         //creating the date of coupon request
@@ -35,14 +36,15 @@ function VendorDashboard() {
         // we will display the date as DD-MM-YYYY 
 
         let currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
-
+        let userEmail = session.user.username
 
         const data = {
             couponNumber: enteredcnInputRef,
             couponRequestDate: currentDate,
-            email: session.user.username,
+            email:userEmail ,
 
         }
+        console.log(data)
         const response = await fetch('http://localhost:3000/api/vendor/vendor-coupon', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -57,7 +59,7 @@ function VendorDashboard() {
             throw new Error(userData.message || 'something went wrong')
         }
 
-       router.reload()
+       
 
 
     }
@@ -94,7 +96,7 @@ function VendorDashboard() {
 
 
                             <label htmlFor="passport">Number of Coupon you can sell within the given time frame</label>
-                            <input type='Number'
+                            <input type='number'
                                 required id="
                                 couponsNumber"
                                 name="

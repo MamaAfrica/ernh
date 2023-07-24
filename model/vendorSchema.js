@@ -43,6 +43,16 @@ const vendorSchema = new Schema({
     phone:{
         type: String
     },
+    passport:{
+        type: String
+    },
+    bank:{
+        type: String
+    },
+    link:{
+        type: String
+    },
+
     role: {
         type: String
     },

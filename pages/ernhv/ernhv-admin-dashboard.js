@@ -9,6 +9,9 @@ function AdminDashboard(){
       if (status === "unauthenticated") {
         return <p>Admin Access Denied</p>
       }
+      if(status==='authenticated' && session.user.role !=='Admin'){
+        return <h1>Not an Admin</h1>
+      }
     return ( 
         <div>
         
