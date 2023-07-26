@@ -44,6 +44,7 @@ async function handler(req, res) {
                 role:role,
                 approved: false,
                 couponsNumber:0,
+                unaprovedCoupons:0,
                 status: 'active',
                 registerdDate: currentDate,
                 couponRequestDate:'',

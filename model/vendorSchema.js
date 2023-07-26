@@ -83,7 +83,14 @@ const vendorSchema = new Schema({
     couponRequestDate: {
         type: String
     },
-    coupons: {
+    unaprovedCoupons: {
+        type: Number
+    },
+    approvedCoupons: {
+        type: Array,
+        default: ''
+    },
+    usedCoupons: {
         type: Array,
         default: ''
     }

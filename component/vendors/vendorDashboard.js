@@ -5,9 +5,10 @@ import { useRouter } from 'next/router'
 
 function VendorDashboard() {
     const { data: session, status } = useSession()
-    const[setForm, SetsetForm] = useState(classes.close)
+    const [setForm, SetsetForm] = useState(classes.close)
     const cnInputRef = useRef()
     const router = useRouter()
+
 
     if (status === "loading") {
         return <p>Loading...</p>
@@ -15,10 +16,41 @@ function VendorDashboard() {
     if (status === "unauthenticated") {
         return <p>Access Denied</p>
     }
-    function openForm(){
+    function openForm() {
         SetsetForm(classes.open)
     }
+    //putting all coupouns together
+    let allCoupons
+    let createdCoupons
+    let  cCoupons 
+    let unused
+    let used
+    if (session.user.approvedCoupons.length > 1) {
+        
+        createdCoupons = [].concat(...session.user.approvedCoupons)
+        //removing the unwanted "0"
+        let cleanedCoupons = createdCoupons.slice(1,100000)
+        cCoupons = session.user.usedCoupons.slice(1,100000)
+       
+        allCoupons = [...cleanedCoupons]
 
+        unused = allCoupons.filter((el)=>{
+            if( !(cCoupons.includes(el.slice(0,24).trim()))){
+                return el
+            }
+        })
+         used = allCoupons.filter((el)=>{
+            if(cCoupons.includes(el.slice(0,24).trim())){
+                return el
+            }
+        })
+ 
+        
+    }
+    
+
+    // if(session.user)
+    // console.log(session.user.coupons[1])
     async function submitHandler(e) {
         e.preventDefault()
         const enteredcnInputRef = cnInputRef.current.value
@@ -41,10 +73,10 @@ function VendorDashboard() {
         const data = {
             couponNumber: enteredcnInputRef,
             couponRequestDate: currentDate,
-            email:userEmail ,
+            email: userEmail,
 
         }
-        console.log(data)
+        // console.log(data)
         const response = await fetch('http://localhost:3000/api/vendor/vendor-coupon', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -58,8 +90,8 @@ function VendorDashboard() {
         if (!response.ok) {
             throw new Error(userData.message || 'something went wrong')
         }
+        router.reload()
 
-       
 
 
     }
@@ -73,15 +105,19 @@ function VendorDashboard() {
             <div className={classes.coupons}>
                 <div>
                     <p>SOLD COUPONS</p>
-                    <h4>{session.user.soldCoupons}</h4>
+                    <h4>N {(session.user.usedCoupons.length - 1) * 4500}</h4>
                 </div>
                 <div>
                     <p>UNSOLD COUPONS</p>
-                    <h4>{session.user.UnsoldCoupons}</h4>
+                    <h4>
+                        {session.user.approvedCoupons.length > 1 ?
+                            ((createdCoupons.length - 1)-(session.user.usedCoupons.length - 1))*4500:0
+                        }
+                    </h4>
                 </div>
                 <div>
-                    <p>UNPAIN COUPONS</p>
-                    <h4>{session.user.UpaidsoldCoupons}</h4>
+                    <p>UNPAID COUPONS</p>
+                    <h4>N {(session.user.couponsNumber)*4500}</h4>
                 </div>
 
             </div>
@@ -116,6 +152,59 @@ function VendorDashboard() {
 
                 </div>
             </div>
+            {session.user.approvedCoupons.length > 1 ? <div className={classes.couponTable}>
+            <h3>Unused Coupon</h3>
+                <table>
+                 
+                    <tr>
+                        <th>S/N</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Value</th>
+                    </tr>
+
+                    {unused.map((el, i) => (
+                        <tr key={i}>
+                            <td>{i+1}</td>
+                            <td>{el.slice(0,24).trim()}</td>
+                            <td>{el.slice(el.indexOf(' '),100)}</td>
+                            
+                            <td>4500</td>
+                             
+
+
+                        </tr>
+                    ))}
+                </table>
+                {/* ensuring the used coupons table starts showing when neccessary */}
+               {session.user.usedCoupons.length>1? <div>
+                    <h3>Used Coupon</h3>
+                <table>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Value</th>
+                    
+                       
+                    </tr>
+                    {used.map((el, i) => (
+                        <tr key={i}>
+                            <td>{i+1}</td>
+                            <td>{el.slice(0,24).trim()}</td>
+                            <td>{el.slice(el.indexOf(' '),100)}</td>
+                            
+                            <td>4500</td>
+                             
+
+
+                        </tr>
+                    ))}
+                </table>
+                </div>:" " }
+              
+
+            </div> : ""}
         </div>
     )
 }

@@ -32,6 +32,7 @@ export async function getStaticProps() {
                 link:vendor.link,
                 approved: vendor.approved,
                 couponsNumber: vendor.couponsNumber,
+                unaprovedCoupons: vendor.unaprovedCoupons,
                 registerdDate: vendor.registerdDate,
                 couponRequestDate: vendor.couponRequestDate,
                 lastLoginDate: vendor.lastLoginDate,

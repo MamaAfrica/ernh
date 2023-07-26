@@ -1,5 +1,6 @@
 import connectDB from "../../../utils/connectmongo"
 import Users from "../../../model/registerSchema"
+import Vendor from '../../../model/vendorSchema'
 
 import mongoose from "mongoose"
 const bcrypt = require('bcrypt')
@@ -96,14 +97,62 @@ async function handler(req, res) {
                 signUpDate: signUpDate,
                 welcomeEarning: `Welcome Bonus: ${welcomeBonus}H || Date: ${currentDate}`,
                 referralEarning: " ",
-                iReferralEarning:" ",
-                sIReferralEarning:" ",
+                iReferralEarning: " ",
+                sIReferralEarning: " ",
                 dLoginEarning: `Daily Login Bonus: 300H || Date: ${currentDate}`,
-                hivePostEarning:" ",
-                hivePostOneDate:0,
-                hivePostTwoDate:0,
+                hivePostEarning: " ",
+                hivePostOneDate: 0,
+                hivePostTwoDate: 0,
 
 
+            })
+            const allVendors = await Vendor.find({})
+
+            //checking if coupon is in database
+
+            const allApprovedCouponsWithDates = allVendors.flatMap(user => user.approvedCoupons.flat());
+            const allApprovedCoupons = allApprovedCouponsWithDates.map((el) => {
+                return el.slice(0, 24).trim()
+            })
+            console.log(allApprovedCoupons)
+
+            if (allApprovedCoupons.includes(coupon)) {
+                console.log('coupoun is the database')
+            } else {
+                console.log('coupoun is NOT IN the database')
+                return
+            }
+
+
+
+            //using the coupon code 
+            //getting the first 5 characters in the coupon
+            let couponInit = coupon.slice(0, 5).trim() // this is alreay in upperCase
+            let secondInit = coupon.slice(10, 13)
+            
+            //finding the vendor
+            const foundUser = allVendors.find((el) => {
+                return (el.prefferedUsername.slice(0, 5).trim().toUpperCase() === couponInit && el.username.slice(1, 4).trim().toUpperCase() === secondInit)
+            })
+            //checking if coupon has been used already
+            const userID = foundUser._id
+            if (foundUser.usedCoupons.includes(coupon)) {
+                console.log('used coupon')
+                return
+            }
+
+
+            //adding the coupon to the used coupon array
+            const vendorUser = Vendor.findByIdAndUpdate(
+                userID,
+                { "$push": { "usedCoupons": coupon } },
+
+                { "new": true, "upsert": true },
+
+
+            ).then(function (err, managerparent) {
+                if (err) throw err;
+                console.log(managerparent);
             })
 
 
@@ -132,9 +181,9 @@ async function handler(req, res) {
                     const iRefReport = `Indirect Referral Bonus: N300 || Referred User: ${referral} || Date: ${currentDate}`
                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { iReferralEarning: iRefReport } })
 
-                     //creating second in diirect referral update report
-                     const sIRefReport = ` Second Indirect Referral Bonus: N100 || Referred User: ${refUsername} || Date: ${currentDate}`
-                     await Users.findOneAndUpdate({ refUsername: ror }, { $set: { sIReferralEarning: sIRefReport } })
+                    //creating second in diirect referral update report
+                    const sIRefReport = ` Second Indirect Referral Bonus: N100 || Referred User: ${refUsername} || Date: ${currentDate}`
+                    await Users.findOneAndUpdate({ refUsername: ror }, { $set: { sIReferralEarning: sIRefReport } })
 
                     let irb = foundror.indirectReferalBonus + 300
                     let sib = foundror.secondIndirectRBonus + 100

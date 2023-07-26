@@ -21,14 +21,14 @@ function VendorItem(props) {
   let approvedClass;
   let disapproveBtn;
   let approveBtn;
-  if (props.approved === false) {
+  if (props.couponsNumber!==0) {
     approvedClass = classes.red
     disapproveBtn = <button onClick={setDissaprove}>Disapprove</button>
     approveBtn = <button type='submit'>Approve</button>
   } else {
     approvedClass = classes.green
     disapproveBtn = ''
-    approveBtn = ' '
+    approveBtn = <button type='submit'>Approve</button>
   }
 
 
