@@ -111,7 +111,7 @@ function VendorDashboard() {
                     <p>UNSOLD COUPONS</p>
                     <h4>
                         {session.user.approvedCoupons.length > 1 ?
-                            ((createdCoupons.length - 1)-(session.user.usedCoupons.length - 1))*4500:0
+                          <p>N {(((createdCoupons.length - 1)-(session.user.usedCoupons.length - 1))*4500)}</p> :0
                         }
                     </h4>
                 </div>
@@ -132,6 +132,7 @@ function VendorDashboard() {
 
 
                             <label htmlFor="passport">Number of Coupon you can sell within the given time frame</label>
+                            <div className={classes.formControl}>
                             <input type='number'
                                 required id="
                                 couponsNumber"
@@ -139,6 +140,8 @@ function VendorDashboard() {
                                 couponsNumber"
                                 placeholder="eg: 12"
                                 ref={cnInputRef} />
+                            </div>
+                           
 
                         </div>
 
