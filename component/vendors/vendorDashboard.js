@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import classes from './vendorDashboard.module.css'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import WhatsappIcon from '../icons/whatsapp'
 
 function VendorDashboard() {
     const { data: session, status } = useSession()
@@ -22,32 +23,32 @@ function VendorDashboard() {
     //putting all coupouns together
     let allCoupons
     let createdCoupons
-    let  cCoupons 
+    let cCoupons
     let unused
     let used
     if (session.user.approvedCoupons.length > 1) {
-        
+
         createdCoupons = [].concat(...session.user.approvedCoupons)
         //removing the unwanted "0"
-        let cleanedCoupons = createdCoupons.slice(1,100000)
-        cCoupons = session.user.usedCoupons.slice(1,100000)
-       
+        let cleanedCoupons = createdCoupons.slice(1, 100000)
+        cCoupons = session.user.usedCoupons.slice(1, 100000)
+
         allCoupons = [...cleanedCoupons]
 
-        unused = allCoupons.filter((el)=>{
-            if( !(cCoupons.includes(el.slice(0,24).trim()))){
+        unused = allCoupons.filter((el) => {
+            if (!(cCoupons.includes(el.slice(0, 24).trim()))) {
                 return el
             }
         })
-         used = allCoupons.filter((el)=>{
-            if(cCoupons.includes(el.slice(0,24).trim())){
+        used = allCoupons.filter((el) => {
+            if (cCoupons.includes(el.slice(0, 24).trim())) {
                 return el
             }
         })
- 
-        
+
+
     }
-    
+
 
     // if(session.user)
     // console.log(session.user.coupons[1])
@@ -111,13 +112,13 @@ function VendorDashboard() {
                     <p>UNSOLD COUPONS</p>
                     <h4>
                         {session.user.approvedCoupons.length > 1 ?
-                          <p>N {(((createdCoupons.length - 1)-(session.user.usedCoupons.length - 1))*4500)}</p> :0
+                            <p>N {(((createdCoupons.length - 1) - (session.user.usedCoupons.length - 1)) * 4500)}</p> : 0
                         }
                     </h4>
                 </div>
                 <div>
                     <p>UNPAID COUPONS</p>
-                    <h4>N {(session.user.couponsNumber)*4500}</h4>
+                    <h4>N {(session.user.couponsNumber) * 4500}</h4>
                 </div>
 
             </div>
@@ -133,15 +134,15 @@ function VendorDashboard() {
 
                             <label htmlFor="passport">Number of Coupon you can sell within the given time frame</label>
                             <div className={classes.formControl}>
-                            <input type='number'
-                                required id="
+                                <input type='number'
+                                    required id="
                                 couponsNumber"
-                                name="
+                                    name="
                                 couponsNumber"
-                                placeholder="eg: 12"
-                                ref={cnInputRef} />
+                                    placeholder="eg: 12"
+                                    ref={cnInputRef} />
                             </div>
-                           
+
 
                         </div>
 
@@ -156,9 +157,9 @@ function VendorDashboard() {
                 </div>
             </div>
             {session.user.approvedCoupons.length > 1 ? <div className={classes.couponTable}>
-            <h3>Unused Coupon</h3>
+                <h3>Unused Coupon</h3>
                 <table>
-                 
+
                     <tr>
                         <th>S/N</th>
                         <th>Code</th>
@@ -168,46 +169,68 @@ function VendorDashboard() {
 
                     {unused.map((el, i) => (
                         <tr key={i}>
-                            <td>{i+1}</td>
-                            <td>{el.slice(0,24).trim()}</td>
-                            <td>{el.slice(el.indexOf(' '),100)}</td>
-                            
+                            <td>{i + 1}</td>
+                            <td>{el.slice(0, 24).trim()}</td>
+                            <td>{el.slice(el.indexOf(' '), 100)}</td>
+
                             <td>4500</td>
-                             
+
 
 
                         </tr>
                     ))}
                 </table>
                 {/* ensuring the used coupons table starts showing when neccessary */}
-               {session.user.usedCoupons.length>1? <div>
+                {session.user.usedCoupons.length > 1 ? <div>
                     <h3>Used Coupon</h3>
-                <table>
-                    <tr>
-                        <th>S/N</th>
-                        <th>Code</th>
-                        <th>Date</th>
-                        <th>Value</th>
-                    
-                       
-                    </tr>
-                    {used.map((el, i) => (
-                        <tr key={i}>
-                            <td>{i+1}</td>
-                            <td>{el.slice(0,24).trim()}</td>
-                            <td>{el.slice(el.indexOf(' '),100)}</td>
-                            
-                            <td>4500</td>
-                             
+                    <table>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Code</th>
+                            <th>Date</th>
+                            <th>Value</th>
 
 
                         </tr>
-                    ))}
-                </table>
-                </div>:" " }
-              
+                        {used.map((el, i) => (
+                            <tr key={i}>
+                                <td>{i + 1}</td>
+                                <td>{el.slice(0, 24).trim()}</td>
+                                <td>{el.slice(el.indexOf(' '), 100)}</td>
+
+                                <td>4500</td>
+
+
+
+                            </tr>
+                        ))}
+                    </table>
+                </div> : " "}
+
 
             </div> : ""}
+
+
+            <div className={classes.admin}>
+                <h2>Kindly Remit Old Codes Sold to Request Again</h2>
+                <p>Contact any of the following Admins to Make Payment</p>
+                <div className={classes.adminOne}>
+                    <WhatsappIcon/>
+                    <h5>Quickloaded Assistant </h5>
+                    <p>https://wa.link/iljqs0</p>
+                </div>
+                <div className={classes.adminTwo}>
+                <WhatsappIcon/>
+                    <h5>Ajah's Media</h5>
+                    <p>https://wa.link/1zlrg0</p>
+                </div>
+                <div className={classes.adminThree}>
+                     <WhatsappIcon/>
+                    <h5>Digital Bigsteve  </h5>
+                    <p>https://wa.link/8o36fy</p>
+                </div>
+
+            </div>
         </div>
     )
 }

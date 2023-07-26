@@ -63,6 +63,7 @@ padding-top: 20px;
 padding-bottom: 20px;
 border-radius: 20px;
 background: linear-gradient(to right,rgb(255, 255, 255),rgba(187, 191, 231, 0.089),rgba(153, 168, 233, 0.433),white);
+transition: 1000ms;
 }
 .coupons div p{
  color: var(--p-col);
@@ -158,3 +159,41 @@ background-color: rgb(184, 184, 242);
     background-color:var(--p-col);
     color: white;
   }
+  .admin{
+    margin-top: 70px;
+  }
+
+  .admin h2{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 60%;
+    margin-bottom: 20px;
+    
+}
+  
+.admin p{
+    margin-bottom: 20px;
+}
+.admin>div{
+    border: solid gray 1px;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 10px;
+}
+.admin>div:hover{
+    border: solid gray 1px;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 10px;
+    background: linear-gradient(to right,rgb(255, 255, 255),rgba(187, 191, 231, 0.089),rgba(153, 168, 233, 0.433),white);
+transition: 1000ms;
+}
+.admin>div h5{
+    margin-top: 10px;
+    margin-top: 10px;
+}
+.admin>div p{
+    cursor: pointer;
+}

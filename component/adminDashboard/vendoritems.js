@@ -23,8 +23,8 @@ function VendorItem(props) {
   let approveBtn;
   if (props.couponsNumber!==0) {
     approvedClass = classes.red
-    disapproveBtn = <button onClick={setDissaprove}>Disapprove</button>
-    approveBtn = <button type='submit'>Approve</button>
+    disapproveBtn = <button onClick={setDissaprove} className={classes.disapproveBtn}>Disapprove</button>
+    approveBtn = <button type='submit' className={classes.formBtn}>Approve</button>
   } else {
     approvedClass = classes.green
     disapproveBtn = ''
@@ -79,7 +79,7 @@ function VendorItem(props) {
             <img src={props.passport} alt={props.prefferedUsername} />
           </div>
           <h3>{props.firstname}</h3>
-          <h6>{props.lastname}</h6>
+          <h5>{props.lastname}</h5>
 
           <p>{props.approved}</p>
           <p>{props.prefferedUsername}</p>
@@ -95,7 +95,7 @@ function VendorItem(props) {
 
 
 
-          <button onClick={showDetailsHandler}>Vendor Details</button>
+          <button onClick={showDetailsHandler} className={classes.vendorBtn}>Vendor Details</button>
 
           {disapproveBtn}
         </div>
