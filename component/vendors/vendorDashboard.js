@@ -2,7 +2,8 @@ import { useRef, useState } from 'react'
 import classes from './vendorDashboard.module.css'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import WhatsappIcon from '../icons/whatsapp'
+
+import ShufflingAdmin from './shufflingAdmin'
 
 function VendorDashboard() {
     const { data: session, status } = useSession()
@@ -211,27 +212,11 @@ function VendorDashboard() {
             </div> : ""}
 
 
-            <div className={classes.admin}>
-                <h2>Kindly Remit Old Codes Sold to Request Again</h2>
-                <p>Contact any of the following Admins to Make Payment</p>
-                <div className={classes.adminOne}>
-                    <WhatsappIcon/>
-                    <h5>Quickloaded Assistant </h5>
-                    <p>https://wa.link/iljqs0</p>
-                </div>
-                <div className={classes.adminTwo}>
-                <WhatsappIcon/>
-                    <h5>Ajah's Media</h5>
-                    <p>https://wa.link/1zlrg0</p>
-                </div>
-                <div className={classes.adminThree}>
-                     <WhatsappIcon/>
-                    <h5>Digital Bigsteve  </h5>
-                    <p>https://wa.link/8o36fy</p>
-                </div>
+         
+              <ShufflingAdmin/>
 
             </div>
-        </div>
+      
     )
 }
 

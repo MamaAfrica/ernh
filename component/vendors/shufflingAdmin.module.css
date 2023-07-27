@@ -1,1 +1,100 @@
- 
+.admin {
+    margin-top: 70px;
+}
+
+.admin h2 {
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 60%;
+    margin-bottom: 20px;
+
+}
+
+.admin p {
+    margin-bottom: 20px;
+}
+
+.admin>div {
+    border: solid gray 1px;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 10px;
+}
+
+.admin>div:hover {
+    border: solid gray 1px;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(187, 191, 231, 0.089), rgba(153, 168, 233, 0.433), white);
+    transition: 1000ms;
+}
+
+.admin>div h5 {
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+.admin>div p {
+    cursor: pointer;
+}
+
+.adminOne {
+    position: relative;
+    /* top: 0px; quickloaded */
+    /* top: 130px ; ajah */
+    /* top: 280px; digital */
+}
+
+.adminTwo {
+    position: relative;
+    /* top: 0px; quickloaded */
+    /* top: -150px; ajah */
+    /* top :0px; digital */
+}
+
+.adminThree {
+    position: relative;
+    /* top: 0px; quickloaded */
+    /* top: 0px; ajah */
+    /* top: -280px; digital */
+}
+
+.quickloaded {
+    position: relative;
+    top: 0px;
+}
+
+.ajahOne {
+    position: relative;
+    top: 130px;
+}
+
+.ajahTwo {
+    position: relative;
+    top: -150px;
+}
+
+.ajahThree {
+    position: relative;
+    top: 0px;
+}
+
+.digitalOne {
+    position: relative;
+    top: 280px;
+}
+
+.digitalTwo {
+    position: relative;
+
+    top: 0px;
+}
+
+.digitalThree {
+    position: relative;
+
+    top: -280px;
+}

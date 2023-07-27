@@ -1,12 +1,12 @@
 import classes from './vendorlist.module.css'
-import VendorItem from './vendoritems'
+import AllVendors from './allVendors'
 
-function VendorList(props){
+function AllVendorList(props){
 return(
     
     <ul className={classes.list}>
         {props.vendors.map((vendor)=>(
-            <VendorItem 
+            <AllVendors 
             key={vendor.id}
             id={vendor.id}
             firstname={vendor.firstname}
@@ -16,7 +16,7 @@ return(
             email = {vendor.username}
             prefferedUsername = {vendor.prefferedUsername}
             couponsNumber = {vendor.couponsNumber}
-            couponRequestDate={vendor.couponRequestDate}
+            registerdDate={vendor.registerdDate}
             
             />
         ))}
@@ -24,4 +24,4 @@ return(
 )
 }
 
-export default VendorList
+export default AllVendorList

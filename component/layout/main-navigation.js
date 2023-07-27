@@ -58,9 +58,7 @@ const MainNavigation = () => {
             }
 
            
-        } else {
-            console.log('not true')
-        }
+        }  
     }
     function handleDashboard() {
         router.push("/dashboard")
