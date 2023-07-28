@@ -27,6 +27,7 @@ function PostDetails(props) {
                 prefferedUsername={props.vendorData.prefferedUsername}
                 phone={props.vendorData.phone}
                 passport={props.vendorData.passport}
+                bank = {props.vendorData.bank}
                 link={props.vendorData.link}
                 approved={props.vendorData.approved}
                 couponsNumber={props.vendorData.couponsNumber}

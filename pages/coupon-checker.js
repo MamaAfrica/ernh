@@ -1,8 +1,10 @@
+import CouponForm from "@/component/users/couponCheckerForm";
+
  
 const CouponChecker = () => {
     return ( 
         <div>
-            <h3>Coupon Checker</h3>
+             <CouponForm/>
         </div>
      );
 }

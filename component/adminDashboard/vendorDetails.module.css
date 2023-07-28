@@ -43,3 +43,51 @@
     font-weight: bold;
     color: var(--p-col);
 }
+.edit{
+   margin-top: 30px;
+        background-color: var(--p-col);
+        color: white;
+       margin-left: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+    }
+    .edit:hover{
+        background-color: var(--s-col);
+        color: var(--p-col);
+        cursor: pointer;
+    }
+.delete{
+   
+        background-color: var(--s-col);
+        color: white;
+       margin-left: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+    }
+    .delete:hover{
+        background-color: var(--p-col);
+        color: var(--s-col);
+        cursor: pointer;
+    }
+.deactivate{
+   
+        background-color: rgb(240, 171, 171);
+        color: white;
+       margin-left: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+    }
+    .deactivate:hover{
+        background-color: var(--s-col);
+        color: var(--p-col);
+        cursor: pointer;
+    }
