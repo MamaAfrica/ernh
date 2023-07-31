@@ -25,7 +25,27 @@ async function handler(req, res) {
     if (req.method === 'POST') {
         try {
 
-            const { firstname, lastname, username, password, phone, country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal, registeredDate, loginDate, bank, accountNumber, bankName, passport, pin, signUpDate } = req.body
+            const { firstname, lastname, username, password, phone, prefferedUsername,country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal,withdrawalType,requestedWithdrawal, withdrawalRequestDate,registeredDate, loginDate, bank, accountNumber, bankName, passport, pin, signUpDate } = req.body
+            //connect 
+            console.log('Connecting to Mongo')
+            await connectDB()
+            console.log('Connected to Mongo')
+            console.log('Creating document')
+
+            //checking if such email is already in the database
+            // console.log('username check')
+            const user = await Users.findOne({ username: username })
+            // console.log(user)
+            if(user){
+                res.status(403).json({message:'This Email has already been  used by someone else please use another one'})
+                return
+            }
+            console.log('preffered username check')
+            const checkingPusername = await Users.findOne({ prefferedUsername:prefferedUsername })
+            if(checkingPusername){
+                res.status(403).json({message:'This Preffered Username has already been used by someone else please use another one'})
+                return
+            }
 
             //creating a username with email
             const refUsername = username.slice(0, username.indexOf('@'))
@@ -33,10 +53,7 @@ async function handler(req, res) {
             const refLink = `http://localhost:3000/referral/${refUsername}`
 
 
-            console.log('Connecting to Mongo')
-            await connectDB()
-            console.log('Connected to Mongo')
-            console.log('Creating document')
+           
 
             //creating downline
             if (referral !== "Admin") {
@@ -73,6 +90,7 @@ async function handler(req, res) {
                 refUsername: refUsername,
                 refLink: refLink,
                 phone: phone,
+                prefferedUsername:prefferedUsername,
                 country: country,
                 coupon: coupon,
                 packagec: packagec,
@@ -87,6 +105,9 @@ async function handler(req, res) {
                 hiveGame: hiveGame,
                 referral: referral,
                 totalWithdrawal: totalWithdrawal,
+                withdrawalType:withdrawalType,
+                withdrawalRequestDate:withdrawalRequestDate,
+                requestedWithdrawal:requestedWithdrawal,
                 registeredDate: registeredDate,
                 loginDate: loginDate,
                 bank: bank,
@@ -137,8 +158,13 @@ async function handler(req, res) {
             //checking if coupon has been used already
             const userID = foundUser._id
             if (foundUser.usedCoupons.includes(coupon)) {
-                console.log('used coupon')
+                res.status(403).json({ message: 'Coupon has been used' })
+                console.log('Coupon has been used')
                 return
+            }else{
+                res.status(200).json({ message: 'Coupon has not been used' })
+
+            console.log('Coupon has not been used')
             }
 
 

@@ -27,11 +27,22 @@ async function handler(req, res) {
             if (role === 'User') {
                 console.log({ username, password })
                 const user = await Users.findOne({ username })
-                console.log(user)
+                if(!user){
+                    console.log('user not found')
+                    res.status(403)
+                    return
+                }
+                // console.log(user)
                 const validUser = await bcrypt.compare(password, user.password)
                 console.log(validUser)
                 if (!validUser) {
-                    res.status(403).json({ message: 'not a user' })
+                    // const data = {
+                    //     message: 'not a user' 
+                    // }
+                    // const data  = 'not a user'
+                    // res.status(403).json(data)
+                    // res.status(403)
+                    return res.status(404).json({ error: 'User not found or incorrect password' });
                     return
                 }
                 // console.log(Number(newLogin))

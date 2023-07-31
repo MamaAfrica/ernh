@@ -10,12 +10,14 @@ import data from '../pages/api/data'
 
 const RegisterForm = () => {
     // console.log(data)
-    const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
-
+    // const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+  const[checkBtn, setCheckBtn] = useState(true)
     const [show, setShow] = useState(false)
     const [fisrtNameErr, setFisrtNameErr] = useState(' ')
     const [lastNameErr, setLastNameErr] = useState(' ')
     const [emailErr, setEmailErr] = useState(' ')
+    const [pUsernameErr, setPusernameErr] = useState(' ')
+    const [couponErr, setCouponErr] = useState(' ')
     const [password, setPassErr] = useState(' ')
     const [waitMsg, setWaitMsg] = useState(' ')
     const [spinner, setSpinner] = useState(false)
@@ -24,6 +26,7 @@ const RegisterForm = () => {
     const lastnameInputRef = useRef()
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
+    const pUsernameInputRef = useRef()
     const phoneInputRef = useRef()
     const countryInputRef = useRef()
     const couponInputRef = useRef()
@@ -37,14 +40,17 @@ const RegisterForm = () => {
     function setFnc() {
         setShow(!show)
     }
+     
 
     async function submitHandler(event) {
         event.preventDefault()
+        setCheckBtn(false)
         const enteredEmail = emailInputRef.current.value;
         const enteredPassword = passwordInputRef.current.value;
         const enteredFirstName = firstNameInputRef.current.value
         const enteredLastName = lastnameInputRef.current.value
         const enteredPhoneInputRef = phoneInputRef.current.value
+        const enteredPUsernameInputRef = pUsernameInputRef.current.value
         const enteredCountryInputRef = countryInputRef.current.value
         const enteredCouponInputRef = couponInputRef.current.value
         const enteredPackageInputRef = packageInputRef.current.value
@@ -54,23 +60,47 @@ const RegisterForm = () => {
         if (enteredEmail.length < 10) {
             setEmailErr('Email Lenght must be greater than ten')
             return;
+        } else {
+            setEmailErr(' ')
         }
         if (enteredFirstName.length < 3) {
-            setFisrtNameErr('Email Lenght must be greater than three')
-            return;
-        }
-        if (enteredLastName.length < 3) {
-            setLastNameErr('Email Lenght must be greater than three')
-            return;
-        }
-        if (!validPassword.test(enteredPassword)) {
-            setPassErr('Password must contain special character(s), and  uppercase');
+            setFisrtNameErr('Firstname Lenght must be greater than three')
             return;
         } else {
-            setPassErr('Good Password');
+            setFisrtNameErr(' ')
         }
-        setWaitMsg('Hold on for few seconds...')
-        setSpinner(<Spinner />)
+        if (enteredLastName.length < 3) {
+            setLastNameErr('Lastname Lenght must be greater than three')
+            return;
+        } else {
+            setLastNameErr(' ')
+        }
+
+        if ((enteredCouponInputRef.length === 24 || enteredCouponInputRef.length === 25) && enteredCouponInputRef.slice(-2) === 'UC') {
+            setCouponErr(<p className={classes.green}>Please hold on...</p>)
+        } else {
+            setCouponErr(<p className={classes.red}>Please provide a valid Coupon</p>)
+            return;
+        }
+
+
+
+
+        if (enteredPUsernameInputRef.length < 3 || enteredPUsernameInputRef.includes(' ')) {
+            setPusernameErr('Preffered Username Lenght must be greater than three and should not have space')
+            return;
+        }
+        if (enteredPassword.length < 6 || enteredPassword.includes(' ')) {
+            setPassErr('Password length must be greater than six and must not have space')
+            return;
+        }
+        // if (!validPassword.test(enteredPassword)) {
+        //     setPassErr('Password must contain special character(s), and  uppercase');
+        //     return;
+        // } else {
+        //     setPassErr('Good Password');
+        // }
+
         //picking the date of registration
         // Date object
         const date = new Date();
@@ -86,7 +116,7 @@ const RegisterForm = () => {
         let currentDate = `${currentDay}${currentMonth}${currentYear}`;
         let signUpDate = `${currentDay}-${currentMonth}-${currentYear}`;
 
-        const pin = Math.floor(Math.random()*4000)+4000
+        const pin = Math.floor(Math.random() * 4000) + 4000
 
 
         // collection of data
@@ -96,6 +126,7 @@ const RegisterForm = () => {
             username: enteredEmail,
             password: enteredPassword,
             phone: enteredPhoneInputRef,
+            prefferedUsername: enteredPUsernameInputRef,
             country: enteredCountryInputRef,
             coupon: enteredCouponInputRef,
             packagec: enteredPackageInputRef,
@@ -109,15 +140,18 @@ const RegisterForm = () => {
             dailyLogin: 300,
             hiveGame: 0,
             totalWithdrawal: 0,
-            bank:'You are yet choose your preferred bank',
-            accountNumber:'0',
-            bankName:'You are yet to do your bank setup',
-            passport:'none',
-            pin:pin,
-            registeredDate:Number(currentDate),
-            loginDate:Number(currentDate),
+            withdrawalType: 'none',
+            requestedWithdrawal: 0,
+            withdrawalRequestDate: 'none',
+            bank: 'You are yet choose your preferred bank',
+            accountNumber: '0',
+            bankName: 'You are yet to do your bank setup',
+            passport: 'none',
+            pin: pin,
+            registeredDate: Number(currentDate),
+            loginDate: Number(currentDate),
             referral: 'Admin',
-            signUpDate:signUpDate,
+            signUpDate: signUpDate,
         }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',
@@ -128,12 +162,31 @@ const RegisterForm = () => {
 
         });
         console.log(data)
-        let userData = await response.json()
+        let user = await response.json()
 
         if (!response.ok) {
-            throw new Error(userData.message || 'something went wrong')
-        }
+            if (user.message === 'This Email has already been  used by someone else please use another one') {
+                setEmailErr(<p className={classes.red}>{user.message}</p>)
+                return
+            } else if (user.message === 'This Preffered Username has already been used by someone else please use another one') {
+                setPusernameErr(<p className={classes.red}>{user.message}</p>)
+                return
+            } else if (user.message === 'Coupon has been used') {
+                setCouponErr(<p className={classes.red}>{user.message}</p>)
+                return
+            }
 
+
+            // codeErr = user.message
+            // throw new Error(user.message || 'something went wrong')
+        } else if (response.ok) {
+            setCouponErr(<p className={classes.green}>{user.message}</p>)
+
+            // codeErr = user.message
+            // throw new Error(user.message || 'something went wrong')
+        }
+        setWaitMsg('Hold on for few seconds...')
+        setSpinner(<Spinner />)
         router.push('/login')
     }
 
@@ -159,7 +212,7 @@ const RegisterForm = () => {
 
                     </div>
                     <div>
-                        {fisrtNameErr}
+                        <p className={classes.red}>{fisrtNameErr}</p>
                     </div>
                     <div className={classes.control}>
                         <label htmlFor="lastname">Lastname</label>
@@ -170,7 +223,8 @@ const RegisterForm = () => {
 
                     </div>
                     <div>
-                        {lastNameErr}
+                        <p className={classes.red}> {lastNameErr}</p>
+
                     </div>
 
                     <div className={classes.control}>
@@ -183,7 +237,8 @@ const RegisterForm = () => {
 
                     </div>
                     <div>
-                        {emailErr}
+                        <p className={classes.red}>   {emailErr}</p>
+
                     </div>
 
                     <div className={classes.control}>
@@ -200,18 +255,32 @@ const RegisterForm = () => {
 
 
                         <div>
-                            {password}
+                            <p className={classes.red}> {password}</p>
+
                         </div>
                     </div>
                     <div className={classes.control}>
 
                         <label htmlFor="phone">Phone Number</label>
-                        <input type='tel'
+                        <input type='text'
                             required id="phone"
                             name="phone"
                             ref={phoneInputRef}
                         />
 
+                    </div>
+                    <div className={classes.control}>
+
+                        <label htmlFor="phone">Preffered Username</label>
+                        <input type='text'
+                            required id="pUsername"
+                            name="pUsername"
+                            ref={pUsernameInputRef}
+                        />
+                        <div>
+                            <p className={classes.red}>  {pUsernameErr}</p>
+
+                        </div>
                     </div>
                     <div className={classes.control}>
                         <label htmlFor="country">Select Your Country</label>
@@ -243,6 +312,7 @@ const RegisterForm = () => {
                             name="coupon"
                             ref={couponInputRef}
                         />
+                        {couponErr}
                         <h4>Dont Have Code?<span className={classes.getCode}><Link href='/activation-code'>Get Code</Link></span>  </h4>
                     </div>
                     <div className={classes.control}>
@@ -253,7 +323,7 @@ const RegisterForm = () => {
                             required
                             ref={packageInputRef}
                         >
-                            <option>Hivenaira N 4000</option>
+                            <option>Hivenaira N 4500</option>
                         </select>
 
 
@@ -267,9 +337,11 @@ const RegisterForm = () => {
                         </div>
 
                     </div>
-                    <div className={classes.actions}>
-                        <button type="submit">Register</button>
-                    </div>
+                    {checkBtn?<div className={classes.actions}>
+                        <button type="submit"   >Register</button>
+                    </div>:<div className={classes.submitted}>
+                        <button type="submit" disabled  >Register</button>
+                    </div>}
                     <div className={classes.acc}>
                         <p>Already have an Account? <Link href='/login' target='_blank'>Login</Link></p>
                     </div>

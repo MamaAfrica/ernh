@@ -57,7 +57,8 @@ function DashboardBanner(props) {
                     </div>
                     <div className={classes.username}>
                         {session?.user ? (<li onClick={handleDashboard}>
-                            {`${session.user.firstname} ${session.user.lastname}`}
+                            
+                            {session.user.prefferedUsername}
 
                         </li>) : " "}
                     </div>

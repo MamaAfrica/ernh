@@ -8,7 +8,7 @@ function ErnhvAllVendors(props) {
    return (
        <div>
            <AllVendorList vendors={props.vendors} />
-           <VendorsCodeList vendors = {props.vendors}/>
+            
            
        
        </div>

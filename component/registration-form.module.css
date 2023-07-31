@@ -26,6 +26,20 @@ padding-top: 20px;
     margin-top: 50px;
    
 }
+.red{
+  color: red;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  
+  
+}
+.green{
+  color:green;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 1em;
+}
 .form {
   padding: 20px 20px 10px 20px;
   box-shadow: 2px 2px 3px gainsboro;
@@ -75,6 +89,21 @@ padding-top: 20px;
   .actions button:active {
     background-color: var(--s-col);
     border-color: #a50e48;
+  }
+  .submitted button{
+    cursor:not-allowed;
+    font: inherit;
+    
+    background-color:rgb(182, 179, 179);
+    color: white;
+    border: 1px solid #939292;
+    margin-top:  50px;
+    margin-bottom:  50px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+    
   }
   
   .span {

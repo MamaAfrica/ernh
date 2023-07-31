@@ -18,7 +18,25 @@ function ActivationCode(props) {
 }
 export async function getStaticProps() {
     await connectDB()
-    const vendors = await Vendor.find({})
+    
+    // rearrange()
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+    const Allvendors = await Vendor.find({})
+    let vendors
+    
+    function rearrangeArray() {
+         vendors = shuffleArray([...Allvendors]);
+        return vendors;
+    }
+    // Example usage:
+    rearrangeArray(); // Output will be a shuffled version of the 'vendors' array
+
 
 
     return {

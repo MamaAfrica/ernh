@@ -6,7 +6,7 @@ const regSchema = new Schema({
     firstname:{
         type: String,
         require: true,
-        minLength:[2,'firstname characters must be greater five'],
+        minLength:[3,'firstname characters must be greater three'],
         toLowerCase:true,
         trim: true,
       
@@ -14,7 +14,7 @@ const regSchema = new Schema({
       lastname:{
         type: String,
         require: true,
-        minLength:[2,'lastname characters must be greater five'],
+        minLength:[3,'lastname characters must be greater three'],
         toLowerCase:true,
         trim: true,
      
@@ -25,7 +25,7 @@ const regSchema = new Schema({
         minLength:[10,'username characters must be greater 10'],
         toLowerCase:true,
         trim: true,
-        unique: true
+       
       },
       password:{
         type: String,
@@ -39,9 +39,15 @@ const regSchema = new Schema({
       type:String,
     },
     phone:{
-        type: Number,
+        type: String,
         require: true,
         trim: true
+    },
+    prefferedUsername:{
+      type:String,
+      require: true,
+      trim: true,
+      minLength:[3,'lastname characters must be greater three'],
     },
     country:{
         type: String,
@@ -90,6 +96,15 @@ const regSchema = new Schema({
     },
     totalWithdrawal:{
       type:Number
+    },
+    withdrawalType:{
+      type:String
+    },
+    requestedWithdrawal:{
+      type:String
+    },
+    withdrawalRequestDate:{
+      type:String
     },
     registeredDate:{
       type:Number

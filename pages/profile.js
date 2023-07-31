@@ -31,7 +31,7 @@ function Profile() {
                     <div className={classes.sectionThree}>
                         <div className={classes.refUsername}>
                             <h3>Username</h3>
-                            <p>{session.user.refUsername}</p>
+                            <p>{session.user.prefferedUsername}</p>
                         </div>
                         <div className={classes.username}>
                             <h3>Email</h3>

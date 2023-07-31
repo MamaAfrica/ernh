@@ -10,8 +10,8 @@ import { signIn } from "next-auth/react";
 
 
 const LoginForm = () => {
-  
-    const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+    // const [errorMessage, setErrorMessage] = useState('');
+    // const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
 
     const [show, setShow] = useState(false) 
@@ -19,10 +19,11 @@ const LoginForm = () => {
     const[password, setPassErr] = useState(' ')
     const [waitMsg, setWaitMsg] = useState(' ')
     const [spinner, setSpinner] = useState(false)
+    const[checkBtn, setCheckBtn] = useState(true)
 
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
-    const router = useRouter()
+    // const router = useRouter()
 
 
     //toggle of show and hide password
@@ -32,6 +33,7 @@ const LoginForm = () => {
 
     async function submitHandler(event) {
         event.preventDefault()
+        setCheckBtn(false)
         const enteredEmail = emailInputRef.current.value;
         const enteredPassword = passwordInputRef.current.value;
 
@@ -40,12 +42,12 @@ const LoginForm = () => {
         if (enteredEmail.length < 10) {
             setEmailErr('Email Lenght must be greater than ten')
             return;
-        }
-        if (!validPassword.test(enteredPassword)) {
-            setPassErr('Password must contain special character(s), and  uppercase');
-            return;
         } else {
-            setPassErr('Good Password');
+            setEmailErr(' ')
+        }
+        if (enteredPassword.length < 6 || enteredPassword.includes(' ')) {
+            setPassErr('Password length must be greater than six and must not have space')
+            return;
         }
           //picking the date of registration
         // Date object
@@ -69,7 +71,10 @@ const LoginForm = () => {
             callbackUrl:"/dashboard"
         })
         // console.log(result)
-       
+        // if (result.error) {
+        //     // Set the error message in the state
+        //     setErrorMessage('Password is incorrect');
+        //   }
          
     }
         
@@ -85,6 +90,7 @@ const LoginForm = () => {
                 <div className={classes.control}>
                 {spinner}
                     <h3>{waitMsg}</h3>
+                    {/* <h3>{errorMessage}</h3> */}
                    <label htmlFor="Username">Email</label>
                    <input type='text' 
                    required id="Username" 
@@ -115,7 +121,11 @@ const LoginForm = () => {
                  
                
                 <div className={classes.actions}>
-                 <button type="submit">Login</button>
+                {checkBtn?<div className={classes.actions}>
+                        <button type="submit"   >Login</button>
+                    </div>:<div className={classes.submitted}>
+                        <button type="submit" disabled  >Login</button>
+                    </div>}
                  </div>
 
                 <p>Forgot Password?</p><br/><br/>

@@ -54,12 +54,10 @@
       padding: 0.25rem;
       width: 100%;
     }
-     
-    
     .actions button {
       font: inherit;
       cursor: pointer;
-      background-color: #77002e;
+      background-color:var(--p-col);
       color: white;
       border: 1px solid #77002e;
       margin-top:  50px;
@@ -72,10 +70,26 @@
     
     .actions button:hover,
     .actions button:active {
-      background-color: hsl(337, 84%, 35%);
+      background-color: var(--s-col);
       border-color: #a50e48;
     }
+    .submitted button{
+      cursor:not-allowed;
+      font: inherit;
+      
+      background-color:rgb(182, 179, 179);
+      color: white;
+      border: 1px solid #939292;
+      margin-top:  50px;
+      margin-bottom:  50px;
+      border-radius: 4px;
+      font-weight: bold;
+      padding: 20px;
+      width: 100%;
+      
+    }
     
+     
     .span {
       font: inherit;
       cursor: pointer;
