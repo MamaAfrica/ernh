@@ -8,14 +8,11 @@ import Hamburger from "./layout/hamburger"
 function UserDashboard() {
     return (
         <div className={classes.section}>
-            <div className={classes.navToggle}>
-                 <button> <Hamburger /></button>  
-                </div>
-            <div className={classes.navBar}>
+             
                 
                 <DashboardSide />
 
-            </div>
+            
             <div className={classes.sectionOne}>
                 <DashboardBanner placed="Dashboard" />
                 <DashboardMain />

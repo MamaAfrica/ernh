@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useState } from "react";
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+ 
 import Spinner from "@/component/icons/spinner";
 import { signIn } from "next-auth/react";
 import classes from './earnhv.module.css'

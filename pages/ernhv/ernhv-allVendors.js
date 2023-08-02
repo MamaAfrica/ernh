@@ -6,7 +6,7 @@ import VendorsCodeList from '@/component/users/vendorsCodeList'
 
 function ErnhvAllVendors(props) {
    return (
-       <div>
+       <div style={{marginTop:"100px"}}>
            <AllVendorList vendors={props.vendors} />
             
            

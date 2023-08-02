@@ -6,7 +6,7 @@ import connectDB from "@/utils/connectmongo"
 
 function ErnhvVendors(props) {
     return (
-        <div>
+        <div style={{marginTop:"100px"}}>
             <VendorList vendors={props.vendors} />
         
         </div>

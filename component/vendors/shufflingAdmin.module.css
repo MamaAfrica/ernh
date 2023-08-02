@@ -98,3 +98,20 @@
 
     top: -280px;
 }
+@media screen and (max-width:768px)  {
+    .admin>div {
+        border: solid gray 1px;
+        margin-bottom: 20px;
+        width: 30%;
+        padding: 10px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+    .admin>div {
+        border: solid gray 1px;
+        margin-bottom: 20px;
+        width: 95%;
+        padding: 2.5%;
+    }
+ }

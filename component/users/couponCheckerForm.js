@@ -19,7 +19,7 @@ const CouponForm = () => {
         event.preventDefault()
         const coupon = couponInputRef.current.value;
         
-        if ((coupon.length === 24 || coupon.length ===25 ) && coupon.slice(-2)==='UC') {
+        if ((coupon.length === 23 || coupon.length === 24 || coupon.length ===25 ) && coupon.slice(-2)==='UC') {
             setErrMsg(<p className={classes.green}>Please hold on...</p>)
         } else {
             setErrMsg(<p className={classes.red}>Please provide a valid Coupon</p>)
