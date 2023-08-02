@@ -3,15 +3,21 @@ import DashboardEarnings from "./users/dashboardEarnings"
 import DashboardMain from "./users/dashboardMain"
 import DashboardSide from "./users/dashboardSideBar"
 import classes from './userDashboard.module.css'
+import Hamburger from "./layout/hamburger"
 
 function UserDashboard() {
     return (
         <div className={classes.section}>
-            <div>
+            <div className={classes.navToggle}>
+                 <button> <Hamburger /></button>  
+                </div>
+            <div className={classes.navBar}>
+                
                 <DashboardSide />
+
             </div>
             <div className={classes.sectionOne}>
-                <DashboardBanner placed ="Dashboard" />
+                <DashboardBanner placed="Dashboard" />
                 <DashboardMain />
                 <DashboardEarnings />
             </div>

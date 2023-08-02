@@ -46,3 +46,45 @@
 .share span{
     cursor: pointer;
 }
+@media screen and (max-width:768px) {
+    .postDetail{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 100px;
+    }
+    .postDetail h1{
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--p-col);
+        width: 30%;
+        margin-bottom: 20px;  
+    }
+    .section img{
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+}
+@media screen and (max-width:600px) {
+    .postDetail{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 100px;
+    }
+    .postDetail h1{
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--p-col);
+        width: 80%;
+        margin-bottom: 20px;  
+    }
+    .section img{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .figure{
+        width: 90%;
+    }
+}

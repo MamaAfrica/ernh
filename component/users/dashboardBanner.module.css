@@ -167,3 +167,60 @@
     color:var(--p-col);
     font-family: 'Times New Roman', Times, serif;
 }
+
+@media screen and (max-width:768px)  {
+    
+    .banner{
+        width: 100%;
+        background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+        margin-top: 50px;
+        height: 380px;
+        border-bottom-right-radius: 100px;
+        padding-right: 5%;
+      
+    }
+    
+    .nav{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 50px;
+    
+    }
+    
+    .dashboard{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .profile{
+        display: flex;
+        margin-left: 50px;
+        width: 30%;
+    }
+    .welcome h2{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .welcomeUser{
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+    .earning{
+        display: flex;
+        
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 50px 0px 0px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+   
+ }
+@media screen and (max-width:385px)  {
+  
+ }
+@media screen and (max-width:320px)  {
+   
+ }
+

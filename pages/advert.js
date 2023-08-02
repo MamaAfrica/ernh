@@ -1,11 +1,12 @@
 import PostList from "@/component/post/postList"
 import Post from "../model/postSchema"
 import connectDB from "@/utils/connectmongo"
+ 
 
 
 function Avert(props) {
     return (
-        <div>
+        <div style={{marginTop:'70px'}}>
             <PostList posts={props.posts} />
         </div>
     )

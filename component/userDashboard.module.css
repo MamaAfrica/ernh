@@ -2,4 +2,29 @@
     display: flex;
     
 }
+.navToggle{
+    display: none;
+}
+
+@media screen and (max-width:768px)  {
+    .navBar{
+        display: none;
+    }
+    .navToggle{
+        display: block;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 100px;
+    }
+     
+ }
  
+@media screen and (max-width:600px)  {
+   
+ }
+@media screen and (max-width:385px)  {
+  
+ }
+@media screen and (max-width:320px)  {
+   
+ }
