@@ -11,6 +11,9 @@
     padding-top: 50px;
     background-color:var(--p-col);
 }
+.copy{
+    color: #ffffff;
+}
 
 .footer .menu ul li{
     list-style: none;

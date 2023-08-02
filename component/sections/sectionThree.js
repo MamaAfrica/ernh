@@ -11,7 +11,7 @@ function SectionThree() {
                         <img src="https://images.pexels.com/photos/4386149/pexels-photo-4386149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="hive" />
                     </div>
                     <div className={classes.list}>
-                        <h4>Business adverts and many more… </h4>
+                        <h4>Business adverts and many more</h4>
                         <ul>
                             <li>Facebook marketing</li>
                             <li>WhatsApp Tv creating</li>

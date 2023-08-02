@@ -12,8 +12,8 @@ import { useState } from "react";
 const MainNavigation = () => {
     const { data: session, status } = useSession()
 
-    
-    
+
+
     const router = useRouter()
     let profile
     function showProfile() {
@@ -49,16 +49,16 @@ const MainNavigation = () => {
             await signOut({
                 redirect: false
             })
-            if(session.user.role==='vendor'){
+            if (session.user.role === 'vendor') {
                 router.push('/ernhv/ernhvLogin')
-            }else if(session.user.role==='User'){
+            } else if (session.user.role === 'User') {
                 router.push('/login')
-            }else if(session.user.role==='Admin'){
+            } else if (session.user.role === 'Admin') {
                 router.push('/ernhv/ernhv-admin-login')
             }
 
-           
-        }  
+
+        }
     }
     function handleDashboard() {
         router.push("/dashboard")
@@ -102,7 +102,7 @@ const MainNavigation = () => {
 
 
                                 <li style={{ marginTop: "-4px", marginLeft: "5px" }}><DropDown /></li>
-                                 
+
                                 <li><Link href='/advert'>Hive Advert</Link></li>
                                 <li><Link href='/contact'>Contact</Link></li>
                                 <li className={classes.termsMenu}>
@@ -127,12 +127,6 @@ const MainNavigation = () => {
                                     {profile}
 
                                 </div>
-                                {/* <div className={classes.userInit}>
-                                    {session?.user ? (<li onClick={handleDashboard}>
-                                        {`${session.user.firstname.charAt().toUpperCase()}${session.user.lastname.charAt().toUpperCase()}`}
-
-                                    </li>) : " "}
-                                </div> */}
 
 
 
@@ -148,6 +142,9 @@ const MainNavigation = () => {
                 <div className={classes.hr}></div>
             </div>
             <div className={classes.mobileHeader}>
+                <div className={classes.sign}>
+                    {session?.user ? (<li onClick={logOut}>Logout</li>) : (<li onClick={() => signIn()} >Login</li>)}
+                </div>
                 <div className={classes.mobileNav}>
                     <div className={classes.mobileLogo}>
                         <Link href='/'>
@@ -155,6 +152,10 @@ const MainNavigation = () => {
                         </Link>
                     </div>
 
+                    <div className={classes.profile}>
+                        {profile}
+
+                    </div>
                     <div className={classes.hamburger}>
                         <Hamburger />
                         <div className={classes.menu}>
@@ -162,24 +163,46 @@ const MainNavigation = () => {
                                 <ul>
                                     <li><Link href='/'>Home</Link></li>
                                     <li><Link href='/about'>About</Link></li>
-                                    <li><Link href='/about'>Pages</Link></li>
-                                    <li><Link href='/about'>Sponsored Task</Link></li>
-                                    <li><Link href='/about'>Hive Advert</Link></li>
+                                    <div>
+                                        <li><Link href='/activation-code'>Get Coupon Code</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/coupon-checker'>Check Code</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/how-it-works'>How it works</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/top-earners'>Top Earners</Link></li>
+                                    </div>
+
+                                    <li><Link href='/advert'>Hive Advert</Link></li>
                                     <li><Link href='/contact'>Contact</Link></li>
-                                    <li><Link href='/about'>Terms</Link></li>
-                                    <li><Link href='/about'>Sign In</Link></li>
-                                    <li><Link href='/about'>Freelancing</Link></li>
+                                     
+                                            <div>
+                                                <li><Link href='/tandc'>Terms and Conditions</Link></li>
+                                            </div>
+                                            <div>
+                                                <li><Link href='/privacy'>Privacy Policy</Link></li>
+                                            </div>
+
+  
+                                    <li><Link href='/freelancing'>Freelancing</Link></li>
+
+
 
                                 </ul>
                             </main>
 
                         </div>
 
+
                     </div>
 
 
+
                 </div>
-                <div className={classes.hr}></div>
+
             </div>
 
         </header>

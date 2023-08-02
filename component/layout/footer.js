@@ -15,18 +15,38 @@ const Footer = () => {
               <div className={classes.hr}></div>
         <div className={classes.footer}>
             <div className={classes.menu}>
-                     <ul>
-                     <li><Link href='/'>Home</Link></li>
-                                <li><Link href='/about'>About</Link></li>
-                                <li><Link href='/about'>Pages</Link></li>
-                                <li><Link href='/about'>Sponsored Task</Link></li>
-                                <li><Link href='/about'>Hive Advert</Link></li>
-                                <li><Link href='/contact'>Contact</Link></li>
-                                <li><Link href='/about'>Terms</Link></li>
-                                <li><Link href='/about'>Sign In</Link></li>
-                                <li><Link href='/about'>Freelancing</Link></li>
-                       
-                    </ul>
+            <ul>
+                                    <li><Link href='/'>Home</Link></li>
+                                    <li><Link href='/about'>About</Link></li>
+                                    <div>
+                                        <li><Link href='/activation-code'>Get Coupon Code</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/coupon-checker'>Check Code</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/how-it-works'>How it works</Link></li>
+                                    </div>
+                                    <div>
+                                        <li><Link href='/top-earners'>Top Earners</Link></li>
+                                    </div>
+
+                                    <li><Link href='/advert'>Hive Advert</Link></li>
+                                    <li><Link href='/contact'>Contact</Link></li>
+                                     
+                                            <div>
+                                                <li><Link href='/tandc'>Terms and Conditions</Link></li>
+                                            </div>
+                                            <div>
+                                                <li><Link href='/privacy'>Privacy Policy</Link></li>
+                                            </div>
+
+  
+                                    <li><Link href='/freelancing'>Freelancing</Link></li>
+
+
+
+                                </ul>
                  
             </div>
             <div className={classes.icons}>
@@ -45,7 +65,7 @@ const Footer = () => {
             <Logo/>
             </div>
         </div>
-        <p className={classes.copy}>Copyright@EarnHive </p>
+        <p style={{color:'gold',textAlign:'center'}}>Copyright@EarnHive </p>
       
         </div>
      );

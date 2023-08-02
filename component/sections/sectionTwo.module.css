@@ -34,7 +34,7 @@
     font-weight: 900;
 }
 .short{
-    text-align: justify;
+    text-align: start;
     font-family: 'Times New Roman', Times, serif;
     line-height: 25px;
     font-size: 1.2em;
@@ -56,3 +56,52 @@
     background: rgba(240, 248, 255, 0);
     color:var(--s-col);
 }
+@media screen and (max-width:768px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+        background-image: url('../../public/sbgn.png');
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 100px 20px 100px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+    .section{
+        width: 90%;
+        margin-left: 10px;
+        margin-top: 50px;
+        background-image: url('../../public/sbgn.png');
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 10px 20px 50px;
+    }
+ }
+@media screen and (max-width:385px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+        background-image: url('../../public/sbgn.png');
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 30px 20px 50px;
+    }
+ }
+@media screen and (max-width:320px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+        background-image: url('../../public/sbgn.png');
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+         padding:20px 20px 20px 50px;
+    }
+ }
