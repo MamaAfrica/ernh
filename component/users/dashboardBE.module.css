@@ -1,0 +1,167 @@
+ 
+.earning{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 50px 0px 0px;
+}
+.hiveCash{
+    background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+    transform: rotate(5deg);
+
+
+}
+.hiveCash h1{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.hiveCash p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.divTotal{
+    background:  linear-gradient(to right,#01051e,  #051c5a,#061848);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    border-top: solid white 1px;
+    padding-top: 20px;
+   
+}
+ 
+.bank{
+   margin-top: 5px;
+    width: 50px;
+   
+}
+.bank p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.7em; 
+   
+}
+.bank div{
+    display: flex;
+}
+.bank span{
+    margin-left: 2px;
+    
+    background: #920fc1;
+    padding: 2px 6px;
+    width: 2px;
+    border-radius: 50%;
+}
+.totalBalance h1{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.totalBalance p{
+    font-size: larger;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.hiveGame{
+    background:  linear-gradient(to right,#ffffff, #fff,#ffffff);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+    transform: rotate(-5deg);
+
+
+}
+.hiveGame h1{
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.hiveGame p{
+    font-size: larger;
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width:768px)  {
+ 
+    
+     
+    .earning{
+        position: relative;
+        width: 90%;
+       
+        padding: 0px 50px 0px 0px;
+      } 
+      
+      .stackedDiv {
+        position: absolute;
+        width: 100%;
+        
+        display: flex;
+         
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+        user-select: none;
+      } 
+      
+      .hiveCash{
+        z-index: 1;
+      }
+      .divTotal{
+        z-index: 2;
+      }
+      .hiveGame{
+        z-index: 0;
+      }
+       
+      
+
+ }
+ 
+@media screen and (max-width:600px)  {
+    .earning{
+        position: relative;
+        width: 68%;
+       
+        padding: 0px 50px 0px 0px;
+      } 
+ }
+@media screen and (max-width:385px)  {
+    .earning{
+        position: relative;
+        width: 60%;
+       
+        padding: 0px 50px 0px 0px;
+      } 
+ }
+@media screen and (max-width:320px)  {
+    .earning{
+        position: relative;
+        width: 67%;
+       margin-left: -20px;
+        padding: 0px 50px 0px 0px;
+      } 
+ }
+
