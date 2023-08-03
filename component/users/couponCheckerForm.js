@@ -27,7 +27,7 @@ const CouponForm = () => {
         }
         
 
-        const response = await fetch('http://localhost:3000/api/userCoupon/coupon-form', {
+        const response = await fetch('https://earnhive.vercel.app/api/userCoupon/coupon-form', {
             method: 'POST',
             body: JSON.stringify({coupon}),
             headers: {

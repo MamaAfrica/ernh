@@ -32,7 +32,7 @@ const ProfileImage = () => {
 
         // console.log(data)
 
-        const response = await fetch('http://localhost:3000/api/userImage/image-form', {
+        const response = await fetch('https://earnhive.vercel.app/api/userImage/image-form', {
             method: 'POST',
             body: JSON.stringify({ enteredImage, refUsername }),
             headers: {

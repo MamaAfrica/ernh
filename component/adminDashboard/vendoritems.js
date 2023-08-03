@@ -44,7 +44,7 @@ function VendorItem(props) {
 
     }
     console.log(data)
-    const response = await fetch('http://localhost:3000/api/vendor/vendor-approve', {
+    const response = await fetch('https://earnhive.vercel.app/api/vendor/vendor-approve', {
       body: JSON.stringify(data),
       method: 'POST',
       headers: {

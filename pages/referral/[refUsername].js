@@ -153,7 +153,7 @@ const Referral = () => {
           referral: refUsername,
           signUpDate: signUpDate,
       }
-      const response = await fetch('http://localhost:3000/api/register/registerForm', {
+      const response = await fetch('https://earnhive.vercel.app/api/register/registerForm', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {

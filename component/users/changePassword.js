@@ -29,7 +29,7 @@ const ChangePassword = () => {
             setPassCheck("Password do not Match")
         }
 
-        const response = await fetch('http://localhost:3000/api/changePass/password', {
+        const response = await fetch('https://earnhive.vercel.app/api/changePass/password', {
             method: 'POST',
             body: JSON.stringify({ enteredEmail, enteredPassword, enterednewPassword }),
             headers: {

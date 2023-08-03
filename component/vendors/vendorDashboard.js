@@ -79,7 +79,7 @@ function VendorDashboard() {
 
         }
         // console.log(data)
-        const response = await fetch('http://localhost:3000/api/vendor/vendor-coupon', {
+        const response = await fetch('https://earnhive.vercel.app/api/vendor/vendor-coupon', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

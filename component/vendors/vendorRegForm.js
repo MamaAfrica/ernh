@@ -85,7 +85,7 @@ const VendorRegistration = () => {
 
         }
         console.log(data)
-        const response = await fetch('http://localhost:3000/api/vendor/vendor-register', {
+        const response = await fetch('https://earnhive.vercel.app/api/vendor/vendor-register', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
