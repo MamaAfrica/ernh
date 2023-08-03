@@ -1,0 +1,109 @@
+.figure{
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+}
+.about{
+    padding: 120px 90px;
+    background:linear-gradient(-270deg,#dcdcf1,rgb(222, 231, 236),rgb(238, 218, 218), #e4e6f4);
+    margin-bottom: -60px;
+    margin-top:  -70px;
+}
+.about h1{
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 50%;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    
+}
+.figure img{
+    width: 50%;
+    border-radius: 10px;
+    height: 40%;
+}
+.article p{
+    line-height: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 1.3em;
+    margin-left: 50px;
+}
+@media screen and (max-width:768px)  {
+    .figure{
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 50px;
+    }
+    .about{
+        padding: 120px 10px;
+        background:linear-gradient(-270deg,#dcdcf1,rgb(222, 231, 236),rgb(238, 218, 218), #e4e6f4);
+        margin-bottom: -60px;
+        margin-top:  -70px;
+    }
+    .about h1{
+        margin-bottom: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--p-col);
+        width: 30%;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        
+    }
+    .figure img{
+        width: 50%;
+        border-radius: 10px;
+        height: 40%;
+    }
+    .article p{
+        line-height: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        font-size: 1.3em;
+        margin-left: 50px;
+        padding-right: 50px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+    .figure{
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 50px;
+    }
+    .about{
+        padding: 120px 10px;
+        background:linear-gradient(-45deg,#dcdcf1,rgb(222, 231, 236),rgb(238, 218, 218), #e4e6f4);
+        margin-bottom: -60px;
+        margin-top:  -70px;
+    }
+    .about h1{
+        margin-bottom: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--p-col);
+        width: 70%;
+        margin-bottom: 50px;
+        margin-left: 15px;
+        
+    }
+    .figure img{
+        width: 100%;
+        border-radius: 10px;
+        height: 40%;
+    }
+    .article p{
+        line-height: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        font-size: 1.3em;
+        margin-left: 15px;
+        padding-right: 50px;
+    }
+ }

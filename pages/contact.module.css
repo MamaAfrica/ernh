@@ -1,11 +1,13 @@
 .section{
-    background-color: rgb(255, 255, 255);
-   
+    background:linear-gradient(-270deg,#dcdcf1,rgb(222, 231, 236),rgb(238, 218, 218), #e4e6f4);
+    
+    margin-top:  0px;
     text-align: center;
     padding-bottom: 200px;
     margin-bottom: -190px;
-    color: var(--s-col);
-    margin-top: -20px;
+    color: var(--p-col);
+    margin-top: -50px;
+    padding-top: 100px;
 }
 .header{
     margin-bottom: 100px;
@@ -31,11 +33,14 @@
     margin-bottom: 50px;
     font-weight: bold;
     font-size: 1.4em; 
-    border-bottom: solid 3px var(--s-col);
-    width: 10%;
-    margin-left: 45%;
+    font-weight: bold;
+   
+     text-align: center;
     padding-bottom: 10px;
    
+}
+.address p{
+    font-weight: bold;
 }
 .add{
     margin-bottom: 100px;
@@ -44,12 +49,12 @@
 }
 @media screen and (max-width:780px) {
     .section{
-        background-color: black;
+        background:linear-gradient(-45deg,#dcdcf1,rgb(222, 231, 236),rgb(238, 218, 218), #e4e6f4);
        
         text-align: center;
         padding-bottom: 200px;
         margin-bottom: -190px;
-        color: var(--s-col);
+        color: var(--p-col);
         
     }
     .header{

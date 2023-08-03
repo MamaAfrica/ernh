@@ -76,7 +76,7 @@ const WithdrawalForm = () => {
                             required id="amount"
                             name="amount"
                             ref={amountInputRef}
-                            placeholder="Amount in FIgure"
+                            placeholder="Amount in Figure"
                         />
 
 

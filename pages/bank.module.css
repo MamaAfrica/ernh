@@ -81,3 +81,39 @@
     background-color: var(--s-col);
     border-color: var(--p-col);
 }
+@media screen and (max-width:786px) {
+    .aside{
+        display: none;
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionOne{
+        margin-top: 100px;
+         
+        width: 100%;
+        margin-left: -1px;
+        padding: 20px;
+    }
+    .sectionOne h1{
+        width: 90%;
+    }
+}
+@media screen and (max-width:600px) {
+    .aside{
+        display: none;
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionOne{
+        margin-top: 200px;
+         
+        width: 100%;
+        margin-left: -1px;
+        padding: 20px;
+    }
+   
+}

@@ -67,7 +67,10 @@ function DashboardBanner(props) {
 
                 </div>
             </div>
-             <DashboardBE/>
+            <div style={{maxWidth:'130%'}}>
+            <DashboardBE/>
+            </div>
+            
         </div>
     )
 }

@@ -1,25 +1,8 @@
-.section{
+.sectionED{
     display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
-.sectionOne {
-    margin-top: -180px;
-    width: 80%;
-    margin-left: 13%;
-}
-.sectionOne h1{
-    margin-bottom: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    padding-bottom: 20px;
-    border-bottom: solid var(--s-col) 5px;
-    color: var(--p-col);
-    width: 30%;
-    margin-bottom: 50px;
-    
-}
-.earning div p{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: solid var(--s-col) 1px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2em;
+.sectionSet{
+    width: 150%;
 }

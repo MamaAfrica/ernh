@@ -24,6 +24,7 @@ function Profile() {
                 <DashboardSide />
             </div>
             <div className={classes.sectionTwo}>
+                
                 <DashboardBanner placed="My Profile" />
                 <div className={classes.sectionDetails}>
                     <h1>User Data</h1>

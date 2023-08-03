@@ -221,12 +221,14 @@
     
     .nav{
         display: flex;
-        width: 92%;
+        flex-direction: column;
+        width: 120%;
         justify-content: space-between;
         padding: 50px;
         margin-left: -30px;
     
     }
+    
     
     .dashboard{
         font-family: 'Times New Roman', Times, serif;

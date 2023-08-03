@@ -152,3 +152,76 @@ color: var(--s-col);
     color: var(--p-col);
     width: 30%;
 }
+@media screen and (max-width:768px)  {
+    
+ }
+ 
+@media screen and (max-width:600px)  {
+    .sectionDetails{
+        margin-top: 150px;
+        width: 92%;
+        margin-left: 2.5%;
+        
+    }
+    .date{
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+    padding: 20px;
+    border-radius: 10px;
+}
+.sectionThree{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.sectionThree>div{
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.sectionDetails h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 80%;
+    margin-bottom: 50px;
+    margin-top: 200px;
+    
+}
+.sectionFour{
+    margin-top: 20px;
+    background-color:var(--p-col);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sectionFour>div{
+    width: 95%;
+    margin-left: 10px;
+}
+.numReferred{
+    padding: 20px 0px;
+    color: var(--s-col);
+}
+
+.country{
+    padding: 10px;
+}
+ .security{
+    margin-top: -150px;
+ }
+ .withdrawal{
+    margin-top: -150px;
+ }
+ }
+@media screen and (max-width:385px)  {
+     
+ }
+@media screen and (max-width:320px)  {
+     
+ }

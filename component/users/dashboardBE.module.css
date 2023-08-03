@@ -126,13 +126,13 @@
         user-select: none;
       } 
       
-      .hiveCash{
+      .one{
         z-index: 1;
       }
-      .divTotal{
+      .two{
         z-index: 2;
       }
-      .hiveGame{
+      .zero{
         z-index: 0;
       }
        
@@ -143,7 +143,7 @@
 @media screen and (max-width:600px)  {
     .earning{
         position: relative;
-        width: 68%;
+        width: 88%;
        
         padding: 0px 50px 0px 0px;
       } 
