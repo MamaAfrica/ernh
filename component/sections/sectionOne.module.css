@@ -199,7 +199,209 @@
         width: 118.5%;
         margin-bottom: 50px;
         margin-left: -30px;
-         margin-top: -49.5px;
+         margin-top: -50px;
+    }
+    .figureMobile img{
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .figureMobileTwo{
+        display: block;
+        width: 90%;
+        margin-left: 10px;
+        margin-top: -10px;
+        
+    }
+    .figureMobileTwo img{
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+ 
+    .sectionEarn h3{
+        font-size: 1.5em;
+        color: var(--p-col);
+        font-weight: 900;
+    }
+    .sectionEarn{
+        background-color:#efe7cf ;
+        padding: 50px 30px 50px 30px;
+        border-radius: 5px;
+        width: 90%;
+        margin-left: 10px;
+    }
+    .sectionEarn p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        margin-top: 20px;
+        line-height: 25px;
+        width: 100%;
+        
+       
+    }
+    .btn button{
+        margin-top: 30px;
+        padding: 20px 80px 20px 80px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.1em;
+        border: solid 1px #754298;
+        background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .btn button:hover{
+      
+        background: rgba(240, 248, 255, 0);
+        color:var(--s-col);
+    }
+ }
+@media screen and (max-width:385px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 100px;
+    }
+    .sectionAll h2{
+        font-size: 2.4em;
+        padding-left: 20px;
+        color: var(--s-col);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .sectionAll p{
+        padding-left: 20px;
+        font-size: 1.2em;
+        line-height: 30px;
+        margin-top: 20px;
+        width: 90%;
+        
+    }
+    .sectionTwo{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .sectionTwo .figure img{
+        width: 100%;
+        display: none;
+    }
+    .figure{
+        margin-top: 100px;
+        position: absolute;
+        width: 40%;
+        right: 20px;
+        display: none;
+    }
+    .figureMobile{
+        display: block;
+        width: 121.59%;
+        margin-bottom: 50px;
+        margin-left: -30px;
+         margin-top: -50px;
+    }
+    .figureMobile img{
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .figureMobileTwo{
+        display: block;
+        width: 90%;
+        margin-left: 10px;
+        margin-top: -10px;
+        
+    }
+    .figureMobileTwo img{
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+ 
+    .sectionEarn h3{
+        font-size: 1.5em;
+        color: var(--p-col);
+        font-weight: 900;
+    }
+    .sectionEarn{
+        background-color:#efe7cf ;
+        padding: 50px 30px 50px 30px;
+        border-radius: 5px;
+        width: 90%;
+        margin-left: 10px;
+    }
+    .sectionEarn p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        margin-top: 20px;
+        line-height: 25px;
+        width: 100%;
+        
+       
+    }
+    .btn button{
+        margin-top: 30px;
+        padding: 20px 80px 20px 80px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.1em;
+        border: solid 1px #754298;
+        background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .btn button:hover{
+      
+        background: rgba(240, 248, 255, 0);
+        color:var(--s-col);
+    }
+ }
+ 
+ 
+@media screen and (max-width:325px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 100px;
+    }
+    .sectionAll h2{
+        font-size: 2.4em;
+        padding-left: 20px;
+        color: var(--s-col);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .sectionAll p{
+        padding-left: 20px;
+        font-size: 1.2em;
+        line-height: 30px;
+        margin-top: 20px;
+        width: 90%;
+        
+    }
+    .sectionTwo{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .sectionTwo .figure img{
+        width: 100%;
+        display: none;
+    }
+    .figure{
+        margin-top: 100px;
+        position: absolute;
+        width: 40%;
+        right: 20px;
+        display: none;
+    }
+    .figureMobile{
+        display: block;
+        width: 126.2%;
+        margin-bottom: 50px;
+        margin-left: -30px;
+         margin-top: -50px;
     }
     .figureMobile img{
         width: 100%;
