@@ -7,6 +7,8 @@ import EarningIcon from "../icons/earning";
 import ProfileIcon from "../icons/profile";
 import BankIcon from "../icons/bank";
 import Link from "next/link";
+import ShareIcon from "../icons/shareIcon";
+import DownlineIcon from "../icons/downline";
 function DashboardMain() {
     const [isCopied, setIsCopied] = useState(false);
     const { data: session, status } = useSession()
@@ -50,36 +52,80 @@ function DashboardMain() {
                 </button>
             </div>
             <div className={classes.sectionTwo}>
+                <div className={classes.easyDiv}>
                 <h4>Easy Access</h4>
+                </div>
+                
                 <div className={classes.icons}>
                     <div className={classes.icon}>
-                        <button>
-                        <Link href='/withdrawal'>  <WithdrawIcon /></Link>  
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href='/withdrawal'>  <WithdrawIcon /></Link>
 
-                        </button>
-                        <h4>Withdrawal</h4>
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Withdrawal</button>
+                        </div>
+
                     </div>
                     <div className={classes.icon}>
-                        <button>
-                          <Link href='/bank'><BankIcon /></Link>  
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href='/bank'><BankIcon /></Link>
 
-                        </button>
-                        <h4>Bank</h4>
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Bank</button>
+                        </div>
                     </div>
                     <div className={classes.icon}>
-                        <button>
-                          <Link href="/profile"> <ProfileIcon /></Link> 
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href="/profile"> <ProfileIcon /></Link>
 
-                        </button>
-                        <h4>Profile</h4>
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Profile</button>
+                        </div>
+                    </div>
+
+                    <div className={classes.icon}>
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href='/earning'> <EarningIcon /></Link>
+
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Earning</button>
+                        </div>
                     </div>
                     <div className={classes.icon}>
-                        <button>
-                          <Link href='/earning'> <EarningIcon /></Link> 
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href='/downline'> <DownlineIcon /></Link>
 
-                        </button>
-                        <h4>Earning</h4>
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Downline</button>
+                        </div>
                     </div>
+                    <div className={classes.icon}>
+                        <div className={classes.iconbtnOne}>
+                            <button>
+                                <Link href='/advert'><ShareIcon/> </Link>
+
+                            </button>
+                        </div>
+                        <div className={classes.btnTwo}>
+                            <button>Share</button>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>

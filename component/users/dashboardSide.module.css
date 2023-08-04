@@ -26,27 +26,17 @@
 
 @media screen and (max-width:768px)  {
     
-    .section{
-        background: white;
-        width: 10%;
-        padding-top: 100px;
-        padding-left: 20px;
-        padding-right: 20px;
-      z-index: 1;
-        
-    } 
+     .section{
+        display: none;
+     }
       
 
  }
  
-@media screen and (max-width:600px)  {
+@media screen and (max-width:425px)  {
      .section{
-    background: white;
-    width: 10%;
-    padding-top: 100px;
-    padding-left: 0px;
-    padding-right: 0px;
-  
+    
+  display: none;
     
 }
        

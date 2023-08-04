@@ -2,7 +2,7 @@
 .earning{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    min-width: 10%;
     padding: 0px 50px 0px 0px;
 }
 .hiveCash{
@@ -102,18 +102,76 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-@media screen and (max-width:768px)  {
+@media screen and (max-width:778px)  {
  
     
      
     .earning{
         position: relative;
-        width: 90%;
-       
+        max-width: 70%;
+       margin-top: 50px;
         padding: 0px 50px 0px 0px;
+        margin-left: 40px;
       } 
+      .hiveGame{
+        
+        display: none;
+    
+    }
+      /* .earning>div {
+        position: absolute;
+        width: 100%;
+        
+        display: flex;
+         
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+        user-select: none;
+      }  */
       
-      .earning>div {
+      .hiveCash{
+        background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+        margin-top: 50px;
+        width: 340px;
+        height: 175px;
+        margin-left: 50px;
+        padding: 30px 20px 50px 20px;
+        border-radius: 15px;
+        box-shadow: gray 2px 2px 5px;
+        transform: rotate(3deg);
+    order: 3;    
+    
+    }
+       
+
+    .divTotal{
+        background:  linear-gradient(to right,#01051e,  #051c5a,#061848);
+        margin-top: 50px;
+        width: 340px;
+        height: 175px;
+        margin-left: 50px;
+        padding: 30px 20px 50px 20px;
+        border-radius: 15px;
+        box-shadow: gray 2px 2px 5px;
+        order: 2;
+    }
+
+    .hiveGame{
+        background:  linear-gradient(to right,#ffffff, #fff,#ffffff);
+        margin-top: 50px;
+        width: 340px;
+        height: 175px;
+        margin-left: 50px;
+        padding: 30px 20px 50px 20px;
+        border-radius: 15px;
+        box-shadow: gray 2px 2px 5px;
+        transform: rotate(0deg);
+        order: 1;
+    
+    }
+    .earning>div {
         position: absolute;
         width: 100%;
         
@@ -125,17 +183,7 @@
         cursor: pointer;
         user-select: none;
       } 
-      
-      .one{
-        z-index: 1;
-      }
-      .two{
-        z-index: 2;
-      }
-      .zero{
-        z-index: 0;
-      }
-       
+   
       
 
  }
@@ -143,25 +191,28 @@
 @media screen and (max-width:600px)  {
     .earning{
         position: relative;
-        width: 88%;
-       
+        max-width: 90%;
+       margin-top: 50px;
         padding: 0px 50px 0px 0px;
+        margin-left: -30px;
       } 
  }
 @media screen and (max-width:385px)  {
     .earning{
         position: relative;
-        width: 60%;
-       
+        max-width: 90%;
+       margin-top: 50px;
         padding: 0px 50px 0px 0px;
-      } 
+        margin-left: -30px;
+      }  
  }
 @media screen and (max-width:320px)  {
     .earning{
         position: relative;
-        width: 67%;
-       margin-left: -20px;
+        max-width: 90%;
+       margin-top: 50px;
         padding: 0px 50px 0px 0px;
+        margin-left: -30px;
       } 
  }
 

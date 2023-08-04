@@ -156,13 +156,15 @@ color: var(--s-col);
     
  }
  
-@media screen and (max-width:600px)  {
+@media screen and (max-width:450px)  {
     .sectionDetails{
         margin-top: 150px;
         width: 92%;
         margin-left: 2.5%;
         
     }
+    
+    
     .date{
     text-align: center;
     width: 100%;

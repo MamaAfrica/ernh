@@ -8,11 +8,11 @@ import classes from './userDashboard.module.css'
 function UserDashboard() {
     return (
         <div className={classes.section}>
-             
-                
-                <DashboardSide />
+            <div className={classes.DashboardSide}>
 
-            
+                <DashboardSide />
+            </div>
+
             <div className={classes.sectionOne}>
                 <DashboardBanner placed="Dashboard" />
                 <DashboardMain />

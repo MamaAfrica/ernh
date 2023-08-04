@@ -62,37 +62,41 @@
 @media screen and (max-width:768px)  {
     .section{
         padding-left: 4%;
-          width: 95%;
+          max-width: 80%;
            margin-top: 30px;
-           margin-left: 30px;
+           margin-left: 50px;
+           
        }
        
       
 
  }
  
-@media screen and (max-width:600px)  {
+@media screen and (max-width:435px)  {
     .section{
         padding-left: 4%;
-          width: 75%;
+          max-width: 94%;
            margin-top: 30px;
-           margin-left: -10px;
+           margin-left: 5px;
+           
        }
        
  }
 @media screen and (max-width:385px)  {
     .section{
         padding-left: 4%;
-          width: 70%;
+          max-width: 94%;
            margin-top: 30px;
-           margin-left: -10px;
+           margin-left: 5px;
+           
        }
  }
 @media screen and (max-width:320px)  {
     .section{
-        padding-left: 4%;
-          width: 65%;
+        padding-left: 3%;
+          max-width: 95%;
            margin-top: 30px;
-           margin-left: -10px;
+           margin-left: 4px;
+           
        }
  }

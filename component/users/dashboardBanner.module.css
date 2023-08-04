@@ -1,5 +1,5 @@
 .banner{
-    width: 100%;
+    min-width: 100%;
     background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
     margin-top: -50px;
     height: 380px;
@@ -47,15 +47,17 @@
     background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;
 }
 .proImg li{
-    width: 120px;
-     padding: 13px 8px 13px 8px;
-    margin-top: -60px;
-    border-radius: 50%;
-}
-.proImg img{
-    width: 100%;
-    border-radius: 50%;
-}
+    max-width: 80px;
+      padding: 13px 8px 13px 8px;
+     margin-top: -50px;
+     border-radius: 50%;
+ }
+ .proImg img{
+    max-width: 100%;
+     border-radius: 50%;
+ border-radius: 50%;
+ }
+
 .username li{
     color: white;
     font-family: 'Times New Roman', Times, serif;
@@ -187,6 +189,16 @@
         padding: 50px;
     
     }
+    .proImg li{
+        width: 120px;
+         padding: 13px 8px 13px 8px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+    .proImg img{
+        width: 100%;
+        border-radius: 50%;
+    }
     
     .dashboard{
         font-family: 'Times New Roman', Times, serif;
@@ -208,7 +220,7 @@
     
  }
  
-@media screen and (max-width:600px)  {
+@media screen and (max-width:435px)  {
     .banner{
         width: 100%;
         background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
@@ -218,8 +230,25 @@
         padding-right: 5%;
       
     }
-    
     .nav{
+        display: flex;
+        flex-direction: row;
+        min-width: 115%;
+        justify-content: space-between;
+        margin-left: -18px;
+        margin-bottom: 30px;
+    }
+    .proImg li{
+       max-width: 80px;
+         padding: 13px 8px 13px 8px;
+        margin-top: -50px;
+        border-radius: 50%;
+    }
+    .proImg img{
+       max-width: 100%;
+        border-radius: 50%;
+    }
+    /* .nav{
         display: flex;
         flex-direction: column;
         width: 120%;
@@ -227,7 +256,7 @@
         padding: 50px;
         margin-left: -30px;
     
-    }
+    } */
     
     
     .dashboard{
@@ -261,11 +290,10 @@
     
     .nav{
         display: flex;
-        width: 83%;
+        flex-direction: row;
+        min-width: 117%;
         justify-content: space-between;
-        padding: 50px;
-        margin-left: -30px;
-    
+        margin-left: -18px;
     }
     
     .dashboard{
@@ -299,10 +327,10 @@
     
     .nav{
         display: flex;
-        width: 70%;
+        flex-direction: row;
+        min-width: 125%;
         justify-content: space-between;
-        padding: 50px;
-    
+         margin-left: -30px;
     }
     
     .dashboard{
