@@ -5,8 +5,12 @@
   margin-bottom: -50px;
   
   }
+  .section p{
+    color: var(--p-col);
+  }
   .section h2{
       text-align: center;
+      color: var(--p-col);
   }
   .card{
       padding-top: 50px;
@@ -43,6 +47,7 @@
       display: block;
       font-weight: bold;
       margin-bottom: 0.5rem;
+      color: var(--p-col);
     }
     
     .control input,
@@ -53,6 +58,7 @@
       border: 1px solid #ccc;
       padding: 0.25rem;
       width: 100%;
+      color: var(--p-col);
     }
     .actions button {
       font: inherit;
@@ -104,6 +110,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
+
     @media screen and (max-width:768px)  {
       .section{
         background-color: #FCF2E8;

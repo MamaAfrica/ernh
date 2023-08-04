@@ -1,12 +1,17 @@
 .section{
 background-color: #ffffff;
-padding-top: 20px;
+padding-top: 200px;
+padding-bottom: 100px;
+ margin-top: -200px;
 
 }
 .section h2{
     text-align: center;
   margin-bottom: 50px;
   color: var(--s-col);
+}
+.section h4{
+  color: var(--p-col);
 }
 .card{
     padding-top: 10px;
@@ -68,6 +73,8 @@ padding-top: 20px;
     border: 1px solid #ccc;
     padding: 0.25rem;
     width: 100%;
+    background-color: rgba(180, 171, 171, 0.313);
+    color: var(--p-col);
   }
    
   
@@ -132,10 +139,21 @@ padding-top: 20px;
 }
 .use{
   margin-top: 60px;
+  
+}
+.use p{
+  color: var(--p-col);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
 }
 .tandc{
   color: var(--s-col);
   font-weight: bold;
+}
+.itandc label{
+  color: var(--p-col);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
 }
 @media screen and (max-width:768px)  {
   .section{
