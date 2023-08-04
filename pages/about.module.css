@@ -31,6 +31,8 @@
     color: black;
     font-size: 1.3em;
     margin-left: 50px;
+    width: 90%;
+    text-align: justify;
 }
 @media screen and (max-width:768px)  {
     .figure{
@@ -91,6 +93,7 @@
         width: 70%;
         margin-bottom: 50px;
         margin-left: 15px;
+        font-size: 1em;
         
     }
     .figure img{
@@ -102,8 +105,10 @@
         line-height: 30px;
         font-family: 'Times New Roman', Times, serif;
         color: black;
-        font-size: 1.3em;
-        margin-left: 15px;
+        font-size: 1em;
+        margin-left: 19px;
         padding-right: 50px;
+        text-align: justify;
+        width: 100%;
     }
  }

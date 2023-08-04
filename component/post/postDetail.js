@@ -24,6 +24,14 @@ function PostDetail(props){
 
   // creating a share link
   const handleShareClick = async () => {
+
+    if(status==='unauthenticated'){
+      router.push('/login')
+    }else{
+     
+  
+
+
     if (navigator.share) {
       navigator
         .share({
@@ -49,7 +57,7 @@ function PostDetail(props){
       }
 
   }
-
+}
 
     return(
       <div className={classes.postDetail}>

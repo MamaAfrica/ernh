@@ -15,12 +15,12 @@ function PostItem(props) {
   // Join the first 20 words back into a string
   const result = firstTwentyWords.join(' ');
   function showDetailsHandler() {
+   
     if(status==='unauthenticated'){
       router.push('/login')
     }else{
       router.push('/post/' + props.id);
     }
-   
 
   }
 

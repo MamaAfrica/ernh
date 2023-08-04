@@ -1,11 +1,12 @@
  
-
+ 
 .item{
 
      width: 80%;
     margin-left: 10%;
     margin-top: 20px;
     border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .figure{
     width: 100%;
@@ -21,15 +22,15 @@
 }
 .itemBody h3{
     margin: 10px 0px 10px 0px;
-    color:var(--p-col);
+    
 }
 .itemBody h6{
     margin: 10px 0px 10px 0px;
-    color:var(--p-col);
+  
 }
 .itemBody p{
     margin: 20px 0px 20px 0px;
-    color:black;
+     
     font-size: 1.1em;
     font-family: 'Times New Roman', Times, serif;
     line-height: 25px;
