@@ -30,7 +30,7 @@ async function handler(req, res) {
             console.log('Connected to Mongo')
             console.log('Creating document')
             const user = await Vendor.findOne({ username: email })
-            console.log(user)
+            // console.log(user)
             //a function that would create the number of coupon
 
            async function createCoupons(realNumber) {

@@ -20,17 +20,17 @@ async function handler(req, res) {
 
             // Query transactions within the last 24 hours
             const transactions = await Users.find({ createdAt: { $gte: twentyFourHoursAgo, $lte: currentDate } })
-            console.log('aout')
-            console.log(transactions)
+            // console.log('aout')
+            // console.log(transactions)
 
             const { enteredImage, refUsername } = req.body
-            console.log({ enteredImage, refUsername })
+            // console.log({ enteredImage, refUsername })
 
             const user = await Users.findOneAndUpdate({ refUsername: refUsername }, { $set: { passport: enteredImage } })
 
             res.status(200).json(user)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
 }

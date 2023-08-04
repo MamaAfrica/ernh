@@ -27,10 +27,10 @@ async function handler(req, res) {
 
             const { firstname, lastname, username, password, phone, prefferedUsername,country, coupon, packagec, role, welcomeBonus, referalBonus, indirectReferalBonus, secondIndirectRBonus, hivepostOne, hivepostTwo, dailyLogin, hiveGame, referral, totalWithdrawal,withdrawalType,requestedWithdrawal, withdrawalRequestDate,registeredDate, loginDate, bank, accountNumber, bankName, passport, pin, signUpDate } = req.body
             //connect 
-            console.log('Connecting to Mongo')
+            // console.log('Connecting to Mongo')
             await connectDB()
-            console.log('Connected to Mongo')
-            console.log('Creating document')
+            // console.log('Connected to Mongo')
+            // console.log('Creating document')
 
             //checking if such email is already in the database
             // console.log('username check')
@@ -135,7 +135,7 @@ async function handler(req, res) {
             const allApprovedCoupons = allApprovedCouponsWithDates.map((el) => {
                 return el.slice(0, 24).trim()
             })
-            console.log(allApprovedCoupons)
+            // console.log(allApprovedCoupons)
 
             if (allApprovedCoupons.includes(coupon)) {
                 console.log('coupoun is the database')

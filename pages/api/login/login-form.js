@@ -28,7 +28,7 @@ async function handler(req, res) {
                 console.log({ username, password })
                 const user = await Users.findOne({ username })
                 if(!user){
-                    console.log('user not found')
+                    // console.log('user not found')
                     res.status(403)
                     return
                 }
@@ -74,9 +74,9 @@ async function handler(req, res) {
             } else if (role === 'Admin') {
                 console.log({ username, password })
                 const user = await Admin.findOne({ username })
-                console.log(user)
+                // console.log(user)
                 const validUser = await bcrypt.compare(password, user.password)
-                console.log(validUser)
+                // console.log(validUser)
                 if (!validUser) {
                     res.status(403).json({ message: 'not an Admin' })
                     return
@@ -84,9 +84,9 @@ async function handler(req, res) {
                 res.status(200).json(user);
             } else if (role === 'Vendor') {
                 console.log({ username, password })
-                console.log('Vendor')
+                // console.log('Vendor')
                 const user = await Vendor.findOne({ username: username })
-                console.log(user)
+                // console.log(user)
                 const validUser = await bcrypt.compare(password, user.password)
                 console.log(validUser)
                 if (!validUser) {

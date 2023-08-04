@@ -32,10 +32,7 @@ const MainNavigation = () => {
     if (status === "authenticated") {
 
         showProfile()
-    } else {
-        console.log('not true')
-    }
-
+    }  
     function signIn() {
         router.push('/login')
     }
