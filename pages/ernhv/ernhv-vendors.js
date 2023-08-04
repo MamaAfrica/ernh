@@ -1,4 +1,4 @@
- 
+ import classes from './ernhv-vendors.module.css'
 import VendorList from "@/component/adminDashboard/vendorlist"
  import Vendor from '../../model/vendorSchema'
 import connectDB from "@/utils/connectmongo"
@@ -6,7 +6,7 @@ import connectDB from "@/utils/connectmongo"
 
 function ErnhvVendors(props) {
     return (
-        <div style={{marginTop:"100px"}}>
+        <div className={classes.header}>
             <VendorList vendors={props.vendors} />
         
         </div>
