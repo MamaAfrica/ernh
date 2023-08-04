@@ -1,4 +1,5 @@
 import classes from './sectionFive.module.css'
+import Link from 'next/link'
  
 
 function SectionFive() {
@@ -17,7 +18,7 @@ function SectionFive() {
                         <p>  With Hive Recharge You can Sell Data and Airtime or purchase data/airtime with just your activities Balance and earn profit weekly or you may either Sub and Recharge yourself. </p>
 
                         <div className={classes.btn}>
-                            <button>Learn More</button>
+                        <button><Link href='/freelancing'>Learn More</Link></button>
                         </div>
 
                     </div>
@@ -35,7 +36,7 @@ function SectionFive() {
                             to yourself which means you can earn Over 10-25k weekly through the P2p section </p>
 
                         <div className={classes.btn}>
-                            <button>Learn More</button>
+                        <button><Link href='/freelancing'>Learn More</Link></button>
                         </div>
 
                     </div>

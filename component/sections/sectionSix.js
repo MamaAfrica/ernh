@@ -1,5 +1,5 @@
 import classes from './sectionSix.module.css'
- 
+ import Link from 'next/link'
 
 function SectionSix() {
     return (
@@ -18,7 +18,7 @@ function SectionSix() {
                         <p>With Hive game you can Win the sum of N500 on Each Correct winning and cashout to your Bank. This is as cool as would want it </p>
 
                         <div className={classes.btn}>
-                            <button>Learn More</button>
+                        <button><Link href='/freelancing'>Learn More</Link></button>
                         </div>
 
                     </div>
@@ -36,7 +36,7 @@ function SectionSix() {
                             when you’re been patronize by our users.  </p>
 
                         <div className={classes.btn}>
-                            <button>Learn More</button>
+                        <button><Link href='/freelancing'>Learn More</Link></button>
                         </div>
 
                     </div>

@@ -1,4 +1,5 @@
 import classes from './sectionThree.module.css'
+import Link from 'next/link'
 
 function SectionThree() {
     return (
@@ -21,7 +22,7 @@ function SectionThree() {
                             <li>E-Kitchen </li>
                         </ul>
                         <div className={classes.btn}>
-                            <button>Learn More</button>
+                        <button><Link href='/how-it-works'>Learn More</Link></button>
                         </div>
                     </div>
 

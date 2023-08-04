@@ -1,4 +1,5 @@
 
+import Link from 'next/link'
 import classes from './sectionTwo.module.css'
 
 function SectionTwo() {
@@ -21,7 +22,7 @@ function SectionTwo() {
                     delivers a sense of community and teamwork.</p>
             </div>
             <div className={classes.btn}>
-                <button>Learn More</button>
+                <button><Link href='/how-it-works'>Learn More</Link></button>
             </div>
         </div>
     )

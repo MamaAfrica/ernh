@@ -1,5 +1,5 @@
 import classes from './sectionOne.module.css'
-
+import Link from 'next/link'
 function SectionOne() {
     return (
         <div className={classes.section}>
@@ -21,7 +21,7 @@ function SectionOne() {
                         Imagine 20referrals in 3days. i.e 3,500x20=70,000
                         Not imaginary. As easy as possible. Earnhive making things easier.</p>
                     <div className={classes.btn}>
-                        <button>Learn More</button>
+                    <button><Link href='/how-it-works'>Learn More</Link></button>
                     </div>
                 </div>
                 <div className={classes.figure}>
