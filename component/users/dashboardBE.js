@@ -6,7 +6,7 @@ function DashboardBE(props) {
         <div className={classes.banner}>
 
             <div className={classes.earning}>
-                <div className={classes.stackedDiv}>
+                
                     <div className={classes.hiveCash}>
                         <p>Hive Cash</p>
                         <h1>{
@@ -18,8 +18,8 @@ function DashboardBE(props) {
                         } H</h1>
 
                     </div>
-                </div>
-                <div className={classes.stackedDiv}>
+               
+               
                 <div className={classes.divTotal} >
                     <div className={classes.total}>
                         <div className={classes.totalBalance}>
@@ -38,11 +38,11 @@ function DashboardBE(props) {
 
                         </div>
                     </div>
-                    </div>
+                  
 
 
                 </div>
-                <div className={classes.stackedDiv}>
+                 
                 <div className={classes.hiveGame}>
                     <p>Hive Game</p>
                     <h1>{session.user.hiveGame
@@ -51,7 +51,7 @@ function DashboardBE(props) {
                 </div>
             </div>
             </div>
-        </div>
+      
     )
 }
 export default DashboardBE

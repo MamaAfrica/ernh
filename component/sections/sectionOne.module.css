@@ -2,6 +2,7 @@
     width: 80%;
     margin-left: 10%;
     margin-top: 100px;
+    
 }
 .figureMobile{
     display: none;
@@ -21,7 +22,8 @@
     line-height: 30px;
     margin-top: 20px;
     width: 80%;
-    
+    font-family: 'Times New Roman', Times, serif;
+  
 }
 
 .sectionTwo{
@@ -56,7 +58,8 @@
     margin-top: 20px;
     line-height: 25px;
     width: 80%;
-    
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
    
 }
 .btn button{

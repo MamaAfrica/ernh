@@ -13,7 +13,7 @@ color: var(--s-col);
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
     margin-bottom: 20px;
-   
+    
 }
 .hive{
     display: flex;
@@ -29,7 +29,8 @@ color: var(--s-col);
 
 .sectionTwo .list{
      width: 60%;
-    
+     font-family: 'Times New Roman', Times, serif;
+     color: black;
     padding-top: 100px;
     padding-left: 50px;
 }
@@ -80,6 +81,8 @@ color: var(--s-col);
     padding-top: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
+     
+    color: black;
  }
 .sectionTwo .figure{
   
