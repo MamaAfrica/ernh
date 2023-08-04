@@ -114,4 +114,10 @@
         width: 95%;
         padding: 2.5%;
     }
+    .admin h2{
+        width: 100%;
+    }
+    .admin p{
+        margin-bottom: 30px;
+    }
  }

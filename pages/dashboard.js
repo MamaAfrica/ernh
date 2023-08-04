@@ -1,13 +1,21 @@
 const { default: UserDashboard } = require("@/component/userDashboard");
 import { useSession, getSession } from "next-auth/react"
+import { useRouter } from "next/router";
 
 function Dashboard(){
     const { data: session, status } = useSession()
-    if (status === "loading") {
+    const router = useRouter()
+     
+      if (status === "loading") {
         return <p>Loading...</p>
       }
       if (status === "unauthenticated") {
-        return <p>Access Denied</p>
+         router.push('/login')
+         return
+      }
+      if(status==='authenticated' && session.user.role !=='User'){
+        router.push('/login')
+        return
       }
     return ( 
         <div>
