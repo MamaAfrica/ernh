@@ -9,6 +9,7 @@ import PhoneIcon from "@/component/icons/phone";
 import ChangePassword from "@/component/users/changePassword";
 import Getpin from "@/component/users/getPin";
 import DashboardMain from "@/component/users/dashboardMain";
+import ProfileLinks from "@/component/users/profileLinks";
 function Profile() {
     const router = useRouter()
     const { data: session, status } = useSession()
@@ -28,7 +29,9 @@ function Profile() {
                 
                 <DashboardBanner placed="My Profile" />
                 <div className={classes.sectionDetails}>
-                    
+                    <div className={classes.main}>
+                        <ProfileLinks/>
+                    </div>
 
 
                     <h1>User Data</h1>

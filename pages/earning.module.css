@@ -6,3 +6,11 @@
 .sectionSet{
     width: 150%;
 }
+@media screen and (max-width:450px)  {
+    .aside{
+        display: none;
+    }
+    .sectionSet{
+        width: 100%;
+    } 
+}

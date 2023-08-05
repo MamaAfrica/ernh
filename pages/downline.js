@@ -4,6 +4,7 @@ import DashboardSide from "@/component/users/dashboardSideBar";
 import DashboardBanner from "@/component/users/dashboardBanner";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import ProfileLinks from "@/component/users/profileLinks";
 
 function Downline() {
     const { data: session, status } = useSession()
@@ -41,6 +42,9 @@ function Downline() {
                 </div>
             </div>
             <div className={classes.sectionOne}>
+            <div className={classes.main}>
+                        <ProfileLinks/>
+                    </div>
                 <h1>Direct Downlines</h1>
                 {userDownline}
             </div>

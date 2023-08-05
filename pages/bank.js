@@ -6,6 +6,7 @@ import bankData from "./api/bankdata";
 import { useState } from "react";
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import ProfileLinks from "@/component/users/profileLinks";
 
 function Bank() {
     const { data: session, status } = useSession()
@@ -97,6 +98,9 @@ function Bank() {
                 </div>
             </div>
             <div className={classes.sectionOne}>
+            <div className={classes.main}>
+                        <ProfileLinks/>
+                    </div>
                 <h1>Update Bank Details</h1>
                 <div className={classes.card}>
 

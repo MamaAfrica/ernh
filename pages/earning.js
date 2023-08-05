@@ -16,7 +16,7 @@ function Earning() {
     return (
 
         <div className={classes.sectionED}>
-            <div>
+            <div className={classes.aside}>
                 <DashboardSide />
             </div>
 
@@ -24,7 +24,7 @@ function Earning() {
                 <div>
                     <DashboardBanner placed="Earnings" />
                 </div>
-                <div>
+                <div className={classes.userEarns}>
                     <UserEarning />
                 </div>
 

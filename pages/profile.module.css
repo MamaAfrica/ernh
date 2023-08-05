@@ -152,9 +152,23 @@ color: var(--s-col);
     color: var(--p-col);
     width: 30%;
 }
+.main{
+    display: none;
+}
  
 @media screen and (max-width:768px)  {
-     
+    .sectionDetails{
+        margin-top: 150px;
+        width: 92%;
+        margin-left: 2.5%;
+        margin-bottom: -200px;
+    }
+    
+.main{
+    display: block;
+    margin-bottom: 60px;
+    width: 10%;
+}
  }
  
 @media screen and (max-width:450px)  {
@@ -162,13 +176,13 @@ color: var(--s-col);
         margin-top: 150px;
         width: 92%;
         margin-left: 2.5%;
-        
+        margin-bottom: -200px;
     }
+    
 .main{
     display: block;
-    margin-left: -10px;
-    margin-top: -140px;
-    margin-bottom: -120px;
+    margin-bottom: -130px;
+    width: 10%;
 }
     
     .date{

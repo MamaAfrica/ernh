@@ -4,6 +4,7 @@ import DashboardSide from "@/component/users/dashboardSideBar";
 import DashboardBanner from "@/component/users/dashboardBanner";
 import { useSession } from "next-auth/react";
 import WithdrawalForm from "@/component/users/withdrawalForm";
+import ProfileLinks from "@/component/users/profileLinks";
 
 function Withdrawal() {
     const { data: session, status } = useSession()
@@ -25,6 +26,9 @@ function Withdrawal() {
                 </div>
             </div>
             <div className={classes.sectionPay}>
+            <div className={classes.main}>
+                        <ProfileLinks/>
+                    </div>
                 <h1>Payment</h1>
 
                 <div className={classes.payment}>
