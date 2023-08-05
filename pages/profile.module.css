@@ -171,12 +171,12 @@ color: var(--s-col);
 }
  }
  
-@media screen and (max-width:450px)  {
+@media screen and (max-width:415px)  {
     .sectionDetails{
         margin-top: 150px;
         width: 92%;
         margin-left: 2.5%;
-        margin-bottom: -200px;
+        margin-bottom: -30px;
     }
     
 .main{
@@ -241,9 +241,4 @@ color: var(--s-col);
     margin-top: -150px;
  }
  }
-@media screen and (max-width:385px)  {
-     
- }
-@media screen and (max-width:320px)  {
-     
- }
+ 
