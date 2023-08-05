@@ -32,6 +32,7 @@
     border: none;
     box-shadow: gray 1px 1px 3px;
     cursor: pointer;
+    background-color: white;
 }
 
 .sectionOne button:hover {
@@ -75,6 +76,7 @@
     border: none;
     cursor: pointer;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 .btnTwo button {
@@ -240,6 +242,7 @@
             border: none;
             cursor: pointer;
             margin-bottom: 10px;
+            background-color: white;
         }
         .icons>div {
             margin-left: 12px;

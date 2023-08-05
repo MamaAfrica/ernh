@@ -1,25 +1,10 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
-import Modal from "react-overlays/Modal";
-import { useState } from 'react';
-import classes from './dashboardBE.module.css'
-import ModalCard from './modalCard';
-import { useRouter } from 'next/router';
-
-function DashboardBE() {
+ 
+ 
+import classes from './modalCard.module.css'
+function ModalCard() {
     const { data: session, status } = useSession()
-    const [showModal, setShowModal] = useState(false);
-    const renderBackdrop = (props) => <div className="backdrop" {...props} />;
-   
-
-//   var handleClose = () => setShowModal(false);
-
-  function handleClose(){
-    setShowModal(false)
      
-  }
-
-
-
     return (
         <div className={classes.banner}>
 
@@ -67,30 +52,10 @@ function DashboardBE() {
                     } H</h1>
 
                 </div>
-                <Modal
-        className={classes.modal}
-        show={showModal}
-        onHide={handleClose}
-        renderBackdrop={renderBackdrop}
-      >
-        <div>
-          <div className={classes.modalHeader}>
-             
-            <div>
-              <span className={classes.closeButton} onClick={handleClose}>
-               <button>Close</button>
-              </span>
-            </div>
-          </div>
-          <div className={classes.modalDesc}>
-            <ModalCard/>
-          </div>
-         
-        </div>
-      </Modal>
+                 
             </div>
             </div>
       
     )
 }
-export default DashboardBE
+export default ModalCard

@@ -7,6 +7,7 @@ import UsersList from '@/component/users/usersList'
 function TopEarners(props) {
     return (
         <div className={classes.header}>
+            <h1>Top Earners</h1>
 
             <UsersList users={props.users} />
         </div>

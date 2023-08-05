@@ -161,6 +161,7 @@
             border: none;
             cursor: pointer;
             margin-bottom: 10px;
+            background-color: white;
         }
         .icons>div {
             margin-left: 12px;
