@@ -122,7 +122,7 @@
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:415px) {
     .links{
         
         width: 900%;
@@ -131,42 +131,50 @@
         margin-bottom: 20px;
     }
 
+         
+        .sectionOne {
+
+            width: 95%;
+            padding: 10px 30px 10px 0px;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
         .icons {
             display: flex;
             justify-content: space-between;
-            width: 9%;
-            margin-left: 4px;
-            
-            
-        }
-        .icons>div {
-            margin-left: 1px;
+            width: 90%;
+            margin-left: -1px;
         }
 
         .easyDiv h4 {
-            margin-left: 20px;
+            margin-left: 10px;
+            font-size: 1.3em;
+            
         }
 
         .iconbtnOne button {
 
             box-shadow: gray 2px 2px 10px;
-            padding: 10px;
+            padding: 7px;
             border-radius: 50%;
             border: none;
             cursor: pointer;
             margin-bottom: 10px;
         }
+        .icons>div {
+            margin-left: 12px;
+        }
 
         .btnTwo button {
             color: var(--p-col);
             font-family: 'Times New Roman', Times, serif;
-            font-size: 1em;
+            font-size: .6em;
             border-radius: 10px;
             border: none;
             cursor: pointer;
             background-color: white;
         }
-
         .iconbtnOne button:hover {
 
             box-shadow: gray 2px 2px 10px;
@@ -178,9 +186,7 @@
             transition: 300ms;
         }
 
-        .easyDiv h4 {
-            font-size: 1.3em;
-        }
+      
 
         
 
