@@ -152,6 +152,7 @@ const RegisterForm = () => {
             loginDate: Number(currentDate),
             referral: 'Admin',
             signUpDate: signUpDate,
+            
         }
         const response = await fetch('api/register/registerForm', {
             method: 'POST',

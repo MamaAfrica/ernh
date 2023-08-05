@@ -124,6 +124,10 @@ async function handler(req, res) {
                 hivePostEarning: " ",
                 hivePostOneDate: 0,
                 hivePostTwoDate: 0,
+                activeWithdrawal:true,
+                extraOne: 0,
+                extraTwo: '',
+                extraThree: ''
 
 
             })

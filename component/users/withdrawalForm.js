@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 
 
 const WithdrawalForm = () => {
-
+    const[balanceErr,setBalanceErr] = useState(false)
     const { data: session } = useSession()
     const withdrawalInputRef = useRef()
     const amountInputRef = useRef()
@@ -21,10 +21,24 @@ const WithdrawalForm = () => {
     async function submitHandler(event) {
         event.preventDefault()
         const enteredWithdrawal = withdrawalInputRef.current.value;
-        const enteredAmount = amountInputRef.current.value;
-        const refUsername = session.user.usernmae
+        const enteredAmount = Number(amountInputRef.current.value);
+        const refUsername = session.user.refUsername
+        const userBalance = session.user.referalBonus +
+        session.user.indirectReferalBonus +
+        session.user.secondIndirectRBonus
 
-        const response = await fetch('http://localhost:3000/api/userImage/image-form', {
+        // console.log( typeof(userBalance))
+        // console.log( typeof(enteredAmount))
+        if(enteredAmount>7000 ){
+            setBalanceErr(<h3>Either you don't have Enough Balance or it is above 7000 </h3>)
+            return
+        }
+        if(enteredAmount> userBalance ){
+            setBalanceErr(<h3>Either you don't have Enough Balance or it is above 7000 </h3>)
+            return
+        }
+
+        const response = await fetch('api/withdrawal/userWithdrawal', {
             method: 'POST',
             body: JSON.stringify({ enteredWithdrawal, enteredAmount, refUsername }),
             headers: {
@@ -63,8 +77,10 @@ const WithdrawalForm = () => {
                             name="withdrawal"
                         >
                             <option>Chose Witdrawal Type</option>
-                            <option value="Afflite"> Afflite</option>
-                            <option value="Task">Task</option>
+                            {session.user.activeWithdrawal=== true? <option value="Afflite" > Afflite</option>:  <option value="Afflite"  disabled> Afflite</option>}
+                           
+                            {session.user.activeWithdrawal=== true? <option value="Task" > Afflite</option>:  <option value="Task"  disabled> Task</option>}
+                           
                         </select>
 
                     </div>
@@ -83,7 +99,7 @@ const WithdrawalForm = () => {
 
                     </div>
 
-
+                        {balanceErr}
                     <div className={classes.actions}>
                         <button type="submit">Submit a Request</button>
                     </div>

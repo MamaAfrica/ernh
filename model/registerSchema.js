@@ -159,6 +159,18 @@ const regSchema = new Schema({
     hivePostTwoDate:{
       type:Number
     },
+    activeWithdrawal:{
+      type:Boolean
+    },
+    extraOne:{
+      type:Number
+    },
+    extraTwo:{
+      type:String
+    },
+    extraThree:{
+      type:String
+    },
 
     
     // referredUsers:[{type:String}]
