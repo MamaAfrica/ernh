@@ -20,6 +20,10 @@ const WithdrawalForm = () => {
 
     async function submitHandler(event) {
         event.preventDefault()
+        if(session.user.activeWithdrawal===false){
+            return
+        }
+
         const enteredWithdrawal = withdrawalInputRef.current.value;
         const enteredAmount = Number(amountInputRef.current.value);
         const refUsername = session.user.refUsername
