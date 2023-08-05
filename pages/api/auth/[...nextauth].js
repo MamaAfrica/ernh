@@ -20,7 +20,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { username, password,role,newLogin } = credentials
-        const response = await fetch('https://earnhive.net/api/login/login-form', {
+        const response = await fetch('https://earnhive.vercel.app/api/login/login-form', {
           method: 'POST',
           body: JSON.stringify({ username, password,role,newLogin }),
           headers: {
