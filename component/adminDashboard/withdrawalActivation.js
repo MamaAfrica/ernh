@@ -1,29 +1,34 @@
 import { useRef } from "react";
-import { useState } from "react";
+ 
 import { useRouter } from 'next/router';
 
 import classes from '../../component/users/withdrawalForm.module.css'
 
 
 function WithdrawalActivation() {
-    const [confirmMsg, setConfirmMsg] = useState(false)
-
     const activeInputRef = useRef()
     const confirmInputRef = useRef()
     const router = useRouter()
 
-    if (confirmInputRef !=='YES') {
-        setConfirmMsg(<h3> You are no longer going ahead with the action</h3>)
-        return
-    }else{
-        setConfirmMsg(<h3>Deactivating..</h3>)
-    }
-    
+    let confirmMsg;
 
-    async function submitHandler() {
-        const response = await fetch('api/deactivateWithdrawal/deactivateWithdrawal', {
+    async function submitHandler(e) {
+        e.preventDefault()
+        const activeState = activeInputRef.current.value
+        const confirm = confirmInputRef.current.value
+        
+        if (confirm !== 'YES') {
+            confirmMsg = <h3> You are no longer going ahead with the action</h3>
+            return
+        } else {
+            confirmMsg = <h3>Deactivating..</h3>
+        }
+
+        console.log({activeState,confirm})
+
+        const response = await fetch('api/dw-form/dw', {
             method: 'POST',
-            body: JSON.stringify({ activeInputRef, confirmInputRef }),
+            body: JSON.stringify({ activeState }),
             headers: {
                 'Content-type': 'application/json'
             },
@@ -50,11 +55,13 @@ function WithdrawalActivation() {
 
 
                         <select
-                            ref={activeInputRef}
+                         
                             required
                             id="withdrawal"
                             name="withdrawal"
+                            ref={activeInputRef}
                         >
+                            <option>Choose an action</option>
                             <option value='activate'>Activate Withdrawal</option>
                             <option value='deactivate'>De-Activate Withdrawal</option>
 

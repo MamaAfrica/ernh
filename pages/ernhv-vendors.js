@@ -1,7 +1,7 @@
  import classes from './ernhv-vendors.module.css'
-import VendorList from "@/component/adminDashboard/vendorlist"
- import Vendor from '../../model/vendorSchema'
-import connectDB from "@/utils/connectmongo"
+ import VendorList from '@/component/adminDashboard/vendorlist'
+ import Vendor from '../model/vendorSchema'
+import connectDB from '@/utils/connectmongo'
 
 
 function ErnhvVendors(props) {
