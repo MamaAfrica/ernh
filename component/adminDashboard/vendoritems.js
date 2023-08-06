@@ -44,7 +44,7 @@ function VendorItem(props) {
 
     }
     console.log(data)
-    const response = await fetch('api/vendor/vendor-approve', {
+    const response = await fetch('https://www.earnhive.net/api/vendor/vendor-approve', {
       body: JSON.stringify(data),
       method: 'POST',
       headers: {

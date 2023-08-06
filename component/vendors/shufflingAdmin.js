@@ -43,7 +43,7 @@ changeAdmin()
             <div className={refreOne}>
                 <WhatsappIcon />
                 <h5>Quickloaded Assistant </h5>
-                <p><Link hrefLang='https://wa.link/iljqs0'>https://wa.link/iljqs0</Link> </p>
+                <p><Link href='https://wa.link/iljqs0'>https://wa.link/iljqs0</Link> </p>
             </div>
             <div className={refreTwo}>
                 <WhatsappIcon />

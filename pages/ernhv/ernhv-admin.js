@@ -64,7 +64,7 @@ const AdminRegistration = () => {
              
          }
          console.log(data)
-        const response = await fetch('api/admin/admin-register', {
+        const response = await fetch('https://www.earnhive.net/api/admin/admin-register', {
             method: 'POST',
             body: JSON.stringify( data ),
             headers: {

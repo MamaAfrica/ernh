@@ -42,7 +42,7 @@ function PostForm() {
     };
 
     console.log(data)
-    const response = await fetch('http://localhost:3000/api/admin/admin-post', {
+    const response = await fetch('https://www.earnhive.net/api/admin/admin-post', {
       body: JSON.stringify(data),
       method: 'POST',
       headers: {
