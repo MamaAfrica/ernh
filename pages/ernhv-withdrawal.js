@@ -1,9 +1,10 @@
 import WithdrawalActivation from "@/component/adminDashboard/withdrawalActivation"
+import classes from './coupon.module.css'
 
 function ErnhvWithdrawal(){
     return(
-        <div>
-            <h1>Activate and Deactivate Withdrawal</h1>
+        <div className={classes.withdrawal}>
+            <h2>Activate and Deactivate Withdrawal</h2>
             <WithdrawalActivation/>
         </div>
     )
