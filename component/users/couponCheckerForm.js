@@ -27,7 +27,7 @@ const CouponForm = () => {
         }
         
 
-        const response = await fetch('https://www.earnhive.net/api/userCoupon/coupon-form', {
+        const response = await fetch('api/userCoupon/coupon-form', {
             method: 'POST',
             body: JSON.stringify({coupon}),
             headers: {

@@ -43,8 +43,8 @@ function VendorItem(props) {
       couponsNumber: props.couponsNumber
 
     }
-    console.log(data)
-    const response = await fetch('https://www.earnhive.net/api/vendor/vendor-approve', {
+    // console.log(data)
+    const response = await fetch('api/vendor/vendor-approve', {
       body: JSON.stringify(data),
       method: 'POST',
       headers: {

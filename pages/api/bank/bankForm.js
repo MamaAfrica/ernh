@@ -10,9 +10,9 @@ const bcrypt = require('bcrypt')
         await connectDB()
         const{bank, bankName,accountNumber,pin,username} = req.body
       
-            console.log({bank, bankName,accountNumber,pin,username})
+            // console.log({bank, bankName,accountNumber,pin,username})
             const user = await Users.findOne({username:username})
-            console.log(user)
+            // console.log(user)
         
             await Users.findOneAndUpdate({ username: username },{$set:{bank:bank,bankName:bankName,accountNumber:accountNumber,pin:pin}})
            

@@ -25,10 +25,10 @@ async function handler(req, res) {
         try {
              
             const {firstname,lastname,prefferedUsername, username,phone, password,passport,link,bank,role } = req.body
-            console.log('Connecting to Mongo')
+            // console.log('Connecting to Mongo')
             await connectDB()
-            console.log('Connected to Mongo')
-            console.log('Creating document')
+            // console.log('Connected to Mongo')
+            // console.log('Creating document')
             const hashedPassword = await bcrypt.hash(password, 10)
             const doc = new Vendor({
                 _id: new mongoose.Types.ObjectId(),

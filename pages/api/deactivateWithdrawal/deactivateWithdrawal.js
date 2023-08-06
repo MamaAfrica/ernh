@@ -7,7 +7,7 @@ async function handler(req, res) {
         try {
             const{enteredWithdrawal,enteredAmount,refUsername} = req.body
 
-            console.log({enteredWithdrawal,enteredAmount,refUsername} )
+            // console.log({enteredWithdrawal,enteredAmount,refUsername} )
             await connectDB()
              
         } catch (error) {

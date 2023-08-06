@@ -42,7 +42,7 @@ const WithdrawalForm = () => {
             return
         }
 
-        const response = await fetch('https://www.earnhive.net/api/withdrawal/userWithdrawal', {
+        const response = await fetch('api/withdrawal/userWithdrawal', {
             method: 'POST',
             body: JSON.stringify({ enteredWithdrawal, enteredAmount, refUsername }),
             headers: {

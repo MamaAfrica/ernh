@@ -79,7 +79,7 @@ function VendorDashboard() {
 
         }
         // console.log(data)
-        const response = await fetch('https://www.earnhive.net/api/vendor/vendor-coupon', {
+        const response = await fetch('api/vendor/vendor-coupon', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

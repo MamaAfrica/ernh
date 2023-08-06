@@ -154,7 +154,7 @@ const RegisterForm = () => {
             signUpDate: signUpDate,
 
         }
-        const response = await fetch('https://www.earnhive.net/api/register/registerForm', {
+        const response = await fetch('api/register/registerForm', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

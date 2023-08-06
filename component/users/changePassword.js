@@ -29,7 +29,7 @@ const ChangePassword = () => {
             setPassCheck("Password do not Match")
         }
 
-        const response = await fetch('https://www.earnhive.net/api/changePass/password', {
+        const response = await fetch('api/changePass/password', {
             method: 'POST',
             body: JSON.stringify({ enteredEmail, enteredPassword, enterednewPassword }),
             headers: {
