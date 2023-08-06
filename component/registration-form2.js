@@ -76,7 +76,7 @@ const RegisterForm = () => {
             setLastNameErr(' ')
         }
 
-        if ((enteredCouponInputRef.length === 24 || enteredCouponInputRef.length === 25) && enteredCouponInputRef.slice(-2) === 'UC') {
+        if ((enteredCouponInputRef.length === 22 ||enteredCouponInputRef.length === 23 || enteredCouponInputRef.length === 24 || enteredCouponInputRef.length === 25 ||enteredCouponInputRef.length === 26 ) && enteredCouponInputRef.slice(-2) === 'UC') {
             setCouponErr(<p className={classes.green}>Please hold on...</p>)
         } else {
             setCouponErr(<p className={classes.red}>Please provide a valid Coupon</p>)
