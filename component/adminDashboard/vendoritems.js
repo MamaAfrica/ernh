@@ -21,7 +21,7 @@ function VendorItem(props) {
   let approvedClass;
   let disapproveBtn;
   let approveBtn;
-  if (props.couponsNumber!==0) {
+  if (props.couponsNumber !== 0) {
     approvedClass = classes.red
     disapproveBtn = <button onClick={setDissaprove} className={classes.disapproveBtn}>Disapprove</button>
     approveBtn = <button type='submit' className={classes.formBtn}>Approve</button>
@@ -36,16 +36,18 @@ function VendorItem(props) {
 
   async function setApprove(e) {
     e.preventDefault()
-
+    let email = props.email
+    let prefferedUsername = props.prefferedUsername
+    let couponsNumber = props.couponsNumber
     const data = {
       email: props.email,
       prefferedUsername: props.prefferedUsername,
       couponsNumber: props.couponsNumber
 
     }
-    // console.log(data)
-    const response = await fetch('api/vendor/vendor-approve', {
-      body: JSON.stringify(data),
+    console.log(data)
+    const response = await fetch(' https://www.earnhive.net/api/vendor/vendor-approve', {
+      body: JSON.stringify({ email, prefferedUsername, couponsNumber }),
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -75,9 +77,7 @@ function VendorItem(props) {
 
 
         <div className={classes.itemBody}>
-          <div className={classes.figure}>
-            <img src={props.passport} alt={props.prefferedUsername} />
-          </div>
+          
           <h3>{props.firstname}</h3>
           <h5>{props.lastname}</h5>
 

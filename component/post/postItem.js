@@ -16,13 +16,10 @@ function PostItem(props) {
   const result = firstTwentyWords.join(' ');
   function showDetailsHandler() {
    
-    if(status==='unauthenticated'){
-      router.push('/login')
-    }else{
       router.push('/post/' + props.id);
     }
 
-  }
+  
 
 
   return (<li className={classes.productItem}>

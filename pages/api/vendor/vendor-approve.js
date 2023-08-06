@@ -1,7 +1,7 @@
 import connectDB from "../../../utils/connectmongo"
 import Vendor from '../../../model/vendorSchema'
 
-import mongoose from "mongoose"
+ 
 
 //creating date for the coupon
 const date = new Date();
@@ -24,13 +24,13 @@ async function handler(req, res) {
 
             const { email, prefferedUsername, couponsNumber } = req.body
              
-            // console.log({ email, prefferedUsername, couponsNumber })
-            // console.log('Connecting to Mongo')
+            console.log({ email, prefferedUsername, couponsNumber })
+            console.log('Connecting to Mongo')
             await connectDB()
-            // console.log('Connected to Mongo')
-            // console.log('Creating document')
+            console.log('Connected to Mongo')
+            console.log('Creating document')
             const user = await Vendor.findOne({ username: email })
-            // console.log(user)
+            console.log(user)
             //a function that would create the number of coupon
 
            async function createCoupons(realNumber) {

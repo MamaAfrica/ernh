@@ -13,13 +13,7 @@ function PostDetail(props){
  const{data: session, status}  = useSession()
  let hivepost = props.hivepost
  let userEmail
- if(status==='authenticated'){
-  
-  userEmail = session.user.username
- }else{
-  console.log('out')
-  return;
- }
+ 
 
 
   // creating a share link
@@ -35,14 +29,14 @@ function PostDetail(props){
     if (navigator.share) {
       navigator
         .share({
-          url: `http://localhost:3000/post/${props.id}`,
+          url: `http://www.earnhive.net/post/${props.id}`,
         })
         .then(() => console.log('Shared successfully'))
         .catch((error) => console.error('Error sharing:', error));
     } else {
       console.log('Web Share API not supported.');
     }
-    const response = await fetch('http://localhost:3000/api/post/user-post',{
+    const response = await fetch('api/post/user-post',{
       body: JSON.stringify({userEmail,hivepost}),
       method: 'POST',
       headers:{

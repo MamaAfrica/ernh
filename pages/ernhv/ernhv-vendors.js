@@ -27,7 +27,7 @@ export async function getStaticProps() {
                 prefferedUsername: vendor.prefferedUsername,
                 
                 phone: vendor.phone,
-                passport: vendor.passport,
+               
                 bank:vendor.bank,
                 link:vendor.link,
                 approved: vendor.approved,
