@@ -66,7 +66,7 @@ const VendorLoginForm = () => {
             role: 'Vendor',
             newLogin: currentDate,
             redirect: true,
-            callbackUrl:"/ernhv/ernhvDashboard"
+            callbackUrl:"/ernhvDashboard"
         })
         // console.log(result)
        
