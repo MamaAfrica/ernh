@@ -26,7 +26,9 @@ const WithdrawalForm = () => {
 
         const enteredWithdrawal = withdrawalInputRef.current.value;
         const enteredAmount = Number(amountInputRef.current.value);
-        const refUsername = session.user.refUsername
+        //for database because it is in string
+        const requestedWithdrawal = String(amountInputRef.current.value);
+        const username = session.user.username
         const userBalance = session.user.referalBonus +
         session.user.indirectReferalBonus +
         session.user.secondIndirectRBonus
@@ -44,7 +46,7 @@ const WithdrawalForm = () => {
 
         const response = await fetch('api/withdrawal/userWithdrawal', {
             method: 'POST',
-            body: JSON.stringify({ enteredWithdrawal, enteredAmount, refUsername }),
+            body: JSON.stringify({ enteredWithdrawal, requestedWithdrawal, username }),
             headers: {
                 'Content-type': 'application/json'
             },
@@ -83,7 +85,7 @@ const WithdrawalForm = () => {
                             <option>Chose Witdrawal Type</option>
                             {session.user.activeWithdrawal=== true? <option value="Afflite" > Afflite</option>:  <option value="Afflite"  disabled> Afflite</option>}
                            
-                            {session.user.activeWithdrawal=== true? <option value="Task" > Afflite</option>:  <option value="Task"  disabled> Task</option>}
+                            {session.user.activeWithdrawal=== true? <option value="Task" > Task</option>:  <option value="Task"  disabled> Task</option>}
                            
                         </select>
 
