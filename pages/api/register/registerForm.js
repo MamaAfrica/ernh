@@ -50,7 +50,7 @@ async function handler(req, res) {
             //creating a username with email
             const refUsername = username.slice(0, username.indexOf('@'))
             //craeating referral link
-            const refLink = `http://localhost:3000/referral/${refUsername}`
+            const refLink = `https://earnhive.net/referral/${refUsername}`
 
 
            
