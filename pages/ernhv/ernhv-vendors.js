@@ -15,7 +15,7 @@ function ErnhvVendors(props) {
 export async function getStaticProps() {
     await connectDB()
     const vendors = await Vendor.find({})
-    console.log(vendors)
+    // console.log(vendors)
 
     return {
         props: {
