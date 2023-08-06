@@ -1,6 +1,7 @@
 import classes from './shufflingAdmin.module.css'
 import WhatsappIcon from '../icons/whatsapp'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 function ShufflingAdmin() {
 const router = useRouter()
@@ -42,17 +43,17 @@ changeAdmin()
             <div className={refreOne}>
                 <WhatsappIcon />
                 <h5>Quickloaded Assistant </h5>
-                <p>https://wa.link/iljqs0</p>
+                <p><Link hrefLang='https://wa.link/iljqs0'>https://wa.link/iljqs0</Link> </p>
             </div>
             <div className={refreTwo}>
                 <WhatsappIcon />
                 <h5>Ajah's Media</h5>
-                <p>https://wa.link/1zlrg0</p>
+                <p><Link href='https://wa.link/1zlrg0'>https://wa.link/1zlrg0</Link> </p>
             </div>
             <div className={refreThree}>
                 <WhatsappIcon />
                 <h5>Digital Bigsteve  </h5>
-                <p>https://wa.link/8o36fy</p>
+                <p><Link href="https://wa.link/8o36fy">https://wa.link/8o36fy</Link> </p>
             </div>
         </div>
     )
