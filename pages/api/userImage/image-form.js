@@ -28,7 +28,7 @@ async function handler(req, res) {
 
             const user = await Users.findOneAndUpdate({ refUsername: refUsername }, { $set: { passport: enteredImage } })
 
-            res.status(200).json(user)
+            res.status(200).json({message:'created'})
         } catch (error) {
             // console.log(error)
         }

@@ -21,7 +21,7 @@ const bcrypt = require('bcrypt')
              return
             }
          
-            res.status(200).json(user);
+            res.status(200).json({message:'created'})
          
          
         } catch (error) {
