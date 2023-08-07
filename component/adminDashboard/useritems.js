@@ -50,20 +50,21 @@ let username = props.username
             value={props.requestedWithdrawal}
             readOnly
           />
-          <button type='submit'>Submit</button>
+          <div className={classes.approveBtn}><br/>
+          <button type='submit'>Approve</button>
+          </div>
+          
         </form>
 
         <h5>{props.withdrawalRequestDate}</h5>
         <hr />
         <h3>{props.firstname}</h3>
         <h5>{props.lastname}</h5>
-        <h5>{props.bankName}</h5>
+        <h5>{props.bankName}</h5><br/>
 
-        <p>{props.phone}</p>
-        <p>{props.prefferedUsername}</p>
-        <p>{props.bank}</p>
-
-
+        <p>{props.phone}</p> 
+        <p>{props.prefferedUsername}</p><br/>
+        <p>{props.bank}</p><br/>
         <p>{props.couponRequestDate}</p>
         <hr/>
         <h1>{userBal}</h1>

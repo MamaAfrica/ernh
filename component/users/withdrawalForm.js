@@ -37,8 +37,8 @@ const WithdrawalForm = () => {
 
         // console.log( typeof(userBalance))
         // console.log( typeof(enteredAmount))
-        if(enteredAmount>7000 ){
-            setBalanceErr(<h3>Either you don't have Enough Balance or it is above 7000 </h3>)
+        if(enteredAmount<7000 ){
+            setBalanceErr(<h3>Either you don't have Enough Balance or it is below 7000 </h3>)
             return
         }
         if(enteredAmount> UserB ){

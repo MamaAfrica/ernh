@@ -81,3 +81,13 @@ background-color: rgb(173, 173, 243);
     background-color: red;
     color: white;
 }
+.approveBtn button{
+    margin-left: 10px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    background-color: rgb(221, 163, 163);
+    cursor: pointer;
+}
