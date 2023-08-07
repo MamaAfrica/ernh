@@ -20,6 +20,9 @@ return(
             bankName={user.bankName}
             bank={user.bank}
             requestedWithdrawal={user.requestedWithdrawal}
+            totalWithdrawal={user.totalWithdrawal}
+            referalBonus={user.referalBonus}
+            secondIndirectRBonus={user.secondIndirectRBonus}
             
             withdrawalRequestDate={user.withdrawalRequestDate}
           

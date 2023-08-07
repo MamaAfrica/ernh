@@ -33,14 +33,20 @@ const WithdrawalForm = () => {
         session.user.indirectReferalBonus +
         session.user.secondIndirectRBonus
 
+        let UserB = userBalance-  session.user.totalWithdrawal
+
         // console.log( typeof(userBalance))
         // console.log( typeof(enteredAmount))
         if(enteredAmount>7000 ){
             setBalanceErr(<h3>Either you don't have Enough Balance or it is above 7000 </h3>)
             return
         }
-        if(enteredAmount> userBalance ){
+        if(enteredAmount> UserB ){
             setBalanceErr(<h3>Either you don't have Enough Balance or it is above 7000 </h3>)
+            return
+        }
+        if(session.user.packagec !=='Hivenaira N 4500'){
+            setBalanceErr(<h3>Wait until your last Request is approved </h3>)
             return
         }
 
