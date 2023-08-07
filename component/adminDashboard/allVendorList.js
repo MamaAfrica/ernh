@@ -12,7 +12,7 @@ return(
             firstname={vendor.firstname}
             lastname={vendor.lastname}
             approved= {vendor.approved}
-            passport = {vendor.passport}
+           
             email = {vendor.username}
             prefferedUsername = {vendor.prefferedUsername}
             couponsNumber = {vendor.couponsNumber}
