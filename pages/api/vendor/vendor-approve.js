@@ -66,10 +66,7 @@ async function handler(req, res) {
                       { "new": true, "upsert": true },
   
   
-                  ).then(function (err, managerparent) {
-                      if (err) throw err;
-                      console.log(managerparent);
-                  })
+                  ) 
                     //updating the vendor coupon number
                     await Vendor.findOneAndUpdate({ username: email }, { $set: {  couponsNumber: 0 } })
                   
