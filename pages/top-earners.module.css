@@ -1,0 +1,19 @@
+.header{
+    
+        background-color: white;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-bottom: -50px;
+        margin-top: -50px;
+    }
+    .header h1{
+        margin-bottom: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--p-col);
+        width: 30%;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        
+    }

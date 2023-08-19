@@ -1,0 +1,52 @@
+ 
+ 
+.item{
+
+     width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.figure{
+    width: 100%;
+    margin: 0px auto;
+}
+.figure img{
+    width: 100%;
+    
+}
+.itemBody{
+    margin-top: 20px;
+    padding: 20px;
+}
+.itemBody h3{
+    margin: 10px 0px 10px 0px;
+    
+}
+.itemBody h6{
+    margin: 10px 0px 10px 0px;
+  
+}
+.itemBody p{
+    margin: 20px 0px 20px 0px;
+     
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 25px;
+}
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+     
+}

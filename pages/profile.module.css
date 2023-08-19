@@ -1,0 +1,244 @@
+.section{
+    display: flex;
+}
+.sectionDetails{
+    margin-top: 150px;
+    width: 90%;
+    margin-left: 2%;
+}
+.date{
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+    padding: 20px;
+    border-radius: 10px;
+}
+.date h3{
+    color: white;
+    margin-bottom: 10px;
+}
+.date p{
+    color: var(--s-col);
+}
+.sectionThree{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.sectionThree>div{
+    width: 30%;
+    padding: 50px;
+    border-radius: 10px;
+}
+.refUsername{
+    background: linear-gradient(to right,#000000, rgba(5, 5, 118, 0.486),#000000);
+}
+.refUsername h3{
+    color: white;
+    margin-bottom: 10px;
+}
+.refUsername p{
+    color: rgba(229, 228, 228, 0.687);
+    font-weight: 900;
+    font-size: 1.1em;
+}
+.username{
+    background: linear-gradient(to right,#000000, #000000,rgba(5, 5, 118, 0.486));
+}
+.username h3{
+    color: white;
+    margin-bottom: 10px;
+}
+.username p{
+    color: rgba(229, 228, 228, 0.687);
+    font-weight: 900;
+    font-size: 1.1em;
+}
+.numReferred{
+    padding: 50px;
+   
+    height: 30%;
+     
+}
+.numReferred h2{
+    font-size: 2em;
+    color: var(--s-col);
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+.numReferred>.btn button{
+ border-radius: 50%;
+ border: solid var(--s-col) 1px;
+ background-color: #00000000;
+padding: 30px;
+font-size: 2em;
+font-weight: bold;
+box-shadow: var gray 1px 1px 1px;
+color: var(--s-col);
+}
+.referral{
+    background: linear-gradient(to right,rgba(5, 5, 118, 0.486),#000000, #000000);
+}
+.referral h3{
+    color: white;
+    margin-bottom: 10px;
+}
+.referral p{
+    color: rgba(229, 228, 228, 0.687);
+    font-weight: 900;
+    font-size: 1.1em;
+}
+.sectionFour{
+    margin-top: 20px;
+    background-color:var(--p-col);
+    border-radius: 10px;
+    display: flex;
+}
+.sectionFour>div{
+    width: 45%;
+    margin-left: 50px;
+}
+.numReferred{
+    padding: 50px;
+    color: var(--s-col);
+}
+
+.country{
+    padding: 50px;
+}
+.country>div{
+    width: 100%;
+    margin-top: 100px;
+  
+}
+.country>div img{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+}
+.country p{
+    color: var(--s-col);
+    font-size: 1.4em;
+    font-weight:bold;
+    margin-bottom: 10px;
+}
+.security{
+    margin-top:50px;
+}
+.security h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+}
+.sectionDetails h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+    margin-bottom: 50px;
+    
+}
+.withdrawal{
+    margin-top:50px;
+}
+.withdrawal h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+}
+.main{
+    display: none;
+}
+ 
+@media screen and (max-width:768px)  {
+    .sectionDetails{
+        margin-top: 150px;
+        width: 92%;
+        margin-left: 2.5%;
+        margin-bottom: -200px;
+    }
+    
+.main{
+    display: block;
+    margin-bottom: 60px;
+    width: 10%;
+}
+ }
+ 
+@media screen and (max-width:415px)  {
+    .sectionDetails{
+        margin-top: 150px;
+        width: 92%;
+        margin-left: 2.5%;
+        margin-bottom: -30px;
+    }
+    
+.main{
+    display: block;
+    margin-bottom: -130px;
+    width: 10%;
+}
+    
+    .date{
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+    padding: 20px;
+    border-radius: 10px;
+}
+.sectionThree{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.sectionThree>div{
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.sectionDetails h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 80%;
+    margin-bottom: 50px;
+    margin-top: 200px;
+    
+}
+.sectionFour{
+    margin-top: 20px;
+    background-color:var(--p-col);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sectionFour>div{
+    width: 95%;
+    margin-left: 10px;
+}
+.numReferred{
+    padding: 20px 0px;
+    color: var(--s-col);
+}
+
+.country{
+    padding: 10px;
+}
+ .security{
+    margin-top: -150px;
+ }
+ .withdrawal{
+    margin-top: -150px;
+ }
+ }
+ 

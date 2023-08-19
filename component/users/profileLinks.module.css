@@ -1,0 +1,319 @@
+.icons {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.icons>div {
+    margin-left: 30px;
+}
+
+.iconbtnOne button {
+
+    box-shadow: gray 2px 2px 10px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btnTwo button {
+    color: var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.iconbtnOne button:hover {
+
+    box-shadow: gray 2px 2px 10px;
+    padding: 10px;
+    border-radius: 0%;
+    border: none;
+    cursor: pointer;
+    background-color: var(--s-col);
+    transition: 300ms;
+}
+
+.easyDiv h4 {
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--p-col);
+    margin-left: 40px
+}
+
+.sectionTwo {
+
+    margin-right: -10px;
+
+}
+
+@media screen and (max-width:768px) {
+    .links{
+        
+        width: 900%;
+    }
+    .links h4{
+        margin-bottom: 30px;
+    }
+   
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        width: 93%;
+        margin-left: 40px;
+    }
+
+    .easyDiv h4 {
+        margin-left: 70px;
+     
+    }
+
+    .iconbtnOne button {
+
+        box-shadow: gray 2px 2px 10px;
+        padding: 10px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .btnTwo button {
+        color: var(--p-col);
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .iconbtnOne button:hover {
+
+        box-shadow: gray 2px 2px 10px;
+        padding: 10px;
+        border-radius: 0%;
+        border: none;
+        cursor: pointer;
+        background-color: var(--s-col);
+        transition: 300ms;
+    }
+
+    .easyDiv h4 {
+        font-size: 1.3em;
+  
+    }
+
+    .sectionTwo {
+        max-width: 660px;
+        min-width: 660px;
+        margin-right: 40px;
+
+    }
+
+
+
+}
+
+@media screen and (max-width:415px) {
+    .links{
+        
+        width: 900%;
+    }
+    .links h4{
+        margin-bottom: 20px;
+    }
+
+         
+        .sectionOne {
+
+            width: 95%;
+            padding: 10px 30px 10px 0px;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin-left: -1px;
+        }
+
+        .easyDiv h4 {
+            margin-left: 10px;
+            font-size: 1.3em;
+            
+        }
+
+        .iconbtnOne button {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 7px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+        .icons>div {
+            margin-left: 12px;
+        }
+
+        .btnTwo button {
+            color: var(--p-col);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: .6em;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+        .iconbtnOne button:hover {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 10px;
+            border-radius: 0%;
+            border: none;
+            cursor: pointer;
+            background-color: var(--s-col);
+            transition: 300ms;
+        }
+
+      
+
+        
+
+    
+}
+
+/* @media screen and (max-width:385px) {
+    .links{
+        
+        width: 900%;
+    }
+    .links h4{
+        margin-bottom: 20px;
+    }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin-left: 1px;
+            
+            
+        }
+        .icons>div {
+            margin-left: 4px;
+        }
+
+        .easyDiv h4 {
+            margin-left: 20px;
+        }
+
+        .iconbtnOne button {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .btnTwo button {
+            color: var(--p-col);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .iconbtnOne button:hover {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 10px;
+            border-radius: 0%;
+            border: none;
+            cursor: pointer;
+            background-color: var(--s-col);
+            transition: 300ms;
+        }
+
+        .easyDiv h4 {
+            font-size: 1.3em;
+        }
+
+}
+
+@media screen and (max-width:325zpx) {
+    .links{
+        
+        width: 900%;
+    }
+    .links h4{
+        margin-bottom: 20px;
+    }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: 2px;
+            
+            
+        }
+        .icons>div {
+            margin-left: 5px;
+        }
+
+        .easyDiv h4 {
+            margin-left: 20px;
+        }
+
+        .iconbtnOne button {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 7px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .btnTwo button {
+            color: var(--p-col);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: .8em;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .iconbtnOne button:hover {
+
+            box-shadow: gray 2px 2px 10px;
+            padding: 10px;
+            border-radius: 0%;
+            border: none;
+            cursor: pointer;
+            background-color: var(--s-col);
+            transition: 300ms;
+        }
+
+        .easyDiv h4 {
+            font-size: 1.3em;
+        }
+
+} */

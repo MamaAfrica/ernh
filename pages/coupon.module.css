@@ -1,0 +1,29 @@
+.coupon{
+    background-color: white;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    margin-bottom: -50px;
+    margin-top: -50px;
+}
+.withdrawal{
+    background-color: white;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    margin-bottom: -50px;
+    margin-top: -50px;
+    width: 80%;
+    margin-left: 10%;
+}
+.withdrawal h2{
+    
+        font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 40%;
+    margin-left: 10%;
+    margin-bottom: 60px;
+    margin-top: 100px;
+    
+    
+}

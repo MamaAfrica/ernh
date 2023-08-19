@@ -1,0 +1,354 @@
+.banner{
+    min-width: 100%;
+    background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+    margin-top: -50px;
+    height: 380px;
+    border-bottom-right-radius: 100px;
+    padding-right: 5%;
+  
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 50px;
+
+}
+.dashboard{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.profile{
+    display: flex;
+    margin-left: 50px;
+    width: 30%;
+}
+.welcome h2{
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.welcomeUser{
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.userInit li{
+    border: solid 1px var(--s-col);
+    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+    padding: 43px 38px 43px 38px;
+    margin-top: -30px;
+    border-radius: 50%;
+    list-style-type: none;
+    color: black;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+.userInit li:hover{
+    background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;
+}
+.proImg li{
+    max-width: 80px;
+      padding: 13px 8px 13px 8px;
+     margin-top: -50px;
+     border-radius: 50%;
+ }
+ .proImg img{
+    max-width: 100%;
+     border-radius: 50%;
+ border-radius: 50%;
+ }
+
+.username li{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+
+}
+.less{
+    cursor: pointer;
+}
+.earning{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 50px 0px 0px;
+}
+.hiveCash{
+    background:  linear-gradient(to right,#b48118, var(--s-col),#b48118);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+    transform: rotate(5deg);
+
+
+}
+.hiveCash h1{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.hiveCash p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.divTotal{
+    background:  linear-gradient(to right,#01051e,  #051c5a,#061848);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    border-top: solid white 1px;
+    padding-top: 20px;
+   
+}
+ 
+.bank{
+   margin-top: 5px;
+    width: 50px;
+   
+}
+.bank p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.7em; 
+   
+}
+.bank div{
+    display: flex;
+}
+.bank span{
+    margin-left: 2px;
+    
+    background: #920fc1;
+    padding: 2px 6px;
+    width: 2px;
+    border-radius: 50%;
+}
+.totalBalance h1{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.totalBalance p{
+    font-size: larger;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.hiveGame{
+    background:  linear-gradient(to right,#ffffff, #fff,#ffffff);
+    margin-top: 50px;
+    width: 340px;
+    height: 175px;
+    margin-left: 50px;
+    padding: 30px 20px 50px 20px;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 5px;
+    transform: rotate(-5deg);
+
+
+}
+.hiveGame h1{
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.hiveGame p{
+    font-size: larger;
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width:768px)  {
+    
+    .banner{
+        width: 107%;
+        background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+        margin-top: 50px;
+        height: 380px;
+        border-bottom-right-radius: 100px;
+        padding-right: 0%;
+      
+    }
+    
+    .nav{
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        padding: 50px;
+    
+    }
+    .proImg li{
+        width: 120px;
+         padding: 13px 8px 13px 8px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+    .proImg img{
+        width: 100%;
+        border-radius: 50%;
+    }
+    
+    .dashboard{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .profile{
+        display: flex;
+        margin-left: 50px;
+        width: 30%;
+    }
+    .welcome h2{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .welcomeUser{
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+    
+ }
+ 
+@media screen and (max-width:435px)  {
+    .banner{
+        width: 100%;
+        background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+        margin-top: 50px;
+        height: 380px;
+        border-bottom-right-radius: 100px;
+        padding-right: 5%;
+      
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        min-width: 115%;
+        justify-content: space-between;
+        margin-left: -18px;
+        margin-bottom: 30px;
+    }
+    .proImg li{
+       max-width: 80px;
+         padding: 13px 8px 13px 8px;
+        margin-top: -50px;
+        border-radius: 50%;
+    }
+    .proImg img{
+       max-width: 100%;
+        border-radius: 50%;
+    }
+    /* .nav{
+        display: flex;
+        flex-direction: column;
+        width: 120%;
+        justify-content: space-between;
+        padding: 50px;
+        margin-left: -30px;
+    
+    } */
+    
+    
+    .dashboard{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .profile{
+        display: flex;
+        margin-left: 10px;
+        width: 30%;
+    }
+    .welcome h2{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .welcomeUser{
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+ }
+@media screen and (max-width:385px)  {
+    .banner{
+        width: 100%;
+        background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+        margin-top: 50px;
+        height: 380px;
+        border-bottom-right-radius: 100px;
+        padding-right: 5%;
+      
+    }
+    
+    .nav{
+        display: flex;
+        flex-direction: row;
+        min-width: 117%;
+        justify-content: space-between;
+        margin-left: -18px;
+    }
+    
+    .dashboard{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .profile{
+        display: flex;
+        margin-left: 10px;
+        width: 30%;
+    }
+    .welcome h2{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .welcomeUser{
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+ }
+@media screen and (max-width:320px)  {
+    .banner{
+        width: 100%;
+        background:linear-gradient(-270deg,#020243,var(--p-col), #050A30);
+        margin-top: 50px;
+        height: 380px;
+        border-bottom-right-radius: 100px;
+        padding-right: 5%;
+      
+    }
+    
+    .nav{
+        display: flex;
+        flex-direction: row;
+        min-width: 125%;
+        justify-content: space-between;
+         margin-left: -30px;
+    }
+    
+    .dashboard{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .profile{
+        display: flex;
+        margin-left: 10px;
+        width: 30%;
+    }
+    .welcome h2{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .welcomeUser{
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+ }
+

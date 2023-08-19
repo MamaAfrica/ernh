@@ -1,0 +1,107 @@
+.section{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+   
+   
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding:20px 100px 20px 100px;
+    
+}
+
+.choose{
+    font-size: 3em;
+    font-weight: 900;
+}
+.logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 200px;
+    
+}
+.logo img{
+    width: 4%;
+}
+.earn{
+    font-size: 2.5em;
+    font-weight: 400;
+    color: grey;
+}
+.hive{
+    color: var(--s-col);
+    font-size: 1.6em;
+    font-weight: 900;
+}
+.short{
+    text-align: start;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 25px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.btn button{
+    margin-top: 30px;
+    padding: 20px 80px 20px 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    border: solid 1px #754298;
+    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.btn button:hover{
+  
+    background: rgba(240, 248, 255, 0);
+    color:var(--s-col);
+}
+@media screen and (max-width:768px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+        
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 100px 20px 100px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+    .section{
+        width: 90%;
+        margin-left: 10px;
+        margin-top: 50px;
+        
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 10px 20px 50px;
+    }
+ }
+@media screen and (max-width:385px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+       
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding:20px 30px 20px 50px;
+    }
+ }
+@media screen and (max-width:320px)  {
+    .section{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 50px;
+        
+       
+        background-repeat: no-repeat;
+        background-size: contain;
+         padding:20px 20px 20px 50px;
+    }
+ }

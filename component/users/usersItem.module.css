@@ -1,0 +1,57 @@
+.itemBody {
+    background: linear-gradient(to left, rgb(255, 255, 255), rgba(187, 191, 231, 0.089), rgba(153, 168, 233, 0.433), white);
+     transition: 1000ms;
+     border: solid gray 1px;
+     padding: 20px;
+     border-radius: 10px;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .itemBody:hover {
+     background: linear-gradient(to right, rgb(255, 255, 255), rgba(187, 191, 231, 0.089), rgba(153, 168, 233, 0.433), white);
+     transition: 1000ms;
+     box-shadow: gray 1px 2px 10px;
+ }
+
+.userInit p{
+    border: solid 1px var(--s-col);
+    background:linear-gradient(45deg,var(--s-col),#69B4CE) ;
+    padding: 13px 8px 13px 8px;
+    margin-top: -10px;
+   width: 25%;
+   text-align: center;
+   border-radius: 50%;
+}
+.userInit p:hover{
+    background:linear-gradient(45deg,#69B4CE,var(--s-col)) ; ;
+}
+.total{
+    color:red;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.username{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--p-col);
+}
+.badge{
+    width: 30%;
+}
+.badge img{
+    width: 100%;
+}
+.details{
+    width: 60%;
+    margin-left: 18px; 
+    margin-top: 10px;
+}
+.details p{
+    margin-bottom: 10px;
+}
+.figure img{
+    width: 40%;
+    border-radius: 50%;
+}

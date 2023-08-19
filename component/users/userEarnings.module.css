@@ -1,0 +1,81 @@
+.sectionEarn {
+    margin-top: 200px;
+   
+    margin-left: 0%;
+    margin-top: 10px;
+        
+        width: 100%;
+        background-color: white;
+         
+        padding-top: 150px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
+}
+.sectionEarn h1{
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 70%;
+    margin-bottom: 50px;
+    
+}
+.earning div p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+.main{
+    display: none;
+}
+
+@media screen and (max-width:789px) {
+    .main {
+        display: block;
+        margin-bottom: 60px;
+        width: 10%;
+    }
+}
+
+@media screen and (max-width:450px){
+    .sectionEarn {
+        margin-top: 200px;
+       
+        margin-left: -8%;
+        margin-top: 10px;
+            
+            width: 98%;
+            background-color: white;
+             
+            padding-top: 150px;
+            
+            
+    }
+    .sectionEarn h1{
+        margin-bottom: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 5px;
+        color: var(--s-col);
+        width: 80%;
+        margin-bottom: 50px;
+        
+    }
+    .main {
+        display: block;
+        margin-bottom: 70px;
+        width: 10%;
+        margin-left: -10px;
+    }
+    .earning div p{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: solid var(--s-col) 1px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+    }
+}

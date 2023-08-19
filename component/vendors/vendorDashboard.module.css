@@ -1,0 +1,247 @@
+.span{
+    color:var(--p-col);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+.close{
+    display: none;
+}
+.open{
+    display: block;
+}
+.section{
+    width: 80%;
+    margin-left: 10%;
+    background: linear-gradient(to right,rgb(255, 255, 255),rgba(187, 191, 231, 0.089),rgba(153, 168, 233, 0.433),white);
+    -webkit-box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+    padding: 30px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    
+    z-index: 1000;
+}
+.welcome{
+    margin-bottom: 100px;
+}
+.welcome p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+.welcome span{
+    color: var(--p-col);
+    font-weight: bold;
+}
+.coupons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.coupons div{
+border: solid var(--p-col) 1px;
+box-shadow: gray 1px 1px 1px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1em;
+font-weight: bold;
+width: 30%;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
+border-radius: 20px;
+}
+.coupons div:hover{
+border: solid var(--p-col) 1px;
+box-shadow: gray 1px 1px 1px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1em;
+font-weight: bold;
+width: 30%;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
+border-radius: 20px;
+background: linear-gradient(to right,rgb(255, 255, 255),rgba(187, 191, 231, 0.089),rgba(153, 168, 233, 0.433),white);
+transition: 1000ms;
+}
+.coupons div p{
+ color: var(--p-col);
+font-size: 1em;
+font-weight: bold;
+margin-bottom: 10px;
+}
+.sectionTwo{
+    margin-top: 30px;
+    margin-left: 60%;
+}
+.sectionTwo button{
+    background-color: var(--p-col);
+    color: white;
+    margin-left: 20px;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    cursor: pointer;
+}
+.sectionTwo button:hover{
+    background-color: var(--s-col);
+    color: var(--p-col);
+}
+.card{
+    margin-top: 30px;
+    margin-left: 60%;
+    border: solid gray 1px;
+    padding: 20px;
+}
+.formControl{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.formControl label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+.formControl input{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+background-color: rgb(184, 184, 242);
+
+}
+.form button{
+    background-color: var(--p-col);
+    color: white;
+   
+    border: none;
+    padding: 10px 50px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+.form button:hover{
+    background-color: var(--s-col);
+    color: var(--p-col);
+    cursor: pointer;
+}
+.section h3{
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    border-bottom: solid var(--s-col) 5px;
+    color: var(--p-col);
+    width: 30%;
+    font-size: 1.5em;
+}
+ 
+.section table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .section table td, .section table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .section table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .section table tr:hover {background-color: #ddd;}
+  
+  .section table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:var(--p-col);
+    color: white;
+  }
+  @media screen and (max-width:768px)  {
+    .section{
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 100px;
+        background: linear-gradient(to right,rgb(255, 255, 255),rgba(187, 191, 231, 0.089),rgba(153, 168, 233, 0.433),white);
+        -webkit-box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+        box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.75);
+        padding: 30px;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        
+        z-index: 1000;
+    }
+    .sectionTwo{
+        margin-top: 30px;
+        margin-left: 40%;
+        margin-bottom: 100px;
+    }
+ }
+ 
+@media screen and (max-width:600px)  {
+    .coupons{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .welcome p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .coupons >div{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .sectionTwo{
+        margin-top: 30px;
+        margin-left: -3%;
+        margin-bottom: 100px;
+        width: 100%;
+    }
+    .sectionTwo button{
+        background-color: var(--p-col);
+        color: white;
+         margin-bottom: 20px;
+        border: none;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    .card{
+        margin-top: -70px;
+        margin-left: 0%;
+        border: solid gray 1px;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+    .section table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      
+       .section table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        
+      }
+      .section table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 0.2em;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+ }
+  
