@@ -21,7 +21,7 @@ pipeline{
         stage('Package'){
             steps{
                 sh '''
-                tar czf earnhive-$BUILD_NUMBER.tar.gz .next component model .env pages public styles utils jsconfig.json next.config.js package-lock.json package.json
+                tar czf earnhive-$BUILD_NUMBER.tar.gz component model .env pages public styles utils jsconfig.json next.config.js package-lock.json package.json
                 '''
             }
         }
