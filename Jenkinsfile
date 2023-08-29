@@ -21,7 +21,7 @@ pipeline{
         stage('Package'){
             steps{
                 sh '''
-                tar czf earnhive-$BUILD_NUMBER.tar.gz component model .env pages public styles utils jsconfig.json next.config.js package-lock.json package.json
+                tar czf earnhive-$BUILD_NUMBER.tar.gz component model .env pages public styles utils jsconfig.json next.config.js package-lock.json package.json deploy.sh
                 '''
             }
         }
@@ -36,10 +36,10 @@ pipeline{
                     execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
-                    cd /var/www/earnhive/;
-                    sudo npm install;
-                    sudo npm run build;
-                    sudo systemctl restart nginx; 
+                    which npm;
+                    echo $PATH;
+                    chmod +x deploy.sh;
+                    ./deploy.sh; 
                     ''', 
                     execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
                     patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', 
