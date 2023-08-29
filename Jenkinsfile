@@ -36,9 +36,12 @@ pipeline{
                     execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
+                    pwd;
                     which npm;
                     echo $PATH;
-                    chmod +x deploy.sh;
+                    export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.1/bin;
+                    echo $PATH;
+                    sudo chmod +x deploy.sh;
                     ./deploy.sh; 
                     ''', 
                     execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
