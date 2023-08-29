@@ -33,7 +33,7 @@ pipeline{
                     configName: 'earnhiveserver', 
                     transfers: [sshTransfer(
                     cleanRemote: false, excludes: '', 
-                    execCommand: '''sudo mv /home/jenkins/workspace/ernhive/earnhive-*.tar.gz /var/www/earnhive/;
+                    execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
                     npm ci;
