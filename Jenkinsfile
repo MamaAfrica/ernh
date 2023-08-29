@@ -5,16 +5,24 @@ pipeline{
         }
     }
     stages{
-        stage('Build'){
+        stage('Add .env'){
             steps{
             sh ''' 
-            npm install
+            rm -rf *.tar.gz
+            echo 'PASSWORD=${earnhivePASSWORD}' > .env
+            echo 'NAME=${earnhiveNAME}' >> .env
+            echo 'DB=${earnhiveDB}' >> .env
+            echo 'CLOUDINARY_CLOUD_NAME=${earnhiveCLOUDINARY_CLOUD_NAME}' >> .env
+            echo 'CLOUDINARY_KEY=${earnhiveCLOUDINARY_KEY}' >> .env
+            echo 'CLOUDINARY_SECRET=${earnhiveCLOUDINARY_SECRET}' >> .env
             '''
             }
         }
         stage('Package'){
             steps{
-                sh 'tar czf Node.tar.gz node_modules index.js package.json public app.json'
+                sh '''
+                tar czf earnhive-$BUILD_NUMBER.tar.gz .next component model .env pages public styles utils jsconfig.json next.config.js package-lock.json package.json
+                '''
             }
         }
         stage('Deploy'){
@@ -25,11 +33,13 @@ pipeline{
                     configName: 'earnhiveserver', 
                     transfers: [sshTransfer(
                     cleanRemote: false, excludes: '', 
-                    execCommand: '''mv ./home/ubuntu/one/node-js-sample/Node.tar.gz /home/ubuntu/test/Node.tar.gz;
-                    cd /home/ubuntu/test/
-                    tar -xf Node.tar.gz;
-                    docker build -t nodeimage .;
-                    docker run -d --name nodecontainer -p 5001:5000 nodeimage;''', 
+                    execCommand: '''mv ./home/jenkins/workspace/ernhive/earnhive-$BUILD_NUMBER.tar.gz /var/www/earnhive/earnhive-$BUILD_NUMBER.tar.gz;
+                    cd /var/www/earnhive/;
+                    tar -xf earnhive-$BUILD_NUMBER.tar.gz;
+                    npm ci;
+                    npm run build;
+                    sudo systemctl restart nginx; 
+                    ''', 
                     execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
                     patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', 
                     sourceFiles: '**/*.gz')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)
