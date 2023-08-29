@@ -36,6 +36,7 @@ pipeline{
                     execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
+                    cd /var/www/earnhive/;
                     sudo npm install;
                     sudo npm run build;
                     sudo systemctl restart nginx; 
