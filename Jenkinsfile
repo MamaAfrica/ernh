@@ -39,7 +39,7 @@ pipeline{
                     pwd;
                     which npm;
                     echo $PATH;
-                    env.PATH = "${env.PATH}:/home/ubuntu/.nvm/versions/node/v20.5.1/bin;
+                    env.PATH = "${env.PATH}:/home/ubuntu/.nvm/versions/node/v20.5.1/bin";
                     echo $PATH;
                     sudo chmod +x deploy.sh;
                     ./deploy.sh; 
