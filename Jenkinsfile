@@ -39,7 +39,9 @@ pipeline{
                     pwd;
                     echo $SHELL
                     echo $PATH;
+                    cat ~/.bashrc;
                     echo export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.1/bin >> ~/.bashrc;
+                    cat ~/.bashrc;
                     source ~/.bashrc;
                     echo $PATH;
                     sudo chmod +x deploy.sh;
