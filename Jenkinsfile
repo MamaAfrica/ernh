@@ -9,12 +9,12 @@ pipeline{
             steps{
             sh ''' 
             rm -rf *.tar.gz
-            echo 'PASSWORD=${earnhivePASSWORD}' > .env
-            echo 'NAME=${earnhiveNAME}' >> .env
-            echo 'DB=${earnhiveDB}' >> .env
-            echo 'CLOUDINARY_CLOUD_NAME=${earnhiveCLOUDINARY_CLOUD_NAME}' >> .env
-            echo 'CLOUDINARY_KEY=${earnhiveCLOUDINARY_KEY}' >> .env
-            echo 'CLOUDINARY_SECRET=${earnhiveCLOUDINARY_SECRET}' >> .env
+            echo PASSWORD=${earnhivePASSWORD} > .env
+            echo NAME=${earnhiveNAME} >> .env
+            echo DB=${earnhiveDB} >> .env
+            echo CLOUDINARY_CLOUD_NAME=${earnhiveCLOUDINARY_CLOUD_NAME} >> .env
+            echo CLOUDINARY_KEY=${earnhiveCLOUDINARY_KEY} >> .env
+            echo CLOUDINARY_SECRET=${earnhiveCLOUDINARY_SECRET} >> .env
             '''
             }
         }
@@ -36,13 +36,6 @@ pipeline{
                     execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
-                    pwd;
-                    echo $SHELL
-                    echo $PATH;
-                    cat ~/.bashrc;
-                    echo export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.1/bin >> ~/.bashrc;
-                    cat ~/.bashrc;
-                    source ~/.bashrc;
                     echo $PATH;
                     sudo chmod +x deploy.sh;
                     ./deploy.sh; 
