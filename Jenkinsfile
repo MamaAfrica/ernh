@@ -36,7 +36,6 @@ pipeline{
                     execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
-                    echo $PATH;
                     sudo chmod +x deploy.sh;
                     ./deploy.sh; 
                     ''', 
