@@ -33,7 +33,8 @@ pipeline{
                     configName: 'earnhiveserver', 
                     transfers: [sshTransfer(
                     cleanRemote: false, excludes: '', 
-                    execCommand: '''sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
+                    execCommand: '''sudo rm -rf /var/www/earnhive/earnhive-*.tar.gz 
+                    sudo mv /home/ubuntu/earnhive-*.tar.gz /var/www/earnhive/;
                     cd /var/www/earnhive/;
                     sudo tar -xf earnhive-*.tar.gz;
                     sudo chmod +x deploy.sh;
