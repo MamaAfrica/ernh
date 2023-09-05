@@ -4,7 +4,7 @@ const BannerHeader = () => {
     return ( 
        
         <div className={classes.bannerHeader}>
-                <h1>EARNHIVE</h1>
+                <h1>EARNHIVE DEV</h1>
         </div>
     
      );
