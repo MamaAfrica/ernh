@@ -13,8 +13,7 @@ function SectionTwo() {
 
             <div className={classes.short}>
                 <p>EarnHive: A strong and short
-                    name that brings to mind co
-                    operation, collaboration and earning money. The name aligns with
+                    name that brings to mind cooperation, collaboration and earning money. The name aligns with
                     big ideas of Ambition, Goal, Community, Tribe, Connection. Excellent fit for business ideas like
                     venture capital funds, star
                     tup accelerators, and hedge funds, a Career Counseling business, a
