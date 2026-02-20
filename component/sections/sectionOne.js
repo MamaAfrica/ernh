@@ -5,7 +5,7 @@ function SectionOne() {
         <div className={classes.section}>
             <div className={classes.sectionAll}>
                 <h2>How to Earn From EarnHive</h2>
-                <p>In Earlink,a commission is paid to the upline if he registers a downline using his/her referral here are several was at which you can earn…</p>
+                <p>In Earlink, a commission is paid to the upline if he registers a downline using his/her referral here are several was at which you can earn…</p>
 
             </div>
             <div className={classes.sectionTwo}>
