@@ -15,7 +15,7 @@ function SectionFive() {
                     </div>
                     <div className={classes.figureContent}>
                         <h3>Hive Recharge </h3>
-                        <p>  With Hive Recharge You can Sell Data and Airtime or purchase data/airtime with just your activities Balance and earn profit weekly or you may either Sub and Recharge yourself. </p>
+                        <p>  With Hive Recharge You can Sell Data and Airtime or purchase data/airtime with just your activities Balance and earn profit weekly or you may Sub and Recharge yourself. </p>
 
                         <div className={classes.btn}>
                         <button><Link href='/freelancing'>Learn More</Link></button>
