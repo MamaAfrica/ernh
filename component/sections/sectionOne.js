@@ -35,7 +35,7 @@ function SectionOne() {
                 <div className={classes.sectionEarn}>
                     <h3>Earning Through Non Referrals</h3>
                     <p>There are thus ways for the non-referrals. This means, those
-                        who can’t cope with referring. They’re as follows
+                        who can’t cope with referring. They’re as follows:
                         Log in daily, you get a commission
                         Earnhive daily post, you get a commission
                         Earnhive lucky spin and win
