@@ -18,7 +18,7 @@ function SectionOne() {
                         you have to keep referring to earn more commission from earnhive.
                         Referral is thus one of the easiest was to make million on Earnhive. Take this analysis below
                         Each referral you’ve got is 3,500
-                        Imagine 20 referrals in 3days. i.e 3,500x20=70,000
+                        Imagine 20 referrals in 3 days. i.e 3,500x20=70,000
                         Not imaginary. As easy as possible. Earnhive making things easier.</p>
                     <div className={classes.btn}>
                     <button><Link href='/how-it-works'>Learn More</Link></button>
