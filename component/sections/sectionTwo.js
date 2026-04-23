@@ -16,7 +16,7 @@ function SectionTwo() {
                     name that brings to mind cooperation, collaboration and earning money. The name aligns with
                     big ideas of Ambition, Goal, Community, Tribe, Connection. Excellent fit for business ideas like
                     venture capital funds, startup accelerators, and hedge funds, a Career Counseling business, a
-                    Recruitment & Staffing Business, a Finance business and many more! Hive is a clever word that
+                    Recruitment & Staffing business, a Finance business and many more! Hive is a clever word that
                     delivers a sense of community and teamwork.</p>
             </div>
             <div className={classes.btn}>
