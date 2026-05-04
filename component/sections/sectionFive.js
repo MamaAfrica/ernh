@@ -32,7 +32,7 @@ function SectionFive() {
                     </div>
                     <div className={classes.figureContent}>
                         <h3>Hive P2P </h3>
-                        <p>   With Hive p2p you can use your activities Balance to Register the next new user and Keep the money
+                        <p>   With Hive p2p you can use your activities Balance to Register the next new user and keep the money
                             to yourself, which means you can earn Over 10-25k weekly through the P2p section </p>
 
                         <div className={classes.btn}>
